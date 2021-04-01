@@ -55,6 +55,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.2\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -129,39 +132,59 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MonAnController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\HoaDon.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+    <Compile Include="Models\CTHOADON.cs">
+      <DependentUpon>QLThucAnNhanh.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model.Context.cs">
+    <Compile Include="Models\FEEDBACK.cs">
+      <DependentUpon>QLThucAnNhanh.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HOADON.cs">
+      <DependentUpon>QLThucAnNhanh.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KHACHHANG.cs">
+      <DependentUpon>QLThucAnNhanh.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KHUYENMAI.cs">
+      <DependentUpon>QLThucAnNhanh.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MONAN.cs">
+      <DependentUpon>QLThucAnNhanh.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NHANVIEN.cs">
+      <DependentUpon>QLThucAnNhanh.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLThucAnNhanh.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
+      <DependentUpon>QLThucAnNhanh.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model.cs">
+    <Compile Include="Models\QLThucAnNhanh.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>QLThucAnNhanh.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model.Designer.cs">
+    <Compile Include="Models\QLThucAnNhanh.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
+      <DependentUpon>QLThucAnNhanh.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\MonAn.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+    <Compile Include="Models\THONGKEBAOCAO.cs">
+      <DependentUpon>QLThucAnNhanh.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NhanVien.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+    <Compile Include="Models\TINHTRANGDON.cs">
+      <DependentUpon>QLThucAnNhanh.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\admin\css\sb-admin-2.css" />
     <Content Include="Assets\admin\css\sb-admin-2.min.css" />
+    <Content Include="Assets\admin\img\photo-1.jpg" />
     <Content Include="Assets\admin\img\undraw_posting_photo.svg" />
     <Content Include="Assets\admin\img\undraw_profile.svg" />
     <Content Include="Assets\admin\img\undraw_profile_1.svg" />
@@ -1879,6 +1902,7 @@
     <Content Include="Assets\js\main.js" />
     <Content Include="Assets\js\min\main.min.js" />
     <Content Include="Assets\js\plugins.js" />
+    <Content Include="Assets\admin\vendor\jquery\script.js" />
     <Content Include="Assets\js\vendor\jquery-1.10.2.min.js" />
     <Content Include="Assets\js\vendor\modernizr-2.6.2.min.js" />
     <Content Include="Assets\js\wow.min.js" />
@@ -1890,15 +1914,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Model.Context.tt">
+    <Content Include="Models\QLThucAnNhanh.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
+      <DependentUpon>QLThucAnNhanh.edmx</DependentUpon>
+      <LastGenOutput>QLThucAnNhanh.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model.tt">
+    <Content Include="Models\QLThucAnNhanh.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
+      <DependentUpon>QLThucAnNhanh.edmx</DependentUpon>
+      <LastGenOutput>QLThucAnNhanh.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -2089,12 +2113,17 @@
     <Content Include="Assets\js\.DS_Store" />
     <Content Include="Assets\less\main.less" />
     <Content Include="Assets\less\responsive.less" />
-    <EntityDeploy Include="Models\Model.edmx">
+    <Content Include="Areas\Admin\Views\MonAn\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MonAn\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\MonAn\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\MonAn\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\MonAn\Edit.cshtml" />
+    <EntityDeploy Include="Models\QLThucAnNhanh.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>QLThucAnNhanh.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
+    <Content Include="Models\QLThucAnNhanh.edmx.diagram">
+      <DependentUpon>QLThucAnNhanh.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -2125,6 +2154,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Login\" />
+    <Folder Include="Views\as\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

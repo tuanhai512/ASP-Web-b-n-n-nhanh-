@@ -11,15 +11,29 @@ namespace WebBanThucAnNhanh.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
     
-    public partial class MonAn
+    public partial class MONAN
     {
-        public string MaMon { get; set; }
-        public string TenMon { get; set; }
-        public string HinhAnh { get; set; }
-        public string DonViTinh { get; set; }
-        public Nullable<int> GiaBan { get; set; }
-        public Nullable<int> Thue { get; set; }
-        public string MoTa { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public MONAN()
+        {
+            HINHANH = "~/Assets/admin/img/photo-1.jpg";
+            this.CTHOADONs = new HashSet<CTHOADON>();
+        }
+    
+        public string MAMONAN { get; set; }
+        public string TENMONAN { get; set; }
+        public string HINHANH { get; set; }
+        public string DONVITINH { get; set; }
+        public double GIABAN { get; set; }
+        public double THUE { get; set; }
+        public string MOTA { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTHOADON> CTHOADONs { get; set; }
+        [NotMapped]
+        public HttpPostedFileBase ImageUpload { get; set; }
     }
 }

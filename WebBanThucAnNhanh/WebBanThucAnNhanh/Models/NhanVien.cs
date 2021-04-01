@@ -12,11 +12,21 @@ namespace WebBanThucAnNhanh.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class NhanVien
+    public partial class NHANVIEN
     {
-        public long ID { get; set; }
-        public string Ten { get; set; }
-        public string TaiKhoan { get; set; }
-        public string MatKhau { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public NHANVIEN()
+        {
+            this.HOADONs = new HashSet<HOADON>();
+        }
+    
+        public long MANHANVIEN { get; set; }
+        public string TENNV { get; set; }
+        public Nullable<int> SDT { get; set; }
+        public string EMAIL { get; set; }
+        public string PASSWORD { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOADON> HOADONs { get; set; }
     }
 }

@@ -15,6 +15,12 @@ namespace WebBanThucAnNhanh.Areas.Admin
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
+                "Admin_Create",
+                "Admin/{controller}/{action}/{id}",
+                new { action = "Create", id = UrlParameter.Optional },
+                new[] { "WebBanThucAnNhanh.Areas.Admin.Controllers" }
+            );
+            context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional },

@@ -12,11 +12,20 @@ namespace WebBanThucAnNhanh.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class HoaDon
+    public partial class HOADON
     {
-        public long MaHoaDon { get; set; }
-        public string NguoiBan { get; set; }
-        public Nullable<System.DateTime> NgayBan { get; set; }
-        public Nullable<int> TongTien { get; set; }
+        public long MAHOADON { get; set; }
+        public long MAKHUYENMAI { get; set; }
+        public long MANHANVIEN { get; set; }
+        public long MAKHACHHANG { get; set; }
+        public double TONGTIEN { get; set; }
+        public long MATINHTRANGDON { get; set; }
+        public Nullable<System.DateTime> NGAYGIO { get; set; }
+        public double TONGTHUE { get; set; }
+        public string GHICHU { get; set; }
+    
+        public virtual KHACHHANG KHACHHANG { get; set; }
+        public virtual KHUYENMAI KHUYENMAI { get; set; }
+        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }
