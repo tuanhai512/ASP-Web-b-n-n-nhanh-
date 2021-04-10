@@ -14,9 +14,9 @@ namespace WebBanThucAnNhanh.Models
     
     public partial class CTHOADON
     {
-        public long MACTHOADON { get; set; }
+        public int MACTHOADON { get; set; }
         public string MAMONAN { get; set; }
-        public long MATINHTRANG { get; set; }
+        public int MATINHTRANG { get; set; }
         public Nullable<int> SOLUONG { get; set; }
         public string GHICHU { get; set; }
     

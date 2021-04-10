@@ -17,21 +17,22 @@ namespace WebBanThucAnNhanh.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHACHHANG()
         {
-            this.FEEDBACKs = new HashSet<FEEDBACK>();
-            this.HOADONs = new HashSet<HOADON>();
+            this.FEEDBACK = new HashSet<FEEDBACK>();
+            this.HOADON = new HashSet<HOADON>();
         }
     
-        public long MAKHACHHANG { get; set; }
+        public int MAKHACHHANG { get; set; }
         public string TENKHACHHANG { get; set; }
         public Nullable<System.DateTime> NGAYSINH { get; set; }
         public string DIACHI { get; set; }
         public Nullable<int> SDT { get; set; }
         public string EMAIL { get; set; }
         public string PASSWORD { get; set; }
+        public string LOAI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FEEDBACK> FEEDBACKs { get; set; }
+        public virtual ICollection<FEEDBACK> FEEDBACK { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
+        public virtual ICollection<HOADON> HOADON { get; set; }
     }
 }

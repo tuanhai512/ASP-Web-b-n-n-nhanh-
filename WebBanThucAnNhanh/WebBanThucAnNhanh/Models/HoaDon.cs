@@ -14,16 +14,18 @@ namespace WebBanThucAnNhanh.Models
     
     public partial class HOADON
     {
-        public long MAHOADON { get; set; }
-        public long MAKHUYENMAI { get; set; }
-        public long MANHANVIEN { get; set; }
-        public long MAKHACHHANG { get; set; }
+        public int MAHOADON { get; set; }
+        public int MAKHUYENMAI { get; set; }
+        public int MANHANVIEN { get; set; }
+        public int MAKHACHHANG { get; set; }
+        public int MADONDAT { get; set; }
+        public int MATINHTRANGDON { get; set; }
         public double TONGTIEN { get; set; }
-        public long MATINHTRANGDON { get; set; }
         public Nullable<System.DateTime> NGAYGIO { get; set; }
         public double TONGTHUE { get; set; }
         public string GHICHU { get; set; }
     
+        public virtual DONDAT DONDAT { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }
         public virtual KHUYENMAI KHUYENMAI { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }

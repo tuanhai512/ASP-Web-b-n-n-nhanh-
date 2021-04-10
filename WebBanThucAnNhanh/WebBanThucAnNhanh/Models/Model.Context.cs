@@ -25,8 +25,17 @@ namespace WebBanThucAnNhanh.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<HoaDon> HoaDon { get; set; }
-        public virtual DbSet<MonAn> MonAn { get; set; }
-        public virtual DbSet<NhanVien> NhanVien { get; set; }
+        public virtual DbSet<ADMIN> ADMIN { get; set; }
+        public virtual DbSet<CTHOADON> CTHOADON { get; set; }
+        public virtual DbSet<DONDAT> DONDAT { get; set; }
+        public virtual DbSet<FEEDBACK> FEEDBACK { get; set; }
+        public virtual DbSet<GIOHANG> GIOHANG { get; set; }
+        public virtual DbSet<HOADON> HOADON { get; set; }
+        public virtual DbSet<KHACHHANG> KHACHHANG { get; set; }
+        public virtual DbSet<KHUYENMAI> KHUYENMAI { get; set; }
+        public virtual DbSet<MONAN> MONAN { get; set; }
+        public virtual DbSet<NHANVIEN> NHANVIEN { get; set; }
+        public virtual DbSet<TINHTRANGDON> TINHTRANGDON { get; set; }
+        public virtual DbSet<THONGKEBAOCAO> THONGKEBAOCAO { get; set; }
     }
 }

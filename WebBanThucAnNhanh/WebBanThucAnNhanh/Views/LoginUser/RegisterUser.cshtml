@@ -1,0 +1,52 @@
+﻿@model WebBanThucAnNhanh.Models.KHACHHANG
+@{
+    ViewBag.Title = "RegisterUser";
+    Layout = null;
+}
+<style>
+    .field-validation-error {
+        color: red;
+    }
+</style>
+<h2>RegisterUser</h2>
+@using (Html.BeginForm("RegisterUser", "LoginUser", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+   
+
+    if (ViewBag.ErrorRegister != null)
+    {
+        <p>@ViewBag.ErrorRegister</p>
+    }
+
+    <p>@Html.LabelFor(model => model.TENKHACHHANG)</p>
+    <p>@Html.EditorFor(model => model.TENKHACHHANG)</p>
+    <p>@Html.ValidationMessageFor(model => model.TENKHACHHANG)</p>
+
+    <p>@Html.LabelFor(model => model.NGAYSINH)</p>
+    <p>@Html.EditorFor(model => model.NGAYSINH)</p>
+    <p>@Html.ValidationMessageFor(model => model.NGAYSINH)</p>
+
+    <p>@Html.LabelFor(model => model.DIACHI)</p>
+    <p>@Html.EditorFor(model => model.DIACHI)</p>
+    <p>@Html.ValidationMessageFor(model => model.DIACHI)</p>
+
+
+    <p>@Html.LabelFor(model => model.SDT)</p>
+    <p>@Html.EditorFor(model => model.SDT)</p>
+    <p>@Html.ValidationMessageFor(model => model.SDT)</p>
+
+    <p>@Html.LabelFor(model => model.EMAIL)</p>
+    <p>@Html.EditorFor(model => model.EMAIL)</p>
+    <p>@Html.ValidationMessageFor(model => model.EMAIL)</p>
+
+    <p>@Html.LabelFor(model => model.PASSWORD)</p>
+    <p>@Html.EditorFor(model => model.PASSWORD)</p>
+    <p>@Html.ValidationMessageFor(model => model.PASSWORD)</p>
+
+    <p>@Html.LabelFor(model => model.ComfirmPass)</p>
+    <p>@Html.EditorFor(model => model.ComfirmPass)</p>
+    <p>@Html.ValidationMessageFor(model => model.ComfirmPass)</p>
+
+    <input type="submit" value="Register" />
+}
