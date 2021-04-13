@@ -253,3 +253,4 @@ D:\git-hub\Doan1\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Deb
 D:\git-hub\Doan1\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.csproj.CopyComplete
 D:\git-hub\Doan1\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.dll
 D:\git-hub\Doan1\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.pdb
+D:\git-hub\Doan1\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.csprojAssemblyReference.cache

@@ -29,7 +29,6 @@ namespace WebBanThucAnNhanh.Models
         public virtual DbSet<CTHOADON> CTHOADON { get; set; }
         public virtual DbSet<DONDAT> DONDAT { get; set; }
         public virtual DbSet<FEEDBACK> FEEDBACK { get; set; }
-        public virtual DbSet<GIOHANG> GIOHANG { get; set; }
         public virtual DbSet<HOADON> HOADON { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANG { get; set; }
         public virtual DbSet<KHUYENMAI> KHUYENMAI { get; set; }

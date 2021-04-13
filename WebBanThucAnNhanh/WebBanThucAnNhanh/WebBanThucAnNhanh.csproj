@@ -137,6 +137,7 @@
     <Compile Include="Areas\QuanLy\Controllers\DonHangController.cs" />
     <Compile Include="Areas\QuanLy\Controllers\HoaDonController.cs" />
     <Compile Include="Areas\QuanLy\Controllers\KhachHangController.cs" />
+    <Compile Include="Areas\QuanLy\Controllers\KhuyenMaiController.cs" />
     <Compile Include="Areas\QuanLy\Controllers\LoginQuanLyController.cs" />
     <Compile Include="Areas\QuanLy\QuanLyAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -156,9 +157,7 @@
     <Compile Include="Models\FEEDBACK.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\GIOHANG.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\HOADON.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -2250,6 +2249,7 @@
     <Content Include="Areas\QuanLy\Views\KhachHang\Index.cshtml" />
     <Content Include="Areas\QuanLy\Views\KhachHang\Create.cshtml" />
     <Content Include="Areas\QuanLy\Views\KhachHang\Details.cshtml" />
+    <Content Include="Areas\QuanLy\Views\HoaDon\Index.cshtml" />
     <EntityDeploy Include="Models\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
@@ -2257,8 +2257,9 @@
     <Content Include="Models\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\QuanLy\Views\HoaDon\Index.cshtml" />
-    <Content Include="Areas\QuanLy\Views\DonHang\Index.cshtml" />
+    <Content Include="Areas\QuanLy\Views\DonHang\ShowMonAn.cshtml" />
+    <Content Include="Areas\QuanLy\Views\KhuyenMai\Create.cshtml" />
+    <Content Include="Areas\QuanLy\Views\KhuyenMai\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

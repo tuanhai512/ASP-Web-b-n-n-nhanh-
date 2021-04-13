@@ -33,7 +33,7 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
                 database.Configuration.ValidateOnSaveEnabled = false;
                 Session["Email"] = _user.Email;
                 Session["Pass"] = _user.Pass;
-                return RedirectToAction("Index", "LoginQuanLy");
+                return RedirectToAction("Index", "Account");
             }
             return View();
         }

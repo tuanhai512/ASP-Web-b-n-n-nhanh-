@@ -7,38 +7,37 @@ using WebBanThucAnNhanh.Models;
 
 namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
 {
-    public class AccountController : Controller
+    public class KhuyenMaiController : Controller
     {
-        QLThucAnNhanhEntities _db = new QLThucAnNhanhEntities();
-        // GET: QuanLy/Account
+        QLThucAnNhanhEntities database = new QLThucAnNhanhEntities();
+        // GET: QuanLy/KhuyenMai
         public ActionResult Index()
         {
-            return View(_db.NHANVIEN.ToList());
+            return View(database.KHUYENMAI.ToList());
         }
 
-        // GET: QuanLy/Account/Details/5
+        // GET: QuanLy/KhuyenMai/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: QuanLy/Account/Create
+        // GET: QuanLy/KhuyenMai/Create
         public ActionResult Create()
         {
-            NHANVIEN account = new NHANVIEN();
-            return View(account);
+            KHUYENMAI khuyenmai = new KHUYENMAI();
+            return View(khuyenmai);
         }
 
-        // POST: QuanLy/Account/Create
+        // POST: QuanLy/KhuyenMai/Create
         [HttpPost]
-        public ActionResult Create(NHANVIEN nhanvien)
+        public ActionResult Create(KHUYENMAI khuyenmai)
         {
             try
             {
                 // TODO: Add insert logic here
-
-                _db.NHANVIEN.Add(nhanvien);
-                _db.SaveChanges();
+                database.KHUYENMAI.Add(khuyenmai);
+                database.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -47,13 +46,13 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
             }
         }
 
-        // GET: QuanLy/Account/Edit/5
+        // GET: QuanLy/KhuyenMai/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: QuanLy/Account/Edit/5
+        // POST: QuanLy/KhuyenMai/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -69,13 +68,13 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
             }
         }
 
-        // GET: QuanLy/Account/Delete/5
+        // GET: QuanLy/KhuyenMai/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: QuanLy/Account/Delete/5
+        // POST: QuanLy/KhuyenMai/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

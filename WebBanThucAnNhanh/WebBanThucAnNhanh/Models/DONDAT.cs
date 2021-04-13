@@ -14,19 +14,11 @@ namespace WebBanThucAnNhanh.Models
     
     public partial class DONDAT
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DONDAT()
-        {
-            this.HOADON = new HashSet<HOADON>();
-        }
-    
         public int MADONDAT { get; set; }
-        public int MAGIOHANG { get; set; }
+        public string MAMONAN { get; set; }
         public Nullable<int> SOLUONG { get; set; }
         public Nullable<double> TONGTIEN { get; set; }
     
-        public virtual GIOHANG GIOHANG { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADON { get; set; }
+        public virtual MONAN MONAN { get; set; }
     }
 }

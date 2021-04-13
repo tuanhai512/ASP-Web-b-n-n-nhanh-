@@ -25,7 +25,7 @@
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.DONDAT">
         <MappingFragment StoreEntitySet="DONDAT">
           <ScalarProperty Name="MADONDAT" ColumnName="MADONDAT" />
-          <ScalarProperty Name="MAGIOHANG" ColumnName="MAGIOHANG" />
+          <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
           <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
           <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
         </MappingFragment>
@@ -40,16 +40,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="GIOHANG">
-      <EntityTypeMapping TypeName="QLThucAnNhanhModel.GIOHANG">
-        <MappingFragment StoreEntitySet="GIOHANG">
-          <ScalarProperty Name="MAGIOHANG" ColumnName="MAGIOHANG" />
-          <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
-          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
-          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="HOADON">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.HOADON">
         <MappingFragment StoreEntitySet="HOADON">
@@ -57,7 +47,6 @@
           <ScalarProperty Name="MAKHUYENMAI" ColumnName="MAKHUYENMAI" />
           <ScalarProperty Name="MANHANVIEN" ColumnName="MANHANVIEN" />
           <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
-          <ScalarProperty Name="MADONDAT" ColumnName="MADONDAT" />
           <ScalarProperty Name="MATINHTRANGDON" ColumnName="MATINHTRANGDON" />
           <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
           <ScalarProperty Name="NGAYGIO" ColumnName="NGAYGIO" />

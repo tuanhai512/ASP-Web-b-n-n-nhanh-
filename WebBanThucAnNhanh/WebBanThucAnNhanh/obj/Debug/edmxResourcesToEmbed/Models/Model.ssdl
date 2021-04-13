@@ -23,7 +23,7 @@
       <PropertyRef Name="MADONDAT" />
     </Key>
     <Property Name="MADONDAT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MAGIOHANG" Type="int" Nullable="false" />
+    <Property Name="MAMONAN" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="SOLUONG" Type="int" />
     <Property Name="TONGTIEN" Type="float" />
   </EntityType>
@@ -35,15 +35,6 @@
     <Property Name="MAKHACHHANG" Type="int" Nullable="false" />
     <Property Name="NOIDUNG" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="GIOHANG">
-    <Key>
-      <PropertyRef Name="MAGIOHANG" />
-    </Key>
-    <Property Name="MAGIOHANG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MAMONAN" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="SOLUONG" Type="int" />
-    <Property Name="TONGTIEN" Type="float" />
-  </EntityType>
   <EntityType Name="HOADON">
     <Key>
       <PropertyRef Name="MAHOADON" />
@@ -52,7 +43,6 @@
     <Property Name="MAKHUYENMAI" Type="int" Nullable="false" />
     <Property Name="MANHANVIEN" Type="int" Nullable="false" />
     <Property Name="MAKHACHHANG" Type="int" Nullable="false" />
-    <Property Name="MADONDAT" Type="int" Nullable="false" />
     <Property Name="MATINHTRANGDON" Type="int" Nullable="false" />
     <Property Name="TONGTIEN" Type="float" Nullable="false" />
     <Property Name="NGAYGIO" Type="datetime" />
@@ -143,6 +133,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_DONDAT_MONAN">
+    <End Role="MONAN" Type="Self.MONAN" Multiplicity="1" />
+    <End Role="DONDAT" Type="Self.DONDAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONAN">
+        <PropertyRef Name="MAMONAN" />
+      </Principal>
+      <Dependent Role="DONDAT">
+        <PropertyRef Name="MAMONAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_FEEDBACK_KHACHHANG">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
     <End Role="FEEDBACK" Type="Self.FEEDBACK" Multiplicity="*" />
@@ -152,42 +154,6 @@
       </Principal>
       <Dependent Role="FEEDBACK">
         <PropertyRef Name="MAKHACHHANG" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_GIOHANG_DONDAT">
-    <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="1" />
-    <End Role="DONDAT" Type="Self.DONDAT" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="GIOHANG">
-        <PropertyRef Name="MAGIOHANG" />
-      </Principal>
-      <Dependent Role="DONDAT">
-        <PropertyRef Name="MAGIOHANG" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_GIOHANG_MONAN">
-    <End Role="MONAN" Type="Self.MONAN" Multiplicity="1" />
-    <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MONAN">
-        <PropertyRef Name="MAMONAN" />
-      </Principal>
-      <Dependent Role="GIOHANG">
-        <PropertyRef Name="MAMONAN" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_HOADON_DONDAT">
-    <End Role="DONDAT" Type="Self.DONDAT" Multiplicity="1" />
-    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DONDAT">
-        <PropertyRef Name="MADONDAT" />
-      </Principal>
-      <Dependent Role="HOADON">
-        <PropertyRef Name="MADONDAT" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -232,7 +198,6 @@
     <EntitySet Name="CTHOADON" EntityType="Self.CTHOADON" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DONDAT" EntityType="Self.DONDAT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FEEDBACK" EntityType="Self.FEEDBACK" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="GIOHANG" EntityType="Self.GIOHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHUYENMAI" EntityType="Self.KHUYENMAI" Schema="dbo" store:Type="Tables" />
@@ -248,21 +213,13 @@
       <End Role="TINHTRANGDON" EntitySet="TINHTRANGDON" />
       <End Role="CTHOADON" EntitySet="CTHOADON" />
     </AssociationSet>
+    <AssociationSet Name="FK_DONDAT_MONAN" Association="Self.FK_DONDAT_MONAN">
+      <End Role="MONAN" EntitySet="MONAN" />
+      <End Role="DONDAT" EntitySet="DONDAT" />
+    </AssociationSet>
     <AssociationSet Name="FK_FEEDBACK_KHACHHANG" Association="Self.FK_FEEDBACK_KHACHHANG">
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />
       <End Role="FEEDBACK" EntitySet="FEEDBACK" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GIOHANG_DONDAT" Association="Self.FK_GIOHANG_DONDAT">
-      <End Role="GIOHANG" EntitySet="GIOHANG" />
-      <End Role="DONDAT" EntitySet="DONDAT" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GIOHANG_MONAN" Association="Self.FK_GIOHANG_MONAN">
-      <End Role="MONAN" EntitySet="MONAN" />
-      <End Role="GIOHANG" EntitySet="GIOHANG" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HOADON_DONDAT" Association="Self.FK_HOADON_DONDAT">
-      <End Role="DONDAT" EntitySet="DONDAT" />
-      <End Role="HOADON" EntitySet="HOADON" />
     </AssociationSet>
     <AssociationSet Name="FK_HOADON_KHACHHANG" Association="Self.FK_HOADON_KHACHHANG">
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />

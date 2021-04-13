@@ -21,7 +21,7 @@ namespace WebBanThucAnNhanh.Models
         {
             HINHANH = "~/Assets/admin/img/photo-1.jpg";
             this.CTHOADON = new HashSet<CTHOADON>();
-            this.GIOHANG = new HashSet<GIOHANG>();
+            this.DONDAT = new HashSet<DONDAT>();
         }
     
         public string MAMONAN { get; set; }
@@ -35,8 +35,8 @@ namespace WebBanThucAnNhanh.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHOADON> CTHOADON { get; set; }
+        public HashSet<DONDAT> DONDAT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GIOHANG> GIOHANG { get; set; }
 
         [NotMapped]
         public HttpPostedFileBase ImageUpload { get; set; }

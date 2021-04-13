@@ -11,9 +11,12 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
     {
         QLThucAnNhanhEntities _db = new QLThucAnNhanhEntities();
         // GET: QuanLy/DonHang
-        public ActionResult Index()
+        public ActionResult ShowMonAn()
         {
-            return View(_db.DONDAT.ToList());
+            if (Session["GioHang"] == null)
+                return RedirectToAction("ShowMonAn","DonHang");
+            GioHang _gioHang = Session["GioHang"] as GioHang;
+            return View(_gioHang);
         }
 
         // GET: QuanLy/DonHang/Details/5
@@ -30,12 +33,14 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
 
         // POST: QuanLy/DonHang/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(DONDAT collection)
+
         {
             try
             {
+               
                 // TODO: Add insert logic here
-
+               
                 return RedirectToAction("Index");
             }
             catch
