@@ -26,14 +26,16 @@ namespace WebBanThucAnNhanh.Models
         }
     
         public virtual DbSet<ADMIN> ADMIN { get; set; }
+        public virtual DbSet<CT_MONAN_DATHANG> CT_MONAN_DATHANG { get; set; }
         public virtual DbSet<CTHOADON> CTHOADON { get; set; }
-        public virtual DbSet<DONDAT> DONDAT { get; set; }
+        public virtual DbSet<DATHANG> DATHANG { get; set; }
         public virtual DbSet<FEEDBACK> FEEDBACK { get; set; }
         public virtual DbSet<HOADON> HOADON { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANG { get; set; }
         public virtual DbSet<KHUYENMAI> KHUYENMAI { get; set; }
         public virtual DbSet<MONAN> MONAN { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIEN { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TINHTRANGDON> TINHTRANGDON { get; set; }
         public virtual DbSet<THONGKEBAOCAO> THONGKEBAOCAO { get; set; }
     }

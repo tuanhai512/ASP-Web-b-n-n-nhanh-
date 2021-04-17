@@ -33,7 +33,7 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
 
         // POST: QuanLy/DonHang/Create
         [HttpPost]
-        public ActionResult Create(DONDAT collection)
+        public ActionResult Create(DATHANG collection)
 
         {
             try

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eab5c765b8434c01a2896b2076973bcc" Name="Diagram1">
+        <EntityTypeShape EntityType="QLThucAnNhanhModel.ADMIN" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThucAnNhanhModel.CT_MONAN_DATHANG" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThucAnNhanhModel.CTHOADON" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThucAnNhanhModel.DATHANG" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThucAnNhanhModel.FEEDBACK" Width="1.5" PointX="8.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThucAnNhanhModel.HOADON" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThucAnNhanhModel.KHACHHANG" Width="1.5" PointX="3.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThucAnNhanhModel.KHUYENMAI" Width="1.5" PointX="3.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThucAnNhanhModel.MONAN" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThucAnNhanhModel.NHANVIEN" Width="1.5" PointX="3.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThucAnNhanhModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThucAnNhanhModel.TINHTRANGDON" Width="1.5" PointX="6" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThucAnNhanhModel.THONGKEBAOCAO" Width="1.5" PointX="10.75" PointY="1.875" IsExpanded="true" />
+        <AssociationConnector Association="QLThucAnNhanhModel.FK_CTHOADON_CT_MONAN_DATHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThucAnNhanhModel.FK_DATHANG_MONAN" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThucAnNhanhModel.FK_MONAN_DATHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThucAnNhanhModel.FK_CTHOADON_CT_MONAN_TINHTRANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThucAnNhanhModel.FK_CTHOADON_HOADON" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThucAnNhanhModel.FK_HOADON_DATHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThucAnNhanhModel.FK_HOADON_KHACHHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThucAnNhanhModel.FK_HOADON_KHUYENMAI" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThucAnNhanhModel.FK_HOADON_NHANVIEN" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

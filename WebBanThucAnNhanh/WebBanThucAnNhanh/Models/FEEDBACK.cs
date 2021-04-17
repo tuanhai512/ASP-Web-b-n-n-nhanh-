@@ -17,7 +17,5 @@ namespace WebBanThucAnNhanh.Models
         public int MAFEEDBACK { get; set; }
         public int MAKHACHHANG { get; set; }
         public string NOIDUNG { get; set; }
-    
-        public virtual KHACHHANG KHACHHANG { get; set; }
     }
 }

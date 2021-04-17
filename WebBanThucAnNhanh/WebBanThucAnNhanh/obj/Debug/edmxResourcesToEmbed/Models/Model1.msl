@@ -1,18 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="QLThucAnNhanhModelStoreContainer" CdmEntityContainer="QLThucAnNhanhEntities1">
-    <EntitySetMapping Name="CTHOADONs">
+  <EntityContainerMapping StorageEntityContainer="QLThucAnNhanhModelStoreContainer" CdmEntityContainer="QLThucAnNhanhEntities">
+    <EntitySetMapping Name="ADMIN">
+      <EntityTypeMapping TypeName="QLThucAnNhanhModel.ADMIN">
+        <MappingFragment StoreEntitySet="ADMIN">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CT_MONAN_DATHANG">
+      <EntityTypeMapping TypeName="QLThucAnNhanhModel.CT_MONAN_DATHANG">
+        <MappingFragment StoreEntitySet="CT_MONAN_DATHANG">
+          <ScalarProperty Name="MACTMONANDATHANG" ColumnName="MACTMONANDATHANG" />
+          <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
+          <ScalarProperty Name="MADATHANG" ColumnName="MADATHANG" />
+          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+          <ScalarProperty Name="GIABAN" ColumnName="GIABAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTHOADON">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.CTHOADON">
         <MappingFragment StoreEntitySet="CTHOADON">
           <ScalarProperty Name="MACTHOADON" ColumnName="MACTHOADON" />
           <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
           <ScalarProperty Name="MATINHTRANG" ColumnName="MATINHTRANG" />
+          <ScalarProperty Name="MACTMONANDATHANG" ColumnName="MACTMONANDATHANG" />
+          <ScalarProperty Name="MAHOADON" ColumnName="MAHOADON" />
           <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
           <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="FEEDBACKs">
+    <EntitySetMapping Name="DATHANG">
+      <EntityTypeMapping TypeName="QLThucAnNhanhModel.DATHANG">
+        <MappingFragment StoreEntitySet="DATHANG">
+          <ScalarProperty Name="MADATHANG" ColumnName="MADATHANG" />
+          <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
+          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FEEDBACK">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.FEEDBACK">
         <MappingFragment StoreEntitySet="FEEDBACK">
           <ScalarProperty Name="MAFEEDBACK" ColumnName="MAFEEDBACK" />
@@ -21,22 +53,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="HOADONs">
+    <EntitySetMapping Name="HOADON">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.HOADON">
         <MappingFragment StoreEntitySet="HOADON">
           <ScalarProperty Name="MAHOADON" ColumnName="MAHOADON" />
           <ScalarProperty Name="MAKHUYENMAI" ColumnName="MAKHUYENMAI" />
           <ScalarProperty Name="MANHANVIEN" ColumnName="MANHANVIEN" />
           <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
+          <ScalarProperty Name="MACTHOADON" ColumnName="MACTHOADON" />
+          <ScalarProperty Name="MADATHANG" ColumnName="MADATHANG" />
           <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
-          <ScalarProperty Name="MATINHTRANGDON" ColumnName="MATINHTRANGDON" />
           <ScalarProperty Name="NGAYGIO" ColumnName="NGAYGIO" />
           <ScalarProperty Name="TONGTHUE" ColumnName="TONGTHUE" />
           <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="KHACHHANGs">
+    <EntitySetMapping Name="KHACHHANG">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.KHACHHANG">
         <MappingFragment StoreEntitySet="KHACHHANG">
           <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
@@ -50,7 +83,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="KHUYENMAIs">
+    <EntitySetMapping Name="KHUYENMAI">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.KHUYENMAI">
         <MappingFragment StoreEntitySet="KHUYENMAI">
           <ScalarProperty Name="MAKHUYENMAI" ColumnName="MAKHUYENMAI" />
@@ -60,7 +93,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="MONANs">
+    <EntitySetMapping Name="MONAN">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.MONAN">
         <MappingFragment StoreEntitySet="MONAN">
           <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
@@ -70,10 +103,11 @@
           <ScalarProperty Name="GIABAN" ColumnName="GIABAN" />
           <ScalarProperty Name="THUE" ColumnName="THUE" />
           <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+          <ScalarProperty Name="LOAI" ColumnName="LOAI" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="NHANVIENs">
+    <EntitySetMapping Name="NHANVIEN">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.NHANVIEN">
         <MappingFragment StoreEntitySet="NHANVIEN">
           <ScalarProperty Name="MANHANVIEN" ColumnName="MANHANVIEN" />
@@ -84,7 +118,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TINHTRANGDONs">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QLThucAnNhanhModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TINHTRANGDON">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.TINHTRANGDON">
         <MappingFragment StoreEntitySet="TINHTRANGDON">
           <ScalarProperty Name="MATINHTRANG" ColumnName="MATINHTRANG" />
@@ -92,7 +137,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="THONGKEBAOCAOs">
+    <EntitySetMapping Name="THONGKEBAOCAO">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.THONGKEBAOCAO">
         <MappingFragment StoreEntitySet="THONGKEBAOCAO">
           <ScalarProperty Name="MATHONGKEBAOCAO" ColumnName="MATHONGKEBAOCAO" />

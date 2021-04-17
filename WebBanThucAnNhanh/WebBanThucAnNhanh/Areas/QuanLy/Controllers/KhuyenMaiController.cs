@@ -47,19 +47,21 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
         }
 
         // GET: QuanLy/KhuyenMai/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string  id)
         {
-            return View();
+            return View(database.KHUYENMAI.Where(s => s.MAKHUYENMAI == id).FirstOrDefault());
         }
 
         // POST: QuanLy/KhuyenMai/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(KHUYENMAI khuyenmai)
         {
             try
             {
                 // TODO: Add update logic here
-
+               
+                database.Entry(khuyenmai).State = System.Data.Entity.EntityState.Modified;
+                database.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch

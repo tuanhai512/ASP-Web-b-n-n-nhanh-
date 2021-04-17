@@ -21,10 +21,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DONDAT">
-      <EntityTypeMapping TypeName="QLThucAnNhanhModel.DONDAT">
-        <MappingFragment StoreEntitySet="DONDAT">
-          <ScalarProperty Name="MADONDAT" ColumnName="MADONDAT" />
+    <EntitySetMapping Name="DATHANG">
+      <EntityTypeMapping TypeName="QLThucAnNhanhModel.DATHANG">
+        <MappingFragment StoreEntitySet="DATHANG">
+          <ScalarProperty Name="MAGIOHANG" ColumnName="MAGIOHANG" />
           <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
           <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
           <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
@@ -45,6 +45,7 @@
         <MappingFragment StoreEntitySet="HOADON">
           <ScalarProperty Name="MAHOADON" ColumnName="MAHOADON" />
           <ScalarProperty Name="MAKHUYENMAI" ColumnName="MAKHUYENMAI" />
+          <ScalarProperty Name="MACTHOADON" ColumnName="MACTHOADON" />
           <ScalarProperty Name="MANHANVIEN" ColumnName="MANHANVIEN" />
           <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
           <ScalarProperty Name="MATINHTRANGDON" ColumnName="MATINHTRANGDON" />
