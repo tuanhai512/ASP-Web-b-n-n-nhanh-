@@ -1,0 +1,56 @@
+﻿@model WebBanThucAnNhanh.Models.Cart
+
+@{ Layout = null; }
+<head>
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+</head>
+<div class="shopping-cart">
+    <div class="title">
+        Shopping Bag
+    </div>
+    @if (Model != null)
+    {
+        <table class="table">
+            <tbody>
+                @foreach (var pro in Model.Items)
+                {
+                    double total = pro._shopping_monan.GIABAN * pro._shopping_soluong;
+                    <tr class="item">
+                    <td class="buttons">
+                        <a href="/GioHang/RemoveCart/@pro._shopping_monan.MAMONAN">
+                            <span class="delete-btn"></span>
+                        </a>
+                    </td>
+                    <td class="image">
+                        <img src="@Url.Content(pro._shopping_monan.HINHANH)" style="width:100px;height:100px;" />
+                    </td>
+                    <td class="description">
+                        @Html.DisplayFor(model => pro._shopping_monan.TENMONAN)
+                    </td>
+
+
+
+                    <td class="quantity">
+                        @using (Html.BeginForm("Update_Soluong_Cart", "GioHang"))
+                        {
+                            <input type="hidden" value="@pro._shopping_monan.MAMONAN" name="MA_MONAN" id="textbox" />
+                            <input type="text" value="@pro._shopping_soluong" name="Soluong">
+                            <input type="submit" value="Update" />
+                        }
+                    </td>
+                    <td class="total-price">
+                        @*@Html.DisplayFor(model => pro._shopping_monan.GIABAN)*@
+                        Total :@total
+                    </td>
+                </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" style="text-align:right">Sum Total : @Model.Total_Tien()</td>
+                </tr>
+            </tfoot>
+        </table>
+    }
+    <a href="@Url.Action("Index","Home")">=== TIẾP TỤC MUA MÓN ĂN </a>
+</div>
