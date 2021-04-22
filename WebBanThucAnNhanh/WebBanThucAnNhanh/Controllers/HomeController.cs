@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebBanThucAnNhanh.Models;
 
 namespace WebBanThucAnNhanh.Controllers
 {
     public class HomeController : Controller
     {
+        QLThucAnNhanhEntities _db = new QLThucAnNhanhEntities();
         public ActionResult Index()
         {
-            return View();
+            return View(_db.MONANs.ToList());
         }
 
         public ActionResult About()

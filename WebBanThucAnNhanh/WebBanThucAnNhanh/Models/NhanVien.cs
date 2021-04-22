@@ -20,15 +20,10 @@ namespace WebBanThucAnNhanh.Models
         {
             this.HOADONs = new HashSet<HOADON>();
         }
-<<<<<<< Updated upstream
-    
-        public long MANHANVIEN { get; set; }
-=======
 
         [Required(ErrorMessage = "ID not emty")]
         public int MANHANVIEN { get; set; }
         [Required(ErrorMessage = "Name not emty")]
->>>>>>> Stashed changes
         public string TENNV { get; set; }
         [Required(ErrorMessage = "Phone not emty")]
         public Nullable<int> SDT { get; set; }

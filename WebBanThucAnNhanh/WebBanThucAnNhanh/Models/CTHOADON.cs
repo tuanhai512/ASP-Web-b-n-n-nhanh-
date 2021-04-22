@@ -11,23 +11,19 @@ namespace WebBanThucAnNhanh.Models
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class CTHOADON
     {
-        public long MACTHOADON { get; set; }
+        public int MACTHOADON { get; set; }
         public string MAMONAN { get; set; }
-<<<<<<< Updated upstream
-        public long MATINHTRANG { get; set; }
+        public int MATINHTRANG { get; set; }
+        public int MACTMONANDATHANG { get; set; }
+        public int MAHOADON { get; set; }
         public Nullable<int> SOLUONG { get; set; }
         public string GHICHU { get; set; }
     
-=======
-        public int MATINHTRANG { get; set; }
-        public Nullable<int> SOLUONG { get; set; }
-        public string GHICHU { get; set; }
-
->>>>>>> Stashed changes
-        public virtual MONAN MONAN { get; set; }
+        public virtual CT_MONAN_DATHANG CT_MONAN_DATHANG { get; set; }
         public virtual TINHTRANGDON TINHTRANGDON { get; set; }
+        public virtual HOADON HOADON { get; set; }
     }
 }

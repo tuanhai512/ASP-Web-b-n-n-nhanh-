@@ -14,12 +14,6 @@ namespace WebBanThucAnNhanh.Models
     
     public partial class HOADON
     {
-<<<<<<< Updated upstream
-        public long MAHOADON { get; set; }
-        public long MAKHUYENMAI { get; set; }
-        public long MANHANVIEN { get; set; }
-        public long MAKHACHHANG { get; set; }
-=======
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public HOADON()
         {
@@ -32,19 +26,14 @@ namespace WebBanThucAnNhanh.Models
         public int MAKHACHHANG { get; set; }
         public int MACTHOADON { get; set; }
         public int MADATHANG { get; set; }
->>>>>>> Stashed changes
         public double TONGTIEN { get; set; }
-        public long MATINHTRANGDON { get; set; }
         public Nullable<System.DateTime> NGAYGIO { get; set; }
         public double TONGTHUE { get; set; }
         public string GHICHU { get; set; }
     
-<<<<<<< Updated upstream
-=======
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHOADON> CTHOADONs { get; set; }
         public virtual DATHANG DATHANG { get; set; }
->>>>>>> Stashed changes
         public virtual KHACHHANG KHACHHANG { get; set; }
         public virtual KHUYENMAI KHUYENMAI { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }

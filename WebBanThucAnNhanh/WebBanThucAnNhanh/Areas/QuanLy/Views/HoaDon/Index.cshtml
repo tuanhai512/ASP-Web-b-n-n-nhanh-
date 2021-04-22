@@ -1,0 +1,76 @@
+﻿@model IEnumerable<WebBanThucAnNhanh.Models.HOADON>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/QuanLy/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MATINHTRANGDON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TONGTIEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYGIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TONGTHUE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GHICHU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KHACHHANG.TENKHACHHANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KHUYENMAI.MAKHUYENMAI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NHANVIEN.TENNV)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MATINHTRANGDON)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TONGTIEN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYGIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TONGTHUE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GHICHU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KHACHHANG.TENKHACHHANG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KHUYENMAI.MAKHUYENMAI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NHANVIEN.TENNV)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MAHOADON }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MAHOADON }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MAHOADON })
+        </td>
+    </tr>
+}
+
+</table>

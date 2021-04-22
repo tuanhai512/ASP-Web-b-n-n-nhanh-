@@ -20,7 +20,7 @@ namespace WebBanThucAnNhanh.Models
             this.HOADONs = new HashSet<HOADON>();
         }
     
-        public long MAKHUYENMAI { get; set; }
+        public string MAKHUYENMAI { get; set; }
         public Nullable<double> GIAMGIA { get; set; }
         public Nullable<System.DateTime> NGAYBATDAU { get; set; }
         public Nullable<System.DateTime> NGAYKETTHUC { get; set; }

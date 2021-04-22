@@ -14,7 +14,7 @@ namespace WebBanThucAnNhanh.Models
     
     public partial class THONGKEBAOCAO
     {
-        public long MATHONGKEBAOCAO { get; set; }
+        public int MATHONGKEBAOCAO { get; set; }
         public System.DateTime THANG { get; set; }
         public string GHICHU { get; set; }
     }

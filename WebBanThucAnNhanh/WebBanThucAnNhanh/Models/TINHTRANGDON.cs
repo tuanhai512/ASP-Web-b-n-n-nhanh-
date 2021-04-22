@@ -20,7 +20,7 @@ namespace WebBanThucAnNhanh.Models
             this.CTHOADONs = new HashSet<CTHOADON>();
         }
     
-        public long MATINHTRANG { get; set; }
+        public int MATINHTRANG { get; set; }
         public string TINHTRANG { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -19,13 +19,6 @@ namespace WebBanThucAnNhanh.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHACHHANG()
         {
-<<<<<<< Updated upstream
-            this.FEEDBACKs = new HashSet<FEEDBACK>();
-            this.HOADONs = new HashSet<HOADON>();
-        }
-    
-        public long MAKHACHHANG { get; set; }
-=======
             this.FEEDBACK = new HashSet<FEEDBACK>();
             this.HOADONs = new HashSet<HOADON>();
         }
@@ -34,7 +27,6 @@ namespace WebBanThucAnNhanh.Models
         public int MAKHACHHANG { get; set; }
 
         [Required(ErrorMessage = "Name not emty")]
->>>>>>> Stashed changes
         public string TENKHACHHANG { get; set; }
         public Nullable<System.DateTime> NGAYSINH { get; set; }
 
@@ -50,13 +42,6 @@ namespace WebBanThucAnNhanh.Models
         [Display(Name = "Mật khẩu")]
         [Required(ErrorMessage = "Pass not emty")]
         public string PASSWORD { get; set; }
-<<<<<<< Updated upstream
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FEEDBACK> FEEDBACKs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
-=======
         public string LOAI { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -71,6 +56,5 @@ namespace WebBanThucAnNhanh.Models
 
         [NotMapped]
         public string ErrorLogin { get; set; }
->>>>>>> Stashed changes
     }
 }
