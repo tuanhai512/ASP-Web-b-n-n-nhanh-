@@ -4,7 +4,29 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
       <Schema Namespace="QLThucAnNhanhModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+=======
+      <Schema Namespace="QLThucAnNhanhModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Pass" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="CT_MONAN_DATHANG">
+          <Key>
+            <PropertyRef Name="MACTMONANDATHANG" />
+          </Key>
+          <Property Name="MACTMONANDATHANG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MAMONAN" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="MADATHANG" Type="int" Nullable="false" />
+          <Property Name="SOLUONG" Type="int" />
+          <Property Name="GIABAN" Type="float" />
+        </EntityType>
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
         <EntityType Name="CTHOADON">
           <Key>
             <PropertyRef Name="MACTHOADON" />
@@ -15,6 +37,26 @@
           <Property Name="SOLUONG" Type="int" />
           <Property Name="GHICHU" Type="nvarchar(max)" />
         </EntityType>
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
+=======
+        <EntityType Name="DATHANG">
+          <Key>
+            <PropertyRef Name="MADATHANG" />
+          </Key>
+          <Property Name="MADATHANG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MAMONAN" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="SOLUONG" Type="int" />
+          <Property Name="TONGTIEN" Type="float" />
+          <Property Name="GHICHU" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="DONVITINH">
+          <Key>
+            <PropertyRef Name="MADONVITINH" />
+          </Key>
+          <Property Name="MADONVITINH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENDONVITINH" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
         <EntityType Name="FEEDBACK">
           <Key>
             <PropertyRef Name="MAFEEDBACK" />
@@ -64,8 +106,13 @@
           </Key>
           <Property Name="MAMONAN" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="TENMONAN" Type="nvarchar(max)" Nullable="false" />
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
           <Property Name="HINHANH" Type="text" Nullable="false" />
           <Property Name="DONVITINH" Type="nvarchar" MaxLength="20" />
+=======
+          <Property Name="HINHANH" Type="text" />
+          <Property Name="MADONVITINH" Type="int" />
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
           <Property Name="GIABAN" Type="float" Nullable="false" />
           <Property Name="THUE" Type="float" Nullable="false" />
           <Property Name="MOTA" Type="nvarchar(max)" />
@@ -84,7 +131,11 @@
           <Key>
             <PropertyRef Name="MATHONGKEBAOCAO" />
           </Key>
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
           <Property Name="MATHONGKEBAOCAO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+=======
+          <Property Name="MATHONGKEBAOCAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
           <Property Name="THANG" Type="datetime" Nullable="false" />
           <Property Name="GHICHU" Type="nvarchar(max)" />
         </EntityType>
@@ -95,8 +146,13 @@
           <Property Name="MATINHTRANG" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TINHTRANG" Type="nvarchar" MaxLength="30" />
         </EntityType>
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
         <Association Name="FK_CTHOADON_MONAN">
           <End Role="MONAN" Type="Self.MONAN" Multiplicity="1" />
+=======
+        <Association Name="FK_CTHOADON_CT_MONAN_DATHANG">
+          <End Role="CT_MONAN_DATHANG" Type="Self.CT_MONAN_DATHANG" Multiplicity="1" />
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
           <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MONAN">
@@ -167,8 +223,40 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
+=======
+        <Association Name="FK_MONAN_DATHANG">
+          <End Role="MONAN" Type="Self.MONAN" Multiplicity="1" />
+          <End Role="CT_MONAN_DATHANG" Type="Self.CT_MONAN_DATHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONAN">
+              <PropertyRef Name="MAMONAN" />
+            </Principal>
+            <Dependent Role="CT_MONAN_DATHANG">
+              <PropertyRef Name="MAMONAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MONAN_DONVITINH">
+          <End Role="DONVITINH" Type="Self.DONVITINH" Multiplicity="0..1" />
+          <End Role="MONAN" Type="Self.MONAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DONVITINH">
+              <PropertyRef Name="MADONVITINH" />
+            </Principal>
+            <Dependent Role="MONAN">
+              <PropertyRef Name="MADONVITINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
         <EntityContainer Name="QLThucAnNhanhModelStoreContainer">
           <EntitySet Name="CTHOADON" EntityType="Self.CTHOADON" Schema="dbo" store:Type="Tables" />
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
+=======
+          <EntitySet Name="DATHANG" EntityType="Self.DATHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DONVITINH" EntityType="Self.DONVITINH" Schema="dbo" store:Type="Tables" />
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
           <EntitySet Name="FEEDBACK" EntityType="Self.FEEDBACK" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
@@ -177,8 +265,13 @@
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THONGKEBAOCAO" EntityType="Self.THONGKEBAOCAO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TINHTRANGDON" EntityType="Self.TINHTRANGDON" Schema="dbo" store:Type="Tables" />
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
           <AssociationSet Name="FK_CTHOADON_MONAN" Association="Self.FK_CTHOADON_MONAN">
             <End Role="MONAN" EntitySet="MONAN" />
+=======
+          <AssociationSet Name="FK_CTHOADON_CT_MONAN_DATHANG" Association="Self.FK_CTHOADON_CT_MONAN_DATHANG">
+            <End Role="CT_MONAN_DATHANG" EntitySet="CT_MONAN_DATHANG" />
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
             <End Role="CTHOADON" EntitySet="CTHOADON" />
           </AssociationSet>
           <AssociationSet Name="FK_CTHOADON_TINHTRANGDON" Association="Self.FK_CTHOADON_TINHTRANGDON">
@@ -201,12 +294,47 @@
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="HOADON" EntitySet="HOADON" />
           </AssociationSet>
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
+=======
+          <AssociationSet Name="FK_MONAN_DATHANG" Association="Self.FK_MONAN_DATHANG">
+            <End Role="MONAN" EntitySet="MONAN" />
+            <End Role="CT_MONAN_DATHANG" EntitySet="CT_MONAN_DATHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MONAN_DONVITINH" Association="Self.FK_MONAN_DONVITINH">
+            <End Role="DONVITINH" EntitySet="DONVITINH" />
+            <End Role="MONAN" EntitySet="MONAN" />
+          </AssociationSet>
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLThucAnNhanhModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
+=======
+        <EntityType Name="ADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Pass" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CT_MONAN_DATHANG">
+          <Key>
+            <PropertyRef Name="MACTMONANDATHANG" />
+          </Key>
+          <Property Name="MACTMONANDATHANG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MAMONAN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MADATHANG" Type="Int32" Nullable="false" />
+          <Property Name="SOLUONG" Type="Int32" />
+          <Property Name="GIABAN" Type="Double" />
+          <NavigationProperty Name="CTHOADONs" Relationship="Self.FK_CTHOADON_CT_MONAN_DATHANG" FromRole="CT_MONAN_DATHANG" ToRole="CTHOADON" />
+          <NavigationProperty Name="DATHANG" Relationship="Self.FK_DATHANG_MONAN" FromRole="CT_MONAN_DATHANG" ToRole="DATHANG" />
+          <NavigationProperty Name="MONAN" Relationship="Self.FK_MONAN_DATHANG" FromRole="CT_MONAN_DATHANG" ToRole="MONAN" />
+        </EntityType>
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
         <EntityType Name="CTHOADON">
           <Key>
             <PropertyRef Name="MACTHOADON" />
@@ -216,8 +344,34 @@
           <Property Name="MATINHTRANG" Type="Int64" Nullable="false" />
           <Property Name="SOLUONG" Type="Int32" />
           <Property Name="GHICHU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
           <NavigationProperty Name="MONAN" Relationship="Self.FK_CTHOADON_MONAN" FromRole="CTHOADON" ToRole="MONAN" />
           <NavigationProperty Name="TINHTRANGDON" Relationship="Self.FK_CTHOADON_TINHTRANGDON" FromRole="CTHOADON" ToRole="TINHTRANGDON" />
+=======
+          <NavigationProperty Name="CT_MONAN_DATHANG" Relationship="Self.FK_CTHOADON_CT_MONAN_DATHANG" FromRole="CTHOADON" ToRole="CT_MONAN_DATHANG" />
+          <NavigationProperty Name="TINHTRANGDON" Relationship="Self.FK_CTHOADON_CT_MONAN_TINHTRANG" FromRole="CTHOADON" ToRole="TINHTRANGDON" />
+          <NavigationProperty Name="HOADON" Relationship="Self.FK_CTHOADON_HOADON" FromRole="CTHOADON" ToRole="HOADON" />
+        </EntityType>
+        <EntityType Name="DATHANG">
+          <Key>
+            <PropertyRef Name="MADATHANG" />
+          </Key>
+          <Property Name="MADATHANG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MAMONAN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SOLUONG" Type="Int32" />
+          <Property Name="TONGTIEN" Type="Double" />
+          <Property Name="GHICHU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CT_MONAN_DATHANG" Relationship="Self.FK_DATHANG_MONAN" FromRole="DATHANG" ToRole="CT_MONAN_DATHANG" />
+          <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_DATHANG" FromRole="DATHANG" ToRole="HOADON" />
+        </EntityType>
+        <EntityType Name="DONVITINH">
+          <Key>
+            <PropertyRef Name="MADONVITINH" />
+          </Key>
+          <Property Name="MADONVITINH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENDONVITINH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MONANs" Relationship="Self.FK_MONAN_DONVITINH" FromRole="DONVITINH" ToRole="MONAN" />
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
         </EntityType>
         <EntityType Name="FEEDBACK">
           <Key>
@@ -241,6 +395,11 @@
           <Property Name="NGAYGIO" Type="DateTime" Precision="3" />
           <Property Name="TONGTHUE" Type="Double" Nullable="false" />
           <Property Name="GHICHU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
+=======
+          <NavigationProperty Name="CTHOADONs" Relationship="Self.FK_CTHOADON_HOADON" FromRole="HOADON" ToRole="CTHOADON" />
+          <NavigationProperty Name="DATHANG" Relationship="Self.FK_HOADON_DATHANG" FromRole="HOADON" ToRole="DATHANG" />
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
           <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_HOADON_KHACHHANG" FromRole="HOADON" ToRole="KHACHHANG" />
           <NavigationProperty Name="KHUYENMAI" Relationship="Self.FK_HOADON_KHUYENMAI" FromRole="HOADON" ToRole="KHUYENMAI" />
           <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_HOADON_NHANVIEN" FromRole="HOADON" ToRole="NHANVIEN" />
@@ -254,9 +413,15 @@
           <Property Name="NGAYSINH" Type="DateTime" Precision="3" />
           <Property Name="DIACHI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="Int32" />
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
           <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="PASSWORD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="FEEDBACKs" Relationship="Self.FK_FEEDBACK_KHACHHANG" FromRole="KHACHHANG" ToRole="FEEDBACK" />
+=======
+          <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LOAI" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
           <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_KHACHHANG" FromRole="KHACHHANG" ToRole="HOADON" />
         </EntityType>
         <EntityType Name="KHUYENMAI">
@@ -275,12 +440,23 @@
           </Key>
           <Property Name="MAMONAN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TENMONAN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
           <Property Name="HINHANH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DONVITINH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+=======
+          <Property Name="HINHANH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MADONVITINH" Type="Int32" />
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
           <Property Name="GIABAN" Type="Double" Nullable="false" />
           <Property Name="THUE" Type="Double" Nullable="false" />
           <Property Name="MOTA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
           <NavigationProperty Name="CTHOADONs" Relationship="Self.FK_CTHOADON_MONAN" FromRole="MONAN" ToRole="CTHOADON" />
+=======
+          <Property Name="LOAI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CT_MONAN_DATHANG" Relationship="Self.FK_MONAN_DATHANG" FromRole="MONAN" ToRole="CT_MONAN_DATHANG" />
+          <NavigationProperty Name="DONVITINH" Relationship="Self.FK_MONAN_DONVITINH" FromRole="MONAN" ToRole="DONVITINH" />
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
         </EntityType>
         <EntityType Name="NHANVIEN">
           <Key>
@@ -289,15 +465,24 @@
           <Property Name="MANHANVIEN" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TENNV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SDT" Type="Int32" />
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
           <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="PASSWORD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+=======
+          <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
           <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_NHANVIEN" FromRole="NHANVIEN" ToRole="HOADON" />
         </EntityType>
         <EntityType Name="THONGKEBAOCAO">
           <Key>
             <PropertyRef Name="MATHONGKEBAOCAO" />
           </Key>
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
           <Property Name="MATHONGKEBAOCAO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+=======
+          <Property Name="MATHONGKEBAOCAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
           <Property Name="THANG" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="GHICHU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -307,9 +492,39 @@
           </Key>
           <Property Name="MATINHTRANG" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TINHTRANG" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
           <NavigationProperty Name="CTHOADONs" Relationship="Self.FK_CTHOADON_TINHTRANGDON" FromRole="TINHTRANGDON" ToRole="CTHOADON" />
         </EntityType>
         <Association Name="FK_CTHOADON_MONAN">
+=======
+          <NavigationProperty Name="CTHOADONs" Relationship="Self.FK_CTHOADON_CT_MONAN_TINHTRANG" FromRole="TINHTRANGDON" ToRole="CTHOADON" />
+        </EntityType>
+        <Association Name="FK_CTHOADON_CT_MONAN_DATHANG">
+          <End Role="CT_MONAN_DATHANG" Type="Self.CT_MONAN_DATHANG" Multiplicity="1" />
+          <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CT_MONAN_DATHANG">
+              <PropertyRef Name="MACTMONANDATHANG" />
+            </Principal>
+            <Dependent Role="CTHOADON">
+              <PropertyRef Name="MACTMONANDATHANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DATHANG_MONAN">
+          <End Role="DATHANG" Type="Self.DATHANG" Multiplicity="1" />
+          <End Role="CT_MONAN_DATHANG" Type="Self.CT_MONAN_DATHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DATHANG">
+              <PropertyRef Name="MADATHANG" />
+            </Principal>
+            <Dependent Role="CT_MONAN_DATHANG">
+              <PropertyRef Name="MADATHANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MONAN_DATHANG">
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
           <End Role="MONAN" Type="Self.MONAN" Multiplicity="1" />
           <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
           <ReferentialConstraint>
@@ -342,6 +557,18 @@
             </Principal>
             <Dependent Role="FEEDBACK">
               <PropertyRef Name="MAKHACHHANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MONAN_DONVITINH">
+          <End Role="DONVITINH" Type="Self.DONVITINH" Multiplicity="0..1" />
+          <End Role="MONAN" Type="Self.MONAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DONVITINH">
+              <PropertyRef Name="MADONVITINH" />
+            </Principal>
+            <Dependent Role="MONAN">
+              <PropertyRef Name="MADONVITINH" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -381,8 +608,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
         <EntityContainer Name="QLThucAnNhanhEntities6" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CTHOADONs" EntityType="Self.CTHOADON" />
+=======
+        <EntityContainer Name="QLThucAnNhanhEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADMINs" EntityType="Self.ADMIN" />
+          <EntitySet Name="CT_MONAN_DATHANG" EntityType="Self.CT_MONAN_DATHANG" />
+          <EntitySet Name="CTHOADONs" EntityType="Self.CTHOADON" />
+          <EntitySet Name="DATHANGs" EntityType="Self.DATHANG" />
+          <EntitySet Name="DONVITINHs" EntityType="Self.DONVITINH" />
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
           <EntitySet Name="FEEDBACKs" EntityType="Self.FEEDBACK" />
           <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
           <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
@@ -391,6 +627,7 @@
           <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
           <EntitySet Name="THONGKEBAOCAOs" EntityType="Self.THONGKEBAOCAO" />
           <EntitySet Name="TINHTRANGDONs" EntityType="Self.TINHTRANGDON" />
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
           <AssociationSet Name="FK_CTHOADON_MONAN" Association="Self.FK_CTHOADON_MONAN">
             <End Role="MONAN" EntitySet="MONANs" />
             <End Role="CTHOADON" EntitySet="CTHOADONs" />
@@ -402,6 +639,35 @@
           <AssociationSet Name="FK_FEEDBACK_KHACHHANG" Association="Self.FK_FEEDBACK_KHACHHANG">
             <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
             <End Role="FEEDBACK" EntitySet="FEEDBACKs" />
+=======
+          <AssociationSet Name="FK_CTHOADON_CT_MONAN_DATHANG" Association="Self.FK_CTHOADON_CT_MONAN_DATHANG">
+            <End Role="CT_MONAN_DATHANG" EntitySet="CT_MONAN_DATHANG" />
+            <End Role="CTHOADON" EntitySet="CTHOADONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DATHANG_MONAN" Association="Self.FK_DATHANG_MONAN">
+            <End Role="DATHANG" EntitySet="DATHANGs" />
+            <End Role="CT_MONAN_DATHANG" EntitySet="CT_MONAN_DATHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MONAN_DATHANG" Association="Self.FK_MONAN_DATHANG">
+            <End Role="MONAN" EntitySet="MONANs" />
+            <End Role="CT_MONAN_DATHANG" EntitySet="CT_MONAN_DATHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTHOADON_CT_MONAN_TINHTRANG" Association="Self.FK_CTHOADON_CT_MONAN_TINHTRANG">
+            <End Role="TINHTRANGDON" EntitySet="TINHTRANGDONs" />
+            <End Role="CTHOADON" EntitySet="CTHOADONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTHOADON_HOADON" Association="Self.FK_CTHOADON_HOADON">
+            <End Role="HOADON" EntitySet="HOADONs" />
+            <End Role="CTHOADON" EntitySet="CTHOADONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HOADON_DATHANG" Association="Self.FK_HOADON_DATHANG">
+            <End Role="DATHANG" EntitySet="DATHANGs" />
+            <End Role="HOADON" EntitySet="HOADONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MONAN_DONVITINH" Association="Self.FK_MONAN_DONVITINH">
+            <End Role="DONVITINH" EntitySet="DONVITINHs" />
+            <End Role="MONAN" EntitySet="MONANs" />
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
           </AssociationSet>
           <AssociationSet Name="FK_HOADON_KHACHHANG" Association="Self.FK_HOADON_KHACHHANG">
             <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
@@ -421,7 +687,31 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
         <EntityContainerMapping StorageEntityContainer="QLThucAnNhanhModelStoreContainer" CdmEntityContainer="QLThucAnNhanhEntities6">
+=======
+        <EntityContainerMapping StorageEntityContainer="QLThucAnNhanhModelStoreContainer" CdmEntityContainer="QLThucAnNhanhEntities">
+          <EntitySetMapping Name="ADMINs">
+            <EntityTypeMapping TypeName="QLThucAnNhanhModel.ADMIN">
+              <MappingFragment StoreEntitySet="ADMIN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CT_MONAN_DATHANG">
+            <EntityTypeMapping TypeName="QLThucAnNhanhModel.CT_MONAN_DATHANG">
+              <MappingFragment StoreEntitySet="CT_MONAN_DATHANG">
+                <ScalarProperty Name="MACTMONANDATHANG" ColumnName="MACTMONANDATHANG" />
+                <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
+                <ScalarProperty Name="MADATHANG" ColumnName="MADATHANG" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="GIABAN" ColumnName="GIABAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
           <EntitySetMapping Name="CTHOADONs">
             <EntityTypeMapping TypeName="QLThucAnNhanhModel.CTHOADON">
               <MappingFragment StoreEntitySet="CTHOADON">
@@ -433,6 +723,28 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/QLThucAnNhanh.edmx
+=======
+          <EntitySetMapping Name="DATHANGs">
+            <EntityTypeMapping TypeName="QLThucAnNhanhModel.DATHANG">
+              <MappingFragment StoreEntitySet="DATHANG">
+                <ScalarProperty Name="MADATHANG" ColumnName="MADATHANG" />
+                <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DONVITINHs">
+            <EntityTypeMapping TypeName="QLThucAnNhanhModel.DONVITINH">
+              <MappingFragment StoreEntitySet="DONVITINH">
+                <ScalarProperty Name="MADONVITINH" ColumnName="MADONVITINH" />
+                <ScalarProperty Name="TENDONVITINH" ColumnName="TENDONVITINH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.edmx
           <EntitySetMapping Name="FEEDBACKs">
             <EntityTypeMapping TypeName="QLThucAnNhanhModel.FEEDBACK">
               <MappingFragment StoreEntitySet="FEEDBACK">
@@ -486,7 +798,7 @@
                 <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
                 <ScalarProperty Name="TENMONAN" ColumnName="TENMONAN" />
                 <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
-                <ScalarProperty Name="DONVITINH" ColumnName="DONVITINH" />
+                <ScalarProperty Name="MADONVITINH" ColumnName="MADONVITINH" />
                 <ScalarProperty Name="GIABAN" ColumnName="GIABAN" />
                 <ScalarProperty Name="THUE" ColumnName="THUE" />
                 <ScalarProperty Name="MOTA" ColumnName="MOTA" />

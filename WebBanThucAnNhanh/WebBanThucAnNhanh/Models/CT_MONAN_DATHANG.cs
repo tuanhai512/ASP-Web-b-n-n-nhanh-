@@ -11,40 +11,24 @@ namespace WebBanThucAnNhanh.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Web;
     
-    public partial class MONAN
+    public partial class CT_MONAN_DATHANG
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MONAN()
+        public CT_MONAN_DATHANG()
         {
-            HINHANH = "~/Assets/admin/img/photo-1.jpg";
             this.CTHOADONs = new HashSet<CTHOADON>();
-<<<<<<< Updated upstream
-=======
-            this.DATHANG = new HashSet<DATHANG>();
->>>>>>> Stashed changes
         }
     
+        public int MACTMONANDATHANG { get; set; }
         public string MAMONAN { get; set; }
-        public string TENMONAN { get; set; }
-        public string HINHANH { get; set; }
-        public string DONVITINH { get; set; }
-        public double GIABAN { get; set; }
-        public double THUE { get; set; }
-        public string MOTA { get; set; }
+        public int MADATHANG { get; set; }
+        public Nullable<int> SOLUONG { get; set; }
+        public Nullable<double> GIABAN { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHOADON> CTHOADONs { get; set; }
-<<<<<<< Updated upstream
-=======
-        public HashSet<DATHANG> DATHANG { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
->>>>>>> Stashed changes
-        [NotMapped]
-        public HttpPostedFileBase ImageUpload { get; set; }
+        public virtual DATHANG DATHANG { get; set; }
+        public virtual MONAN MONAN { get; set; }
     }
 }

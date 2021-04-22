@@ -25,8 +25,24 @@ namespace WebBanThucAnNhanh.Models
             throw new UnintentionalCodeFirstException();
         }
     
+<<<<<<< Updated upstream:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model.Context.cs
         public virtual DbSet<HoaDon> HoaDon { get; set; }
         public virtual DbSet<MonAn> MonAn { get; set; }
         public virtual DbSet<NhanVien> NhanVien { get; set; }
+=======
+        public virtual DbSet<ADMIN> ADMINs { get; set; }
+        public virtual DbSet<CT_MONAN_DATHANG> CT_MONAN_DATHANG { get; set; }
+        public virtual DbSet<CTHOADON> CTHOADONs { get; set; }
+        public virtual DbSet<DATHANG> DATHANGs { get; set; }
+        public virtual DbSet<DONVITINH> DONVITINHs { get; set; }
+        public virtual DbSet<FEEDBACK> FEEDBACKs { get; set; }
+        public virtual DbSet<HOADON> HOADONs { get; set; }
+        public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
+        public virtual DbSet<KHUYENMAI> KHUYENMAIs { get; set; }
+        public virtual DbSet<MONAN> MONANs { get; set; }
+        public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
+        public virtual DbSet<THONGKEBAOCAO> THONGKEBAOCAOs { get; set; }
+        public virtual DbSet<TINHTRANGDON> TINHTRANGDONs { get; set; }
+>>>>>>> Stashed changes:WebBanThucAnNhanh/WebBanThucAnNhanh/Models/Model1.Context.cs
     }
 }
