@@ -19,7 +19,6 @@ namespace WebBanThucAnNhanh.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHACHHANG()
         {
-            this.FEEDBACK = new HashSet<FEEDBACK>();
             this.HOADONs = new HashSet<HOADON>();
         }
 

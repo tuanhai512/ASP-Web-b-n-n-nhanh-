@@ -28,5 +28,9 @@ namespace WebBanThucAnNhanh.Controllers
 
             return View();
         }
+        public ActionResult Details(string id)
+        {
+            return View(_db.MONANs.Where(s => s.MAMONAN == id).FirstOrDefault());
+        }
     }
 }

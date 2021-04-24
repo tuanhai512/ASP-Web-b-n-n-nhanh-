@@ -54,5 +54,9 @@ namespace WebBanThucAnNhanh.Models
         {
             items.Clear();
         }
+        public int Total_Quantity()
+        {
+            return items.Sum(s => s._quantity);
+        }
     }
 }
