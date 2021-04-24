@@ -7,15 +7,35 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
+
 namespace WebBanThucAnNhanh.Models
 {
     using System;
     using System.Collections.Generic;
+
     
     public partial class ADMIN
     {
         public int ID { get; set; }
         public string Email { get; set; }
+        public string Pass { get; set; }
+    }
+}
+
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class ADMIN
+    {
+
+        [Required(ErrorMessage = "ID not emty")]
+        public int ID { get; set; }
+        [Display(Name = "Email ")]
+        [Required(ErrorMessage = "Email not emty")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
+        public string Email { get; set; }
+        [Display(Name = "Mật khẩu")]
+        [Required(ErrorMessage = "Pass not emty")]
         public string Pass { get; set; }
     }
 }

@@ -12,24 +12,18 @@ namespace WebBanThucAnNhanh.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class DATHANG
+    public partial class DONVITINH
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DATHANG()
+        public DONVITINH()
         {
-            this.CT_MONAN_DATHANG = new HashSet<CT_MONAN_DATHANG>();
-            this.HOADON = new HashSet<HOADON>();
+            this.MONANs = new HashSet<MONAN>();
         }
     
-        public int MADATHANG { get; set; }
-        public string MAMONAN { get; set; }
-        public Nullable<int> SOLUONG { get; set; }
-        public Nullable<double> TONGTIEN { get; set; }
-        public string GHICHU { get; set; }
+        public int MADONVITINH { get; set; }
+        public string TENDONVITINH { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CT_MONAN_DATHANG> CT_MONAN_DATHANG { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADON { get; set; }
+        public virtual ICollection<MONAN> MONANs { get; set; }
     }
 }

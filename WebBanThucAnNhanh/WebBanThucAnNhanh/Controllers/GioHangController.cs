@@ -10,47 +10,47 @@ namespace WebBanThucAnNhanh.Controllers
 {
     public class GioHangController : Controller
     {
-        QLThucAnNhanhEntities9 _db = new QLThucAnNhanhEntities9();
+        QLThucAnNhanhEntities _db = new QLThucAnNhanhEntities();
         // GET: GioHang
-        public Cart GetCart()
+        public GioHang GetGioHang()
         {
-            Cart cart = Session["Cart"] as Cart;
-            if(cart == null || Session["Cart"] == null)
+            GioHang giohang = Session["GioHang"] as GioHang;
+            if(giohang == null || Session["GioHang"] == null)
             {
-                cart = new Cart();
-                Session["Cart"] = cart;
+                giohang = new GioHang();
+                Session["GioHang"] = giohang;
             }
-            return cart;
+            return giohang;
         }
         public ActionResult AddToCart(string id)
         {
             var monan = _db.MONANs.SingleOrDefault(s => s.MAMONAN == id);
             if(monan!=null)
             {
-                GetCart().Add(monan);
+                GetGioHang().Add_Product_Cart(monan);
             }
             return RedirectToAction("ShowToCart", "GioHang");
         }
         //Trang giỏ hàng
         public ActionResult ShowToCart()
         {
-            if (Session["Cart"] == null)
+            if (Session["GioHang"] == null)
                 return RedirectToAction("ShowToCart", "GioHang");
-            Cart cart = Session["Cart"] as Cart;
-            return View(cart);
+            GioHang giohang = Session["GioHang"] as GioHang;
+            return View(giohang);
         }
-        public ActionResult Update_Soluong_Cart(FormCollection form)
+        public ActionResult Update_Quantity_Cart(FormCollection form)
         {
-            Cart cart = Session["Cart"] as Cart;
+            GioHang giohang = Session["GioHang"] as GioHang;
             string ma_monan = form["MA_MONAN"];
-            int soluong = int.Parse(form["Soluong"]);
-            cart.Update_Soluong_Shopping(ma_monan, soluong);
+            int quantity = int.Parse(form["Quantity"]);
+            giohang.Update_quantity(ma_monan, quantity);
             return RedirectToAction("ShowToCart", "GioHang");
         }
         public ActionResult RemoveCart(string id)
         {
-            Cart cart = Session["Cart"] as Cart;
-            cart.Remove_CartItem(id);
+            GioHang giohang = Session["GioHang"] as GioHang;
+            giohang.Remove_CartItem(id);
             return RedirectToAction("ShowToCart", "GioHang");
         }
     }

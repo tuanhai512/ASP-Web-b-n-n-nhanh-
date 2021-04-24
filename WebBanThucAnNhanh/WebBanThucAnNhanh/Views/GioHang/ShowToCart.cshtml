@@ -1,4 +1,4 @@
-﻿@model WebBanThucAnNhanh.Models.Cart
+﻿@model WebBanThucAnNhanh.Models.GioHang
 
 @{ Layout = null; }
 <head>
@@ -14,27 +14,27 @@
             <tbody>
                 @foreach (var pro in Model.Items)
                 {
-                    double total = pro._shopping_monan.GIABAN * pro._shopping_soluong;
+                    double total = pro._monan.GIABAN * pro._quantity;
                     <tr class="item">
                     <td class="buttons">
-                        <a href="/GioHang/RemoveCart/@pro._shopping_monan.MAMONAN">
+                        <a href="/GioHang/RemoveCart/@pro._monan.MAMONAN">
                             <span class="delete-btn"></span>
                         </a>
                     </td>
                     <td class="image">
-                        <img src="@Url.Content(pro._shopping_monan.HINHANH)" style="width:100px;height:100px;" />
+                        <img src="@Url.Content(pro._monan.HINHANH)" style="width:100px;height:100px;" />
                     </td>
                     <td class="description">
-                        @Html.DisplayFor(model => pro._shopping_monan.TENMONAN)
+                        @Html.DisplayFor(model => pro._monan.TENMONAN)
                     </td>
 
 
 
                     <td class="quantity">
-                        @using (Html.BeginForm("Update_Soluong_Cart", "GioHang"))
+                        @using (Html.BeginForm("Update_Quantity_Cart", "GioHang"))
                         {
-                            <input type="hidden" value="@pro._shopping_monan.MAMONAN" name="MA_MONAN" id="textbox" />
-                            <input type="text" value="@pro._shopping_soluong" name="Soluong">
+                            <input type="hidden" value="@pro._monan.MAMONAN" name="MA_MONAN" id="textbox" />
+                            <input type="text" value="@pro._quantity" name="Quantity">
                             <input type="submit" value="Update" />
                         }
                     </td>
@@ -47,7 +47,7 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="5" style="text-align:right">Sum Total : @Model.Total_Tien()</td>
+                    <td colspan="5" style="text-align:right">Sum Total : @Model.Total_money()</td>
                 </tr>
             </tfoot>
         </table>
