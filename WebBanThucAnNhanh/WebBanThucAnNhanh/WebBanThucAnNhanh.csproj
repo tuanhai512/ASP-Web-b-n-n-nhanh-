@@ -158,9 +158,6 @@
     <Compile Include="Models\DATHANG.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DONVITINH.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\FEEDBACK.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -193,6 +190,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NHANVIEN.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\THONGKEBAOCAO.cs">
@@ -1904,6 +1904,7 @@
     <Content Include="Assets\images\blog\blog-img-6.jpg" />
     <Content Include="Assets\images\blog\blog-img-thumb-1.jpg" />
     <Content Include="Assets\images\blog\blog-img-thumb-2.jpg" />
+    <Content Include="Assets\images\cart.png" />
     <Content Include="Assets\images\cooker-img.png" />
     <Content Include="Assets\images\header.jpg" />
     <Content Include="Assets\images\logo.png" />
@@ -2297,6 +2298,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\GioHang\BagCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -53,5 +53,16 @@ namespace WebBanThucAnNhanh.Controllers
             giohang.Remove_CartItem(id);
             return RedirectToAction("ShowToCart", "GioHang");
         }
+        public PartialViewResult BagCart()
+        {
+            int _t_item = 0;
+            GioHang giohang = Session["GioHang"] as GioHang;
+            if(giohang != null)
+            {
+                _t_item = giohang.Total_Quantity();
+            }
+            ViewBag.infoGioHang = _t_item;
+            return PartialView("BagCart");
+        }
     }
 }

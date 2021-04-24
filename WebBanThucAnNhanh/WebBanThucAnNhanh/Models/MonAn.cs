@@ -26,7 +26,7 @@ namespace WebBanThucAnNhanh.Models
         public string MAMONAN { get; set; }
         public string TENMONAN { get; set; }
         public string HINHANH { get; set; }
-        public Nullable<int> MADONVITINH { get; set; }
+        public string DONVITINH { get; set; }
         public double GIABAN { get; set; }
         public Nullable<double> THUE { get; set; }
         public string MOTA { get; set; }
@@ -34,7 +34,6 @@ namespace WebBanThucAnNhanh.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_MONAN_DATHANG> CT_MONAN_DATHANG { get; set; }
-        public virtual DONVITINH DONVITINH { get; set; }
         [NotMapped]
         public HttpPostedFileBase ImageUpload { get; set; }
     }
