@@ -15,13 +15,13 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
         // GET: Admin/MonAn
         public ActionResult Index()
         {
-            return View(_db.MONAN.ToList());
+            return View(_db.MONANs.ToList());
         }
 
         // GET: Admin/MonAn/Details/5
         public ActionResult Details(string id)
         {
-            return View(_db.MONAN.Where(s=>s.MAMONAN==id).FirstOrDefault());
+            return View(_db.MONANs.Where(s=>s.MAMONAN==id).FirstOrDefault());
         }
 
         // GET: Admin/MonAn/Create
@@ -46,7 +46,7 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
                     monan.HINHANH= "~/Assets/admin/img/" + fileName;
                     monan.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Assets/admin/img/"), fileName));
                 }
-                _db.MONAN.Add(monan);
+                _db.MONANs.Add(monan);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -59,7 +59,7 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
         // GET: Admin/MonAn/Edit/5
         public ActionResult Edit(string id)
         {
-            return View(_db.MONAN.Where(s => s.MAMONAN == id).FirstOrDefault());
+            return View(_db.MONANs.Where(s => s.MAMONAN == id).FirstOrDefault());
         }
 
         // POST: Admin/MonAn/Edit/5
@@ -90,7 +90,7 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
         // GET: Admin/MonAn/Delete/5
         public ActionResult Delete(string id)
         {
-            return View(_db.MONAN.Where(s => s.MAMONAN == id).FirstOrDefault());
+            return View(_db.MONANs.Where(s => s.MAMONAN == id).FirstOrDefault());
         }
 
         // POST: Admin/MonAn/Delete/5
@@ -100,8 +100,8 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
             try
             {
                 // TODO: Add delete logic here
-                monan=_db.MONAN.Where(s => s.MAMONAN == id).FirstOrDefault();
-                _db.MONAN.Remove(monan);
+                monan=_db.MONANs.Where(s => s.MAMONAN == id).FirstOrDefault();
+                _db.MONANs.Remove(monan);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -109,6 +109,18 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
             {
                 return View();
             }
+        }
+        public ActionResult SelectFood()
+        {
+            LOAI se_loai = new LOAI();
+            se_loai.ListFood = _db.LOAIs.ToList<LOAI>();
+            return PartialView(se_loai);
+        }
+        public ActionResult SelectUnit()
+        {
+            DONVITINH se_donvi = new DONVITINH();
+            se_donvi.ListUnit = _db.DONVITINHs.ToList<DONVITINH>();
+            return PartialView(se_donvi);
         }
     }
 }

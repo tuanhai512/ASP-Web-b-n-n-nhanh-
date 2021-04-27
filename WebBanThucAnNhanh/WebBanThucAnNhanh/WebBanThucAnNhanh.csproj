@@ -129,6 +129,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\NhanVien\Controllers\DonViTinhMonController.cs" />
+    <Compile Include="Areas\NhanVien\Controllers\LoaiMonController.cs" />
     <Compile Include="Areas\NhanVien\Controllers\LoginNhanVienController.cs" />
     <Compile Include="Areas\NhanVien\NhanVienAreaRegistration.cs" />
     <Compile Include="Areas\NhanVien\Controllers\HomeController.cs" />
@@ -172,6 +174,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KHUYENMAI.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LOAI.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model.Context.cs">
@@ -2259,7 +2264,7 @@
     <Content Include="Areas\QuanLy\Views\HoaDon\Index.cshtml" />
     <Content Include="Areas\QuanLy\Views\DonHang\ShowMonAn.cshtml" />
     <Content Include="Areas\QuanLy\Views\KhuyenMai\Create.cshtml" />
-    <Content Include="Areas\QuanLy\Views\KhuyenMai\Index.cshtml" />
+    <Content Include="Areas\QuanLy\Views\KhuyenMai\Edit.cshtml" />
     <Content Include="Areas\QuanLy\Views\KhuyenMai\Edit.cshtml" />
     <EntityDeploy Include="Models\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -2269,7 +2274,11 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\QuanLy\Views\KhuyenMai\Index.cshtml" />
-    <Content Include="Areas\QuanLy\Views\KhuyenMai\Edit.cshtml" />
+    <Content Include="Areas\NhanVien\Views\LoaiMon\Create.cshtml" />
+    <Content Include="Areas\NhanVien\Views\LoaiMon\Edit.cshtml" />
+    <Content Include="Areas\NhanVien\Views\LoaiMon\Delete.cshtml" />
+    <Content Include="Areas\NhanVien\Views\MonAn\SelectFood.cshtml" />
+    <Content Include="Areas\NhanVien\Views\MonAn\SelectUnit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\GioHang.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -2301,10 +2310,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\LoginUser\Login.cshtml" />
     <Content Include="Views\LoginUser\RegisterUser.cshtml" />
+    <Content Include="Views\GioHang\BagCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\NhanVien\Data\" />
+    <Folder Include="Areas\NhanVien\Views\DonViTinhMon\" />
     <Folder Include="Areas\QuanLy\Data\" />
   </ItemGroup>
   <ItemGroup>

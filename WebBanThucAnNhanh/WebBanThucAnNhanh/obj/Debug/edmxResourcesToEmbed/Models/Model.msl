@@ -10,12 +10,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CT_MONAN_DATHANG">
+      <EntityTypeMapping TypeName="QLThucAnNhanhModel.CT_MONAN_DATHANG">
+        <MappingFragment StoreEntitySet="CT_MONAN_DATHANG">
+          <ScalarProperty Name="MACTMONANDATHANG" ColumnName="MACTMONANDATHANG" />
+          <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
+          <ScalarProperty Name="MADATHANG" ColumnName="MADATHANG" />
+          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+          <ScalarProperty Name="GIABAN" ColumnName="GIABAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CTHOADON">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.CTHOADON">
         <MappingFragment StoreEntitySet="CTHOADON">
           <ScalarProperty Name="MACTHOADON" ColumnName="MACTHOADON" />
           <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
           <ScalarProperty Name="MATINHTRANG" ColumnName="MATINHTRANG" />
+          <ScalarProperty Name="MACTMONANDATHANG" ColumnName="MACTMONANDATHANG" />
+          <ScalarProperty Name="MAHOADON" ColumnName="MAHOADON" />
           <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
           <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
         </MappingFragment>
@@ -24,10 +37,19 @@
     <EntitySetMapping Name="DATHANG">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.DATHANG">
         <MappingFragment StoreEntitySet="DATHANG">
-          <ScalarProperty Name="MAGIOHANG" ColumnName="MAGIOHANG" />
+          <ScalarProperty Name="MADATHANG" ColumnName="MADATHANG" />
           <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
           <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
           <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+          <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DONVITINH">
+      <EntityTypeMapping TypeName="QLThucAnNhanhModel.DONVITINH">
+        <MappingFragment StoreEntitySet="DONVITINH">
+          <ScalarProperty Name="MADONVITINH" ColumnName="MADONVITINH" />
+          <ScalarProperty Name="TENDONVITINH" ColumnName="TENDONVITINH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -45,10 +67,10 @@
         <MappingFragment StoreEntitySet="HOADON">
           <ScalarProperty Name="MAHOADON" ColumnName="MAHOADON" />
           <ScalarProperty Name="MAKHUYENMAI" ColumnName="MAKHUYENMAI" />
-          <ScalarProperty Name="MACTHOADON" ColumnName="MACTHOADON" />
           <ScalarProperty Name="MANHANVIEN" ColumnName="MANHANVIEN" />
           <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
-          <ScalarProperty Name="MATINHTRANGDON" ColumnName="MATINHTRANGDON" />
+          <ScalarProperty Name="MACTHOADON" ColumnName="MACTHOADON" />
+          <ScalarProperty Name="MADATHANG" ColumnName="MADATHANG" />
           <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
           <ScalarProperty Name="NGAYGIO" ColumnName="NGAYGIO" />
           <ScalarProperty Name="TONGTHUE" ColumnName="TONGTHUE" />
@@ -80,17 +102,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="LOAI">
+      <EntityTypeMapping TypeName="QLThucAnNhanhModel.LOAI">
+        <MappingFragment StoreEntitySet="LOAI">
+          <ScalarProperty Name="MALOAI" ColumnName="MALOAI" />
+          <ScalarProperty Name="TENLOAI" ColumnName="TENLOAI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="MONAN">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.MONAN">
         <MappingFragment StoreEntitySet="MONAN">
           <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
           <ScalarProperty Name="TENMONAN" ColumnName="TENMONAN" />
           <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
-          <ScalarProperty Name="DONVITINH" ColumnName="DONVITINH" />
+          <ScalarProperty Name="MADONVITINH" ColumnName="MADONVITINH" />
           <ScalarProperty Name="GIABAN" ColumnName="GIABAN" />
           <ScalarProperty Name="THUE" ColumnName="THUE" />
           <ScalarProperty Name="MOTA" ColumnName="MOTA" />
-          <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+          <ScalarProperty Name="MALOAI" ColumnName="MALOAI" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

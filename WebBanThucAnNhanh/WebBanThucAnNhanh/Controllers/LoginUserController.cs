@@ -18,7 +18,7 @@ namespace WebBanThucAnNhanh.Controllers
         [HttpPost]
         public ActionResult LoginAccount(KHACHHANG _user)
         {
-            var check = database.KHACHHANG.Where(s => s.EMAIL == _user.EMAIL && s.PASSWORD == _user.PASSWORD).FirstOrDefault();
+            var check = database.KHACHHANGs.Where(s => s.EMAIL == _user.EMAIL && s.PASSWORD == _user.PASSWORD).FirstOrDefault();
                 if(check == null)
                 {
                     ViewBag.ErrorInfo = "Sai info";
@@ -43,11 +43,11 @@ namespace WebBanThucAnNhanh.Controllers
         {
             if (ModelState.IsValid)
             {
-                var check_ID = database.KHACHHANG.Where(s => s.EMAIL == _user.EMAIL).FirstOrDefault();
+                var check_ID = database.KHACHHANGs.Where(s => s.EMAIL == _user.EMAIL).FirstOrDefault();
                 if (check_ID == null)
                 {
                     database.Configuration.ValidateOnSaveEnabled = false;
-                    database.KHACHHANG.Add(_user);
+                    database.KHACHHANGs.Add(_user);
                     database.SaveChanges();
                     return RedirectToAction("Login");
                 }

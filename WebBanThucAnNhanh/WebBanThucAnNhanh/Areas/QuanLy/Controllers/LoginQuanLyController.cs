@@ -22,7 +22,7 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
         [HttpPost]
         public ActionResult LoginAccount(ADMIN _user)
         {
-            var check = database.ADMIN.Where(s => s.Email == _user.Email && s.Pass == _user.Pass).FirstOrDefault();
+            var check = database.ADMINs.Where(s => s.Email == _user.Email && s.Pass == _user.Pass).FirstOrDefault();
             if (check == null)
             {
                 ViewBag.ErrorInfo = "Sai info";
