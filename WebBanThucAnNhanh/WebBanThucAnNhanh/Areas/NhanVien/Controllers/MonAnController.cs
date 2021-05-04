@@ -27,6 +27,8 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
         // GET: Admin/MonAn/Create
         public ActionResult Create()
         {
+            List<LOAI> listloai = _db.LOAIs.ToList();
+            ViewBag.Loai = new SelectList(listloai, "MaLoai", "TenLoai", "Select cate");
             MONAN monan = new MONAN();
             return View(monan);
         }
@@ -37,6 +39,8 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
         {
             try
             {
+                List<LOAI> listloai = _db.LOAIs.ToList();
+                ViewBag.Loai = new SelectList(listloai, "MaLoai", "TenLoai", "Select cate");
                 // TODO: Add insert logic here
                 if(monan.ImageUpload!=null)
                 {
@@ -113,7 +117,7 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
         public ActionResult SelectFood()
         {
             LOAI se_loai = new LOAI();
-            se_loai.ListFood = _db.LOAIs.ToList<LOAI>();
+            se_loai.listloai = _db.LOAIs.ToList<LOAI>();
             return PartialView(se_loai);
         }
         public ActionResult SelectUnit()

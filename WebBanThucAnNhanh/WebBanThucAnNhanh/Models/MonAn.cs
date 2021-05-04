@@ -37,6 +37,8 @@ namespace WebBanThucAnNhanh.Models
         public virtual DONVITINH DONVITINH { get; set; }
         public virtual LOAI LOAI { get; set; }
 
+      
+
         [NotMapped]
         public HttpPostedFileBase ImageUpload { get; set; }
     }

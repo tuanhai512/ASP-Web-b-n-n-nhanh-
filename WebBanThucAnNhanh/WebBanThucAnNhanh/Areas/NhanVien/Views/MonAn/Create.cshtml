@@ -32,8 +32,8 @@
     <div class="form-group">
         @Html.LabelFor(model => model.LOAI, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @{Html.RenderAction("SelectFood", "MonAn");}
-            @Html.ValidationMessageFor(model => model.LOAI, "", new { @class = "text-danger" })
+            @Html.DropDownListFor(model=>model.LOAI,(SelectList)ViewBag.Loai)
+            @Html.ValidationMessageFor(model => model.LOAI, " ", new { @class = "text-danger" })
         </div>
     </div>
 

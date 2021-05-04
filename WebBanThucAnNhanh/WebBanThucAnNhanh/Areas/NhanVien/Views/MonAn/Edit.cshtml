@@ -16,7 +16,6 @@
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.MAMONAN)
-    @Html.HiddenFor(model => model.HINHANH)
     <div class="form-group">
         @Html.LabelFor(model => model.TENMONAN, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -24,12 +23,19 @@
             @Html.ValidationMessageFor(model => model.TENMONAN, "", new { @class = "text-danger" })
         </div>
     </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.LOAI, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.LOAI, (SelectList)ViewBag.Loai)
+            @Html.ValidationMessageFor(model => model.LOAI, " ", new { @class = "text-danger" })
+        </div>
+    </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.HINHANH, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.HINHANH, new { htmlAttributes = new { @class = "form-control" } })
-            <img src="@Url.Content(Model.HINHANH)" style="height:200px;width:200px;margin:10px;" id="previewImage" />
+            <img src="@Url.Content("Model.HINHANH")" style="height:200px; width:200px; margin:10px;" id="previewImage" />
             <input type="file" name="ImageUpload" onchange="ShowImagePreview(this, document.getElementById('previewImage'))" />
             @Html.ValidationMessageFor(model => model.HINHANH, "", new { @class = "text-danger" })
         </div>
@@ -38,7 +44,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.DONVITINH, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.DONVITINH, new { htmlAttributes = new { @class = "form-control" } })
+            @{Html.RenderAction("SelectUnit", "MonAn");}
             @Html.ValidationMessageFor(model => model.DONVITINH, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -48,14 +54,6 @@
         <div class="col-md-10">
             @Html.EditorFor(model => model.GIABAN, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.GIABAN, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.THUE, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.THUE, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.THUE, "", new { @class = "text-danger" })
         </div>
     </div>
 
