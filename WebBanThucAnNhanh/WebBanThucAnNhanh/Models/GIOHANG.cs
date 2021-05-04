@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -13,6 +15,23 @@ namespace WebBanThucAnNhanh.Models
     }
     public class GioHang
     {
+        [Display(Name = "Mật khẩu")]
+        [Required(ErrorMessage = "Pass not emty")]
+        public string _pass { get; set; }
+        [Display(Name = "Email ")]
+        [Required(ErrorMessage = "Email not emty")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
+        public string _email { get; set; }
+        [Required(ErrorMessage = "phone not emty")]
+        public string _phone { get; set; }
+        [Required(ErrorMessage = "Name not emty")]
+        public string _tenkh { get; set; }
+        [Display(Name = "Địa chỉ ")]
+        [Required(ErrorMessage = "Address not emty")]
+        public string _diachi { get; set; }
+
+        [NotMapped]
+        public string ErrorRegister { get; set; }
         List<GioHangItem> items = new List<GioHangItem>();
         public IEnumerable<GioHangItem> Items
         {

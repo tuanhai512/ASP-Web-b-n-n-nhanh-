@@ -64,5 +64,33 @@ namespace WebBanThucAnNhanh.Controllers
             ViewBag.infoGioHang = _t_item;
             return PartialView("BagCart");
         }
+        public ActionResult CheckoutSuccess()
+        {
+            return View();
+        }
+        //public ActionResult CheckCheckout()
+        //{
+        //    return View();
+        //}
+        public ActionResult Checkout()
+        {
+            //GioHang giohang = Session["GioHang"] as GioHang;
+            //return View(giohang);
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Checkout(GioHang gh)
+        {
+            try 
+            {
+                _db.GioHangs.Add(gh);
+                _db.SaveChanges();
+                return RedirectToAction("CheckoutSuccess", "GioHang");
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }

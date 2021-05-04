@@ -12,10 +12,18 @@ namespace WebBanThucAnNhanh.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ADMIN
+    public partial class LOAI
     {
-        public int ID { get; set; }
-        public string Email { get; set; }
-        public string Pass { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public LOAI()
+        {
+            this.MONANs = new HashSet<MONAN>();
+        }
+    
+        public string MALOAI { get; set; }
+        public string TENLOAI { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MONAN> MONANs { get; set; }
     }
 }

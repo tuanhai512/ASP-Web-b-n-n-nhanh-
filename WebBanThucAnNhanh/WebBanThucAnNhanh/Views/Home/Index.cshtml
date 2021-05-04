@@ -34,7 +34,7 @@
     <script src="~/Assets/js/plugins.js"></script>
     <script src="~/Assets/js/wow.min.js"></script>
     <script src="~/Assets/js/main.js"></script>
-    <script src="~/Scripts/scripts.js"></script>
+    <script src="~/Scripts/Script.js"></script>
 </head>
 <body>
     <!--
@@ -140,9 +140,10 @@
     <header>
         <style>
             .card {
-                width: 250px;
+                width: 200px;
                 border-radius: 5px;
                 padding: 10px;
+                margin: 10px;
                 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
                 transition: 0.3s;
             }
@@ -151,35 +152,50 @@
                     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
                 }
 
+            .containerMain {
+                width: 100% !important;
+                box-sizing: inherit;
+                display: flex;
+                border: 1px solid blue;
+            }
+
             #margin-card {
                 text-align: center;
                 margin-top: 20px;
+                width: auto;
             }
         </style>
     </header>
 
-    <div class="container">
-        <div class="row">
-            @*<div class="col-md-12">*@
-            @*<div class="row">*@
-            @foreach (var pro in Model)
-            {
-                <div class="col-sm-6 col-md-4 col-lg-3" id="margin-card">
-                    <div class="card">
-                        <img src="@Url.Content(pro.HINHANH)" height="150" width="150" />
-                        <div class="col-sm-6 col-md-4 col-lg-3" id="margin-card">
-                            <p>@Html.DisplayFor(model => pro.TENMONAN)</p>
-                            <p>@Html.DisplayFor(model => pro.GIABAN)</p>
-                            <a href="/GioHang/AddToCart/@pro.MAMONAN">
-                                <p><input type="submit" value="Đặt Hàng" /></p>
-                            </a>
-                            @Html.ActionLink("Details", "Details", new { id = pro.MAMONAN })
+    <div class="container containerMain">
+        <div class="col-md-2">
+            @{ Html.RenderAction("LoaiPartial", "Loai");}
+        </div>
+        <div class="col-md-10" id="div-content">
+            <div class="row">
+                @*<div class="col-md-12">*@
+                @*<div class="row">*@
+                @foreach (var pro in Model)
+                {
+                    <div class="col-sm-6 col-md-4 col-lg-3" id="margin-card">
+                        <div class="card">
+                             <img src="@Url.Content("pro.HINHANH")" height="150" width="150" />
+                            <div class="col-sm-6 col-md-4 col-lg-3" id="margin-card">
+                                <p>@Html.DisplayFor(model => pro.TENMONAN)</p>
+                                <p>@Html.DisplayFor(model => pro.GIABAN)</p>
+                                <p>@Html.DisplayFor(model=>pro.LOAI.TENLOAI)</p>
+                                <a href="/GioHang/AddToCart/@pro.MAMONAN">
+                                    <p><input type="submit" value="Đặt Hàng" /></p>
+                                </a>
+                                @Html.ActionLink("Details", "Details", new { id = pro.MAMONAN })
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
-            @*</div>*@
-            @*</div>*@<!-- .col-md-12 close -->
-        </div><!-- .row close -->
+                }
+                @*</div>*@
+                @*</div>*@<!-- .col-md-12 close -->
+            </div>
+        </div>
+      <!-- .row close -->
     </div><!-- .containe close -->
 </body>

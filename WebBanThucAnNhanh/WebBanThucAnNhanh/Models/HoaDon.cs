@@ -28,7 +28,7 @@ namespace WebBanThucAnNhanh.Models
         public int MADATHANG { get; set; }
         public double TONGTIEN { get; set; }
         public Nullable<System.DateTime> NGAYGIO { get; set; }
-        public double TONGTHUE { get; set; }
+        public Nullable<double> TONGTHUE { get; set; }
         public string GHICHU { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

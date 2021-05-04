@@ -1,0 +1,75 @@
+﻿@model WebBanThucAnNhanh.Models.GioHang
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/Checkout.css" rel="stylesheet" />
+</head>
+<body>
+
+    <h2>THANH TOÁN</h2>
+        <div class="row">
+            <div class="col-75">
+                <div class="container">
+                            <div class="row">
+                                <div class="col-50">
+                                    @using (Html.BeginForm("Checkout", "GioHang", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                        if (ViewBag.ErrorRegister != null)
+                                        {
+                                            <p>@ViewBag.ErrorRegister</p>
+                                        }
+                                        <h3>Thông tin Khách Hàng</h3>
+                                        <label for="fname"><i class="fa fa-user"></i> Họ Và Tên</label>
+                                        @Html.TextBoxFor(model => model._tenkh, new { htmlAttributes = new { @class = "form-control" } })
+                                        <p>@Html.ValidationMessageFor(model => model._tenkh)</p>
+                                        <label for="phone"><i class="fa fa-phone"></i> Số Điện Thoại</label>
+                                        @Html.TextBoxFor(model => model._phone, new { htmlAttributes = new { @class = "form-control" } })
+                                        <p>@Html.ValidationMessageFor(model => model._phone)</p>
+                                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                        @Html.EditorFor(model => model._email, new { htmlAttributes = new { @class = "form-control" } })
+                                        <p>@Html.ValidationMessageFor(model => model._email)</p>
+                                        <label for="adr"><i class="fa fa-address-card-o"></i> Địa Chỉ</label>
+                                        @Html.EditorFor(model => model._diachi, new { htmlAttributes = new { @class = "form-control" } })
+                                        <p>@Html.ValidationMessageFor(model => model._diachi)</p>
+                                        <label for="pass"><i class="fa fa-address-card-o"></i> Pass</label>
+                                        @Html.EditorFor(model => model._pass, new { htmlAttributes = new { @class = "form-control" } })
+                                        <p>@Html.ValidationMessageFor(model => model._pass)</p>
+                                        <input type="submit" value="Tiếp Tục Thanh Toán" class="btn-green">
+
+                                    }
+                                </div>
+                            </div>
+                </div>
+            </div>
+            @*<div class="col-25">
+                <div class="container">
+                    <h4>
+                        Giỏ Hàng
+                        <span class="price" style="color:black">
+                            <i class="fa fa-shopping-cart"></i>
+                            <b>
+                                @Html.Action("BagCart", "GioHang")
+                            </b>
+                        </span>
+                    </h4>
+                    @foreach (var pro in Model.Items)
+                    {
+                        double total = pro._monan.GIABAN * pro._quantity;
+                        <p> @Html.DisplayFor(model => pro._monan.TENMONAN) x @Html.DisplayFor(model => pro._quantity) <span class="price">@total VNĐ</span></p>
+                    }
+                    <hr>
+                    <p>Tổng Tiền <span class="price" style="color:black"><b>@Model.Total_money() VNĐ</b></span></p>
+                </div>
+                <a href="/GioHang/ShowToCart">
+                    <input type="submit" value="Quay Về Giỏ Hàng" class="btn-grey" href="/GioHang/ShowToCart" />
+                </a>
+                
+            </div>*@
+        </div>
+    </body>
+</html>

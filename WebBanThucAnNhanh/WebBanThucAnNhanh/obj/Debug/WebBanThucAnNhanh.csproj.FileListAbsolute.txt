@@ -419,8 +419,8 @@ D:\HUFLIT\THUCANNHANH\New folder - Copy\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\We
 D:\HUFLIT\THUCANNHANH\New folder - Copy\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\bin\Newtonsoft.Json.xml
 D:\HUFLIT\THUCANNHANH\New folder - Copy\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\bin\Antlr3.Runtime.pdb
 D:\HUFLIT\THUCANNHANH\New folder - Copy\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\HUFLIT\THUCANNHANH\New folder - Copy\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.csprojAssemblyReference.cache
 D:\HUFLIT\THUCANNHANH\New folder - Copy\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.csproj.CoreCompileInputs.cache
 D:\HUFLIT\THUCANNHANH\New folder - Copy\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.csproj.CopyComplete
 D:\HUFLIT\THUCANNHANH\New folder - Copy\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.dll
 D:\HUFLIT\THUCANNHANH\New folder - Copy\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.pdb
+D:\HUFLIT\THUCANNHANH\New folder - Copy\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.csprojAssemblyReference.cache
