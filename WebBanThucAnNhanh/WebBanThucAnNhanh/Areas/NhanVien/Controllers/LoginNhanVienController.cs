@@ -21,7 +21,7 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
         [HttpPost]
         public ActionResult LoginAccount(NHANVIEN _user)
         {
-            var check = database.NHANVIEN.Where(s => s.EMAIL == _user.EMAIL && s.PASSWORD== _user.PASSWORD).FirstOrDefault();
+            var check = database.NHANVIENs.Where(s => s.EMAIL == _user.EMAIL && s.PASSWORD== _user.PASSWORD).FirstOrDefault();
                 if(check == null)
                 {
                     ViewBag.ErrorInfo = "Sai info";

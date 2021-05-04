@@ -14,7 +14,7 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
         // GET: QuanLy/HoaDon
         public ActionResult Index()
         {
-            return View(_db.HOADON.ToList());
+            return View(_db.HOADONs.ToList());
         }
 
         // GET: QuanLy/HoaDon/Details/5

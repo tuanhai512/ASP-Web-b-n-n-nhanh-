@@ -14,7 +14,7 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
         QLThucAnNhanhEntities database = new QLThucAnNhanhEntities();
         public ActionResult Index()
         {
-            return View(database.KHACHHANG.ToList());
+            return View(database.KHACHHANGs.ToList());
         }
 
         // GET: QuanLy/KhachHang/Details/5

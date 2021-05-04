@@ -13,7 +13,7 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
         // GET: QuanLy/KhuyenMai
         public ActionResult Index()
         {
-            return View(database.KHUYENMAI.ToList());
+            return View(database.KHUYENMAIs.ToList());
         }
 
         // GET: QuanLy/KhuyenMai/Details/5
@@ -36,7 +36,7 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
             try
             {
                 // TODO: Add insert logic here
-                database.KHUYENMAI.Add(khuyenmai);
+                database.KHUYENMAIs.Add(khuyenmai);
                 database.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -49,7 +49,7 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
         // GET: QuanLy/KhuyenMai/Edit/5
         public ActionResult Edit(string  id)
         {
-            return View(database.KHUYENMAI.Where(s => s.MAKHUYENMAI == id).FirstOrDefault());
+            return View(database.KHUYENMAIs.Where(s => s.MAKHUYENMAI == id).FirstOrDefault());
         }
 
         // POST: QuanLy/KhuyenMai/Edit/5

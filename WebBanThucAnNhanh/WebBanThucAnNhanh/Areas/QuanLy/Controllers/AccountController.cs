@@ -13,7 +13,7 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
         // GET: QuanLy/Account
         public ActionResult Index()
         {
-            return View(_db.NHANVIEN.ToList());
+            return View(_db.NHANVIENs.ToList());
         }
 
         // GET: QuanLy/Account/Details/5
@@ -37,7 +37,7 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
             {
                 // TODO: Add insert logic here
 
-                _db.NHANVIEN.Add(nhanvien);
+                _db.NHANVIENs.Add(nhanvien);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }

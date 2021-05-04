@@ -29,6 +29,7 @@ namespace WebBanThucAnNhanh.Models
         public string MAMONAN { get; set; }
         public Nullable<int> SOLUONG { get; set; }
         public Nullable<double> TONGTIEN { get; set; }
+        public string GHICHU { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_MONAN_DATHANG> CT_MONAN_DATHANG { get; set; }
