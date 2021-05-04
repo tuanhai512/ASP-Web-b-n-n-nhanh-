@@ -2279,6 +2279,9 @@
     <Content Include="Areas\NhanVien\Views\LoaiMon\Delete.cshtml" />
     <Content Include="Areas\NhanVien\Views\MonAn\SelectFood.cshtml" />
     <Content Include="Areas\NhanVien\Views\MonAn\SelectUnit.cshtml" />
+    <Content Include="Areas\NhanVien\Views\DonViTinhMon\Index.cshtml" />
+    <Content Include="Areas\NhanVien\Views\DonViTinhMon\Create.cshtml" />
+    <Content Include="Areas\NhanVien\Views\LoaiMon\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\GioHang.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -2315,7 +2318,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\NhanVien\Data\" />
-    <Folder Include="Areas\NhanVien\Views\DonViTinhMon\" />
     <Folder Include="Areas\QuanLy\Data\" />
   </ItemGroup>
   <ItemGroup>

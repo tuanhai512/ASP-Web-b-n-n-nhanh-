@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebBanThucAnNhanh.Models;
 
 namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
 {
     public class LoaiMonController : Controller
     {
+        QLThucAnNhanhEntities _db = new QLThucAnNhanhEntities();
         // GET: NhanVien/LoaiMon
         public ActionResult Index()
         {
-            return View();
+            return View(_db.LOAIs.ToList());
         }
 
         // GET: NhanVien/LoaiMon/Details/5
@@ -23,17 +25,20 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
         // GET: NhanVien/LoaiMon/Create
         public ActionResult Create()
         {
-            return View();
+            LOAI loai = new LOAI();
+            return View(loai);
         }
 
         // POST: NhanVien/LoaiMon/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(LOAI loai)
         {
             try
             {
                 // TODO: Add insert logic here
 
+                _db.LOAIs.Add(loai);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch

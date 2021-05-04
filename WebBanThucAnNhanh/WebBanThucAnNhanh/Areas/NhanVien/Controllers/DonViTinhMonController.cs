@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebBanThucAnNhanh.Models;
 
 namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
 {
     public class DonViTinhMonController : Controller
     {
+        QLThucAnNhanhEntities _db = new QLThucAnNhanhEntities();
         // GET: NhanVien/DonViTinhMon
         public ActionResult Index()
         {
-            return View();
+            return View(_db.DONVITINHs.ToList());
         }
 
         // GET: NhanVien/DonViTinhMon/Details/5
@@ -23,17 +25,20 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
         // GET: NhanVien/DonViTinhMon/Create
         public ActionResult Create()
         {
-            return View();
+            DONVITINH donvitinh = new DONVITINH();
+            return View(donvitinh);
         }
 
         // POST: NhanVien/DonViTinhMon/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(DONVITINH donvitinh)
         {
             try
             {
                 // TODO: Add insert logic here
 
+                _db.DONVITINHs.Add(donvitinh);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
