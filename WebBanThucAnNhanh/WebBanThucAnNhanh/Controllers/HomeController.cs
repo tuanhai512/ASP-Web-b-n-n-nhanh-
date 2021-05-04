@@ -10,9 +10,19 @@ namespace WebBanThucAnNhanh.Controllers
     public class HomeController : Controller
     {
         QLThucAnNhanhEntities _db = new QLThucAnNhanhEntities();
-        public ActionResult Index()
+        public ActionResult Index(string loai)
         {
-            return View(_db.MONANs.ToList());
+            if (loai == null)
+            {
+                var monanList = _db.MONANs.OrderByDescending(x => x.TENMONAN);
+                return View(monanList);
+            }
+            else
+            {
+                var monanList = _db.MONANs.OrderByDescending(x => x.TENMONAN)
+                    .Where(x => x.MALOAI == loai);
+                return View(monanList);
+            }
         }
 
         public ActionResult About()

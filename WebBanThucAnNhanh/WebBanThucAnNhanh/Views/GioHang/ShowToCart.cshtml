@@ -22,7 +22,7 @@
                         </a>
                     </td>
                     <td class="image">
-                        <img src="@Url.Content(pro._monan.HINHANH)" style="width:100px;height:100px;" />
+                        <img src="@Url.Content("pro._monan.HINHANH")" style="width:100px;height:100px;" />
                     </td>
                     <td class="description">
                         @Html.DisplayFor(model => pro._monan.TENMONAN)
@@ -50,8 +50,10 @@
                     <td
                         colspan="5" style="text-align:right">Sum Total : @Model.Total_money()
                     </td>
-                    <td>
-                        <input type="submit" value="Buy" />
+                    <td>    
+                        <a href="/GioHang/Checkout">
+                            <input type="submit" value="Buy" />
+                        </a>
                     </td>
                 </tr>
             </tfoot>

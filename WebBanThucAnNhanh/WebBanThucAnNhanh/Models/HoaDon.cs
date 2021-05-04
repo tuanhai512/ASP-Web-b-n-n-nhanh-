@@ -17,7 +17,7 @@ namespace WebBanThucAnNhanh.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public HOADON()
         {
-            this.CTHOADON = new HashSet<CTHOADON>();
+            this.CTHOADONs = new HashSet<CTHOADON>();
         }
     
         public int MAHOADON { get; set; }
@@ -28,11 +28,11 @@ namespace WebBanThucAnNhanh.Models
         public int MADATHANG { get; set; }
         public double TONGTIEN { get; set; }
         public Nullable<System.DateTime> NGAYGIO { get; set; }
-        public double TONGTHUE { get; set; }
+        public Nullable<double> TONGTHUE { get; set; }
         public string GHICHU { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHOADON> CTHOADON { get; set; }
+        public virtual ICollection<CTHOADON> CTHOADONs { get; set; }
         public virtual DATHANG DATHANG { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }
         public virtual KHUYENMAI KHUYENMAI { get; set; }
