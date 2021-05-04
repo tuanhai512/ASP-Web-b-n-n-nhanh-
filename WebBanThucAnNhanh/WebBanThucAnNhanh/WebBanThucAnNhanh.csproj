@@ -140,12 +140,17 @@
     <Compile Include="Areas\QuanLy\Controllers\KhuyenMaiController.cs" />
     <Compile Include="Areas\QuanLy\Controllers\LoginQuanLyController.cs" />
     <Compile Include="Areas\QuanLy\QuanLyAreaRegistration.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Controllers\GioHangController.cs" />
+>>>>>>> teammate
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginUserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ADMIN.cs">
+<<<<<<< HEAD
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTHOADON.cs">
@@ -199,6 +204,61 @@
     </Compile>
     <Compile Include="Models\TINHTRANGDON.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+=======
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTHOADON.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CT_MONAN_DATHANG.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DATHANG.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FEEDBACK.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GioHang.cs" />
+    <Compile Include="Models\HOADON.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KHACHHANG.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KHUYENMAI.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MONAN.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NHANVIEN.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\THONGKEBAOCAO.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TINHTRANGDON.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+>>>>>>> teammate
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1903,6 +1963,7 @@
     <Content Include="Assets\images\blog\blog-img-6.jpg" />
     <Content Include="Assets\images\blog\blog-img-thumb-1.jpg" />
     <Content Include="Assets\images\blog\blog-img-thumb-2.jpg" />
+    <Content Include="Assets\images\cart.png" />
     <Content Include="Assets\images\cooker-img.png" />
     <Content Include="Assets\images\header.jpg" />
     <Content Include="Assets\images\logo.png" />
@@ -1973,10 +2034,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\StyleSheet1.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+<<<<<<< HEAD
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -1986,6 +2049,17 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
+=======
+    <Content Include="Models\Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+>>>>>>> teammate
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -2257,16 +2331,28 @@
     <Content Include="Areas\QuanLy\Views\HoaDon\Index.cshtml" />
     <Content Include="Areas\QuanLy\Views\DonHang\ShowMonAn.cshtml" />
     <Content Include="Areas\QuanLy\Views\KhuyenMai\Create.cshtml" />
+<<<<<<< HEAD
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
+=======
+    <Content Include="Areas\QuanLy\Views\KhuyenMai\Index.cshtml" />
+    <Content Include="Areas\QuanLy\Views\KhuyenMai\Edit.cshtml" />
+    <EntityDeploy Include="Models\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+>>>>>>> teammate
     </Content>
     <Content Include="Areas\QuanLy\Views\KhuyenMai\Index.cshtml" />
     <Content Include="Areas\QuanLy\Views\KhuyenMai\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\GioHang.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -2287,11 +2373,19 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\LoginUser\Login.cshtml" />
     <Content Include="Views\LoginUser\RegisterUser.cshtml" />
+    <Content Include="Views\GioHang\ShowToCart.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\LoginUser\Login.cshtml" />
+    <Content Include="Views\LoginUser\RegisterUser.cshtml" />
+=======
+    <Content Include="Views\GioHang\BagCart.cshtml" />
+>>>>>>> teammate
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

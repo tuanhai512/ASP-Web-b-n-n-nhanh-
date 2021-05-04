@@ -31,10 +31,16 @@ namespace WebBanThucAnNhanh.Models
         public Nullable<double> THUE { get; set; }
         public string MOTA { get; set; }
         public string LOAI { get; set; }
+<<<<<<< HEAD
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_MONAN_DATHANG> CT_MONAN_DATHANG { get; set; }
 
+=======
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CT_MONAN_DATHANG> CT_MONAN_DATHANG { get; set; }
+>>>>>>> teammate
         [NotMapped]
         public HttpPostedFileBase ImageUpload { get; set; }
     }

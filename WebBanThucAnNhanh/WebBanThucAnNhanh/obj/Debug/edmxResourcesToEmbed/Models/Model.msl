@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="QLThucAnNhanhModelStoreContainer" CdmEntityContainer="QLThucAnNhanhEntities">
+<<<<<<< HEAD
     <EntitySetMapping Name="ADMIN">
+=======
+    <EntitySetMapping Name="ADMINs">
+>>>>>>> teammate
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.ADMIN">
         <MappingFragment StoreEntitySet="ADMIN">
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -10,28 +14,59 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
     <EntitySetMapping Name="CTHOADON">
+=======
+    <EntitySetMapping Name="CT_MONAN_DATHANG">
+      <EntityTypeMapping TypeName="QLThucAnNhanhModel.CT_MONAN_DATHANG">
+        <MappingFragment StoreEntitySet="CT_MONAN_DATHANG">
+          <ScalarProperty Name="MACTMONANDATHANG" ColumnName="MACTMONANDATHANG" />
+          <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
+          <ScalarProperty Name="MADATHANG" ColumnName="MADATHANG" />
+          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+          <ScalarProperty Name="GIABAN" ColumnName="GIABAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTHOADONs">
+>>>>>>> teammate
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.CTHOADON">
         <MappingFragment StoreEntitySet="CTHOADON">
           <ScalarProperty Name="MACTHOADON" ColumnName="MACTHOADON" />
           <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
           <ScalarProperty Name="MATINHTRANG" ColumnName="MATINHTRANG" />
+<<<<<<< HEAD
+=======
+          <ScalarProperty Name="MACTMONANDATHANG" ColumnName="MACTMONANDATHANG" />
+          <ScalarProperty Name="MAHOADON" ColumnName="MAHOADON" />
+>>>>>>> teammate
           <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
           <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
     <EntitySetMapping Name="DATHANG">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.DATHANG">
         <MappingFragment StoreEntitySet="DATHANG">
           <ScalarProperty Name="MAGIOHANG" ColumnName="MAGIOHANG" />
+=======
+    <EntitySetMapping Name="DATHANGs">
+      <EntityTypeMapping TypeName="QLThucAnNhanhModel.DATHANG">
+        <MappingFragment StoreEntitySet="DATHANG">
+          <ScalarProperty Name="MADATHANG" ColumnName="MADATHANG" />
+>>>>>>> teammate
           <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
           <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
           <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
     <EntitySetMapping Name="FEEDBACK">
+=======
+    <EntitySetMapping Name="FEEDBACKs">
+>>>>>>> teammate
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.FEEDBACK">
         <MappingFragment StoreEntitySet="FEEDBACK">
           <ScalarProperty Name="MAFEEDBACK" ColumnName="MAFEEDBACK" />
@@ -40,15 +75,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
     <EntitySetMapping Name="HOADON">
+=======
+    <EntitySetMapping Name="HOADONs">
+>>>>>>> teammate
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.HOADON">
         <MappingFragment StoreEntitySet="HOADON">
           <ScalarProperty Name="MAHOADON" ColumnName="MAHOADON" />
           <ScalarProperty Name="MAKHUYENMAI" ColumnName="MAKHUYENMAI" />
+<<<<<<< HEAD
           <ScalarProperty Name="MACTHOADON" ColumnName="MACTHOADON" />
           <ScalarProperty Name="MANHANVIEN" ColumnName="MANHANVIEN" />
           <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
           <ScalarProperty Name="MATINHTRANGDON" ColumnName="MATINHTRANGDON" />
+=======
+          <ScalarProperty Name="MANHANVIEN" ColumnName="MANHANVIEN" />
+          <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
+          <ScalarProperty Name="MACTHOADON" ColumnName="MACTHOADON" />
+          <ScalarProperty Name="MADATHANG" ColumnName="MADATHANG" />
+>>>>>>> teammate
           <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
           <ScalarProperty Name="NGAYGIO" ColumnName="NGAYGIO" />
           <ScalarProperty Name="TONGTHUE" ColumnName="TONGTHUE" />
@@ -56,7 +102,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
     <EntitySetMapping Name="KHACHHANG">
+=======
+    <EntitySetMapping Name="KHACHHANGs">
+>>>>>>> teammate
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.KHACHHANG">
         <MappingFragment StoreEntitySet="KHACHHANG">
           <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
@@ -70,7 +120,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
     <EntitySetMapping Name="KHUYENMAI">
+=======
+    <EntitySetMapping Name="KHUYENMAIs">
+>>>>>>> teammate
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.KHUYENMAI">
         <MappingFragment StoreEntitySet="KHUYENMAI">
           <ScalarProperty Name="MAKHUYENMAI" ColumnName="MAKHUYENMAI" />
@@ -80,7 +134,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
     <EntitySetMapping Name="MONAN">
+=======
+    <EntitySetMapping Name="MONANs">
+>>>>>>> teammate
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.MONAN">
         <MappingFragment StoreEntitySet="MONAN">
           <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
@@ -94,7 +152,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
     <EntitySetMapping Name="NHANVIEN">
+=======
+    <EntitySetMapping Name="NHANVIENs">
+>>>>>>> teammate
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.NHANVIEN">
         <MappingFragment StoreEntitySet="NHANVIEN">
           <ScalarProperty Name="MANHANVIEN" ColumnName="MANHANVIEN" />
@@ -105,6 +167,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
     <EntitySetMapping Name="TINHTRANGDON">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.TINHTRANGDON">
         <MappingFragment StoreEntitySet="TINHTRANGDON">
@@ -114,6 +177,20 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="THONGKEBAOCAO">
+=======
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QLThucAnNhanhModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THONGKEBAOCAOs">
+>>>>>>> teammate
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.THONGKEBAOCAO">
         <MappingFragment StoreEntitySet="THONGKEBAOCAO">
           <ScalarProperty Name="MATHONGKEBAOCAO" ColumnName="MATHONGKEBAOCAO" />
@@ -122,5 +199,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
+=======
+    <EntitySetMapping Name="TINHTRANGDONs">
+      <EntityTypeMapping TypeName="QLThucAnNhanhModel.TINHTRANGDON">
+        <MappingFragment StoreEntitySet="TINHTRANGDON">
+          <ScalarProperty Name="MATINHTRANG" ColumnName="MATINHTRANG" />
+          <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+>>>>>>> teammate
   </EntityContainerMapping>
 </Mapping>

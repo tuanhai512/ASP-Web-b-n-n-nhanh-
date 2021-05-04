@@ -54,5 +54,12 @@ namespace WebBanThucAnNhanh.Models
         {
             items.Clear();
         }
+<<<<<<< HEAD
+=======
+        public int Total_Quantity()
+        {
+            return items.Sum(s => s._quantity);
+        }
+>>>>>>> teammate
     }
 }

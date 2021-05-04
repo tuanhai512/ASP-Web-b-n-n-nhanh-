@@ -18,7 +18,11 @@ namespace WebBanThucAnNhanh.Models
         public DATHANG()
         {
             this.CT_MONAN_DATHANG = new HashSet<CT_MONAN_DATHANG>();
+<<<<<<< HEAD
             this.HOADON = new HashSet<HOADON>();
+=======
+            this.HOADONs = new HashSet<HOADON>();
+>>>>>>> teammate
         }
     
         public int MADATHANG { get; set; }
@@ -29,6 +33,10 @@ namespace WebBanThucAnNhanh.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_MONAN_DATHANG> CT_MONAN_DATHANG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+<<<<<<< HEAD
         public virtual ICollection<HOADON> HOADON { get; set; }
+=======
+        public virtual ICollection<HOADON> HOADONs { get; set; }
+>>>>>>> teammate
     }
 }
