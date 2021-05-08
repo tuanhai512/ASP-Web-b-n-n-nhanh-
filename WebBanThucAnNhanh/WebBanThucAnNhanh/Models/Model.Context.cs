@@ -24,12 +24,12 @@ namespace WebBanThucAnNhanh.Models
         {
             throw new UnintentionalCodeFirstException();
         }
-
-        public virtual DbSet<GioHang> GioHangs { get; set; }
+    
         public virtual DbSet<ADMIN> ADMINs { get; set; }
         public virtual DbSet<CT_MONAN_DATHANG> CT_MONAN_DATHANG { get; set; }
         public virtual DbSet<CTHOADON> CTHOADONs { get; set; }
         public virtual DbSet<DATHANG> DATHANGs { get; set; }
+        public virtual DbSet<DIACHIGH> DIACHIGHs { get; set; }
         public virtual DbSet<DONVITINH> DONVITINHs { get; set; }
         public virtual DbSet<FEEDBACK> FEEDBACKs { get; set; }
         public virtual DbSet<HOADON> HOADONs { get; set; }
@@ -38,7 +38,7 @@ namespace WebBanThucAnNhanh.Models
         public virtual DbSet<LOAI> LOAIs { get; set; }
         public virtual DbSet<MONAN> MONANs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
-        public virtual DbSet<THONGKEBAOCAO> THONGKEBAOCAOs { get; set; }
         public virtual DbSet<TINHTRANGDON> TINHTRANGDONs { get; set; }
+        public virtual DbSet<THONGKEBAOCAO> THONGKEBAOCAOs { get; set; }
     }
 }

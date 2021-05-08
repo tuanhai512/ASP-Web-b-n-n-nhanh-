@@ -83,8 +83,8 @@ namespace WebBanThucAnNhanh.Controllers
         {
             try 
             {
-                _db.GioHangs.Add(gh);
-                _db.SaveChanges();
+                //_db.GioHangs.Add(gh);
+                //_db.SaveChanges();
                 return RedirectToAction("CheckoutSuccess", "GioHang");
             }
             catch

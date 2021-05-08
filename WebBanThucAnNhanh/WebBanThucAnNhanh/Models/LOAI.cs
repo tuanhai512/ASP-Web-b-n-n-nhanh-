@@ -11,7 +11,8 @@ namespace WebBanThucAnNhanh.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class LOAI
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,5 +26,8 @@ namespace WebBanThucAnNhanh.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MONAN> MONANs { get; set; }
+
+        [NotMapped]
+        public List<LOAI> listLoai { get; internal set; }
     }
 }

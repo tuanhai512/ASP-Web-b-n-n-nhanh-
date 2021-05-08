@@ -13,6 +13,7 @@ namespace WebBanThucAnNhanh.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Web;
+
     public partial class MONAN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,6 +21,7 @@ namespace WebBanThucAnNhanh.Models
         {
             HINHANH = "~/Assets/admin/img/photo-1.jpg";
             this.CT_MONAN_DATHANG = new HashSet<CT_MONAN_DATHANG>();
+
         }
     
         public string MAMONAN { get; set; }
