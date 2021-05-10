@@ -21,13 +21,12 @@ namespace WebBanThucAnNhanh.Models
         {
             HINHANH = "~/Assets/admin/img/photo-1.jpg";
             this.CT_MONAN_DATHANG = new HashSet<CT_MONAN_DATHANG>();
-
         }
     
         public string MAMONAN { get; set; }
         public string TENMONAN { get; set; }
         public string HINHANH { get; set; }
-        public Nullable<int> MADONVITINH { get; set; }
+        public int MADONVITINH { get; set; }
         public double GIABAN { get; set; }
         public string MOTA { get; set; }
         public string MALOAI { get; set; }
@@ -36,7 +35,8 @@ namespace WebBanThucAnNhanh.Models
         public virtual ICollection<CT_MONAN_DATHANG> CT_MONAN_DATHANG { get; set; }
         public virtual DONVITINH DONVITINH { get; set; }
         public virtual LOAI LOAI { get; set; }
+
         [NotMapped]
-        public HttpPostedFileBase ImageUpload { get; set; }
+        public HttpPostedFileBase UploadImage { get; set; }
     }
 }

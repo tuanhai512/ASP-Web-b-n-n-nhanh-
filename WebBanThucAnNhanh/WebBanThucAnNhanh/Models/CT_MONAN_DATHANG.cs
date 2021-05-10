@@ -17,7 +17,7 @@ namespace WebBanThucAnNhanh.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CT_MONAN_DATHANG()
         {
-            this.CTHOADONs = new HashSet<CTHOADON>();
+            this.CTHOADON = new HashSet<CTHOADON>();
         }
     
         public int MACTMONANDATHANG { get; set; }
@@ -27,7 +27,7 @@ namespace WebBanThucAnNhanh.Models
         public Nullable<double> GIABAN { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHOADON> CTHOADONs { get; set; }
+        public virtual ICollection<CTHOADON> CTHOADON { get; set; }
         public virtual DATHANG DATHANG { get; set; }
         public virtual MONAN MONAN { get; set; }
     }

@@ -17,7 +17,7 @@ namespace WebBanThucAnNhanh.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHUYENMAI()
         {
-            this.HOADONs = new HashSet<HOADON>();
+            this.HOADON = new HashSet<HOADON>();
         }
     
         public string MAKHUYENMAI { get; set; }
@@ -26,6 +26,6 @@ namespace WebBanThucAnNhanh.Models
         public Nullable<System.DateTime> NGAYKETTHUC { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
+        public virtual ICollection<HOADON> HOADON { get; set; }
     }
 }

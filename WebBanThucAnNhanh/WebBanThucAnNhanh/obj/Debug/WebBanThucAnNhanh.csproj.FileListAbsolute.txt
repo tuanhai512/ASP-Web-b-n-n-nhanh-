@@ -63,3 +63,4 @@ D:\git-hub\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\bin\Antlr3.Ru
 D:\git-hub\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.csproj.CopyComplete
 D:\git-hub\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.dll
 D:\git-hub\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.pdb
+D:\git-hub\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.csprojAssemblyReference.cache

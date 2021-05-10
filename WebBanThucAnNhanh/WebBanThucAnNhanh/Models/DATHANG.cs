@@ -18,20 +18,18 @@ namespace WebBanThucAnNhanh.Models
         public DATHANG()
         {
             this.CT_MONAN_DATHANG = new HashSet<CT_MONAN_DATHANG>();
-            this.HOADONs = new HashSet<HOADON>();
+            this.HOADON = new HashSet<HOADON>();
         }
     
         public int MADATHANG { get; set; }
-        public System.DateTime NGAY { get; set; }
-        public int MADIACHI { get; set; }
+        public string MAMONAN { get; set; }
+        public Nullable<int> SOLUONG { get; set; }
         public Nullable<double> TONGTIEN { get; set; }
         public string GHICHU { get; set; }
-        public int MATINHTRANG { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_MONAN_DATHANG> CT_MONAN_DATHANG { get; set; }
-        public virtual TINHTRANGDON TINHTRANGDON { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
+        public virtual ICollection<HOADON> HOADON { get; set; }
     }
 }
