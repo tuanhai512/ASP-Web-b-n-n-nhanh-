@@ -18,6 +18,10 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
             GioHang _gioHang = Session["GioHang"] as GioHang;
             return View(_gioHang);
         }
+        public ActionResult Index()
+        {
+            return View(_db.DATHANGs.ToList());
+        }
 
         // GET: QuanLy/DonHang/Details/5
         public ActionResult Details(int id)
