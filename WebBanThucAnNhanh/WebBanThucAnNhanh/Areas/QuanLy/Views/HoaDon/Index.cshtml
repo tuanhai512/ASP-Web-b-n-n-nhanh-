@@ -13,7 +13,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.MATINHTRANGDON)
+            @Html.DisplayNameFor(model => model.MAHOADON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAKHUYENMAI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MANHANVIEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAKHACHHANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MACTHOADON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MADATHANG)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.TONGTIEN)
@@ -27,22 +42,28 @@
         <th>
             @Html.DisplayNameFor(model => model.GHICHU)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.KHACHHANG.TENKHACHHANG)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.KHUYENMAI.MAKHUYENMAI)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NHANVIEN.TENNV)
-        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.MATINHTRANGDON)
+            @Html.DisplayFor(modelItem => item.MAHOADON)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAKHUYENMAI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MANHANVIEN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAKHACHHANG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MACTHOADON)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MADATHANG)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TONGTIEN)
@@ -57,18 +78,9 @@
             @Html.DisplayFor(modelItem => item.GHICHU)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.KHACHHANG.TENKHACHHANG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.KHUYENMAI.MAKHUYENMAI)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NHANVIEN.TENNV)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MAHOADON }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MAHOADON }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MAHOADON })
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>
 }

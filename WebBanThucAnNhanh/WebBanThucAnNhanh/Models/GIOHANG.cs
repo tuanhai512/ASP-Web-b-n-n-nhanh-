@@ -37,7 +37,7 @@ namespace WebBanThucAnNhanh.Models
         {
             get { return items; }
         }
-        public void Add_Product_Cart(MONAN mon, int _quan=1)
+        public void Add_Product_Cart(MONAN mon, int _quan = 1)
         {
             var item = Items.FirstOrDefault(s => s._monan.MAMONAN == mon.MAMONAN);
             if (item == null)
@@ -53,11 +53,11 @@ namespace WebBanThucAnNhanh.Models
         {
             return items.Sum(s => s._quantity);
         }
-        public decimal Total_money()
+        public float Total_money()
         {
             var total = items.Sum(s => s._quantity * s._monan.GIABAN);
-            return (decimal)total;
-       
+            return (float)total;
+
         }
         public void Update_quantity(string id, int _new_quan)
         {
@@ -65,7 +65,7 @@ namespace WebBanThucAnNhanh.Models
             if (item != null)
                 item._quantity = _new_quan;
         }
-        public void Remove_CartItem (string id)
+        public void Remove_CartItem(string id)
         {
             items.RemoveAll(s => s._monan.MAMONAN == id);
         }

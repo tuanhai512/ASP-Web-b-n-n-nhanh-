@@ -68,29 +68,75 @@ namespace WebBanThucAnNhanh.Controllers
         {
             return View();
         }
-        //public ActionResult CheckCheckout()
-        //{
-        //    return View();
-        //}
         public ActionResult Checkout()
         {
-            //GioHang giohang = Session["GioHang"] as GioHang;
-            //return View(giohang);
+            var GioHang = GetGioHang();
+            if (GioHang.Total_quantity() == 0)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View();
         }
         [HttpPost]
-        public ActionResult Checkout(GioHang gh)
+        public ActionResult Checkout(DIACHIGH model)
         {
-            try 
+            var giohang = GetGioHang();
+            if (giohang.Total_quantity() == 0)
             {
-                _db.GioHangs.Add(gh);
+                ModelState.AddModelError("", "Gio Hang ko duoc de trong");
+            }
+            if (ModelState.IsValid)
+            {
+                //DIACHIGIAOHANG
+                var diachigh = new DIACHIGH()
+                {
+                    HOTEN = model.HOTEN,
+                    SDT = model.SDT,
+                    SONHA = model.SONHA,
+                    PHUONG = model.PHUONG,
+                    QUAN = model.QUAN,
+                };
+                _db.DIACHIGHs.Add(diachigh);
                 _db.SaveChanges();
-                return RedirectToAction("CheckoutSuccess", "GioHang");
+
+                //DATHANG
+                var dathang = new DATHANG()
+                {
+                    MADIACHI = diachigh.MADIACHI,
+                    NGAY = DateTime.Now,
+                    TONGTIEN = giohang.Total_money(),
+
+                };
+                _db.DATHANGs.Add(dathang);
+                _db.SaveChanges();
+
+                //CT DAT HANG
+                var ctdathang = new List<CT_MONAN_DATHANG>();
+                foreach (var item in giohang.Items)
+                {
+                    var detail = new CT_MONAN_DATHANG()
+                    {
+                        MAMONAN = item._monan.MAMONAN,
+                        MADATHANG = dathang.MADATHANG,
+                        SOLUONG = item._quantity,
+                        GIABAN = item._monan.GIABAN,
+                    };
+                    ctdathang.Add(detail);
+                }
+                foreach (var detail in ctdathang)
+                {
+                    _db.CT_MONAN_DATHANG.Add(detail);
+                }
+                _db.SaveChanges();
+
+                return RedirectToAction("CheckoutSuccess");
             }
-            catch
+            else
             {
-                return View();
+                ModelState.AddModelError("", "Vui Long nhap du du lieu.");
             }
+            return View(model);
         }
     }
 }

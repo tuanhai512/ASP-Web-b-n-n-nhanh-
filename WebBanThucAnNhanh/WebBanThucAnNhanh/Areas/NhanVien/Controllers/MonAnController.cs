@@ -27,6 +27,8 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
         // GET: Admin/MonAn/Create
         public ActionResult Create()
         {
+            List<LOAI> list = _db.LOAIs.ToList();
+            ViewBag.listLoai = new SelectList(list, "MaLoai", "TenLoai", "Select cate");
             MONAN monan = new MONAN();
             return View(monan);
         }
@@ -37,15 +39,18 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
         {
             try
             {
+                List<LOAI> list = _db.LOAIs.ToList();
+                
                 // TODO: Add insert logic here
-                if(monan.ImageUpload!=null)
+                if(monan.UploadImage!=null)
                 {
-                    string fileName = Path.GetFileNameWithoutExtension(monan.ImageUpload.FileName);
-                    string extension = Path.GetExtension(monan.ImageUpload.FileName);
+                    string fileName = Path.GetFileNameWithoutExtension(monan.UploadImage.FileName);
+                    string extension = Path.GetExtension(monan.UploadImage.FileName);
                     fileName = fileName + extension;
                     monan.HINHANH= "~/Assets/admin/img/" + fileName;
-                    monan.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Assets/admin/img/"), fileName));
+                    monan.UploadImage.SaveAs(Path.Combine(Server.MapPath("~/Assets/admin/img/"), fileName));
                 }
+                ViewBag.listLoai = new SelectList(list, "MaLoai", "TenLoai", 1);
                 _db.MONANs.Add(monan);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
@@ -69,13 +74,13 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
             try
             {
                 // TODO: Add update logic here
-                if (monan.ImageUpload != null)
+                if (monan.UploadImage != null)
                 {
-                    string fileName = Path.GetFileNameWithoutExtension(monan.ImageUpload.FileName);
-                    string extension = Path.GetExtension(monan.ImageUpload.FileName);
+                    string fileName = Path.GetFileNameWithoutExtension(monan.UploadImage.FileName);
+                    string extension = Path.GetExtension(monan.UploadImage.FileName);
                     fileName = fileName + extension;
                     monan.HINHANH = "~/Assets/admin/img/" + fileName;
-                    monan.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Assets/admin/img/"), fileName));
+                    monan.UploadImage.SaveAs(Path.Combine(Server.MapPath("~/Assets/admin/img/"), fileName));
                 }
                 _db.Entry(monan).State = System.Data.Entity.EntityState.Modified;
                 _db.SaveChanges();
@@ -109,6 +114,18 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
             {
                 return View();
             }
+        }
+        public ActionResult SelectFood()
+        {
+            LOAI se_loai = new LOAI();
+            se_loai.listLoai = _db.LOAIs.ToList<LOAI>();
+            return PartialView(se_loai);
+        }
+        public ActionResult SelectUnit()
+        {
+            DONVITINH se_donvi = new DONVITINH();
+            se_donvi.listUnit = _db.DONVITINHs.ToList<DONVITINH>();
+            return PartialView(se_donvi);
         }
     }
 }

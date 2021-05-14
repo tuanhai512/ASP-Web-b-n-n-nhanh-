@@ -18,6 +18,7 @@ namespace WebBanThucAnNhanh.Controllers
         [HttpPost]
         public ActionResult LoginAccount(KHACHHANG _user)
         {
+
             var check = database.KHACHHANGs.Where(s => s.EMAIL == _user.EMAIL && s.PASSWORD == _user.PASSWORD).FirstOrDefault();
                 if(check == null)
                 {
@@ -43,6 +44,7 @@ namespace WebBanThucAnNhanh.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 var check_ID = database.KHACHHANGs.Where(s => s.EMAIL == _user.EMAIL).FirstOrDefault();
                 if (check_ID == null)
                 {

@@ -1,4 +1,7 @@
-﻿@model WebBanThucAnNhanh.Models.GioHang
+﻿@model WebBanThucAnNhanh.Models.DIACHIGH
+@{
+    var GioHang = Session["GioHang"] as WebBanThucAnNhanh.Models.GioHang;
+}
 
 <!DOCTYPE html>
 <html>
@@ -17,28 +20,23 @@
                                 <div class="col-50">
                                     @using (Html.BeginForm("Checkout", "GioHang", FormMethod.Post, new { enctype = "multipart/form-data" }))
                                     {
-                                        @Html.AntiForgeryToken()
 
-                                        if (ViewBag.ErrorRegister != null)
-                                        {
-                                            <p>@ViewBag.ErrorRegister</p>
-                                        }
                                         <h3>Thông tin Khách Hàng</h3>
                                         <label for="fname"><i class="fa fa-user"></i> Họ Và Tên</label>
-                                        @Html.TextBoxFor(model => model._tenkh, new { htmlAttributes = new { @class = "form-control" } })
-                                        <p>@Html.ValidationMessageFor(model => model._tenkh)</p>
+                                        @Html.EditorFor(model => model.HOTEN, new { htmlAttributes = new { @class = "form-control" } })
+                                        <p>@Html.ValidationMessageFor(model => model.HOTEN)</p>
                                         <label for="phone"><i class="fa fa-phone"></i> Số Điện Thoại</label>
-                                        @Html.TextBoxFor(model => model._phone, new { htmlAttributes = new { @class = "form-control" } })
-                                        <p>@Html.ValidationMessageFor(model => model._phone)</p>
-                                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                                        @Html.EditorFor(model => model._email, new { htmlAttributes = new { @class = "form-control" } })
-                                        <p>@Html.ValidationMessageFor(model => model._email)</p>
+                                        @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
+                                        <p>@Html.ValidationMessageFor(model => model.SDT)</p>
                                         <label for="adr"><i class="fa fa-address-card-o"></i> Địa Chỉ</label>
-                                        @Html.EditorFor(model => model._diachi, new { htmlAttributes = new { @class = "form-control" } })
-                                        <p>@Html.ValidationMessageFor(model => model._diachi)</p>
-                                        <label for="pass"><i class="fa fa-address-card-o"></i> Pass</label>
-                                        @Html.EditorFor(model => model._pass, new { htmlAttributes = new { @class = "form-control" } })
-                                        <p>@Html.ValidationMessageFor(model => model._pass)</p>
+                                        @Html.EditorFor(model => model.SONHA, new { htmlAttributes = new { @class = "form-control" } })
+                                        <p>@Html.ValidationMessageFor(model => model.SONHA)</p>
+                                        <label for="phuong"><i class="fa fa-address-card-o"></i>Phường</label>
+                                        @Html.EditorFor(model => model.PHUONG, new { htmlAttributes = new { @class = "form-control" } })
+                                        <p>@Html.ValidationMessageFor(model => model.PHUONG)</p>
+                                        <label for="quan"><i class="fa fa-address-card-o"></i>Quận</label>
+                                        @Html.EditorFor(model => model.QUAN, new { htmlAttributes = new { @class = "form-control" } })
+                                        <p>@Html.ValidationMessageFor(model => model.QUAN)</p>
                                         <input type="submit" value="Tiếp Tục Thanh Toán" class="btn-green">
 
                                     }
@@ -46,7 +44,7 @@
                             </div>
                 </div>
             </div>
-            @*<div class="col-25">
+            <div class="col-25">
                 <div class="container">
                     <h4>
                         Giỏ Hàng
@@ -57,19 +55,19 @@
                             </b>
                         </span>
                     </h4>
-                    @foreach (var pro in Model.Items)
+                    @foreach (var pro in GioHang.Items)
                     {
                         double total = pro._monan.GIABAN * pro._quantity;
                         <p> @Html.DisplayFor(model => pro._monan.TENMONAN) x @Html.DisplayFor(model => pro._quantity) <span class="price">@total VNĐ</span></p>
                     }
                     <hr>
-                    <p>Tổng Tiền <span class="price" style="color:black"><b>@Model.Total_money() VNĐ</b></span></p>
+                    <p>Tổng Tiền <span class="price" style="color:black"><b>@GioHang.Total_money() VNĐ</b></span></p>
                 </div>
                 <a href="/GioHang/ShowToCart">
                     <input type="submit" value="Quay Về Giỏ Hàng" class="btn-grey" href="/GioHang/ShowToCart" />
                 </a>
                 
-            </div>*@
+            </div>
         </div>
     </body>
 </html>
