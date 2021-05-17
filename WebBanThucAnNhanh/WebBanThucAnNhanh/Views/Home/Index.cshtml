@@ -1,18 +1,19 @@
 ﻿@model IEnumerable<WebBanThucAnNhanh.Models.MONAN>
-@{
-    ViewBag.Title = null;
-}
+@{ ViewBag.Title = null; }
 
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>KFB One Page HTML5 Template</title>
+    <title>KFC One Page HTML5 Template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS
     ================================================ -->
     <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="~/Assets/css/owl.carousel.css">
     <!-- bootstrap.min css -->
     <link rel="stylesheet" href="~/Assets/css/bootstrap.min.css">
@@ -21,6 +22,7 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="~/Assets/css/animate.min.css">
 
+    <link rel="stylesheet" href="~/Assets/css/home.css">
     <link rel="stylesheet" href="~/Assets/css/main.css">
     <!-- Responsive Stylesheet -->
     <link rel="stylesheet" href="~/Assets/css/responsive.css">
@@ -35,13 +37,71 @@
     <script src="~/Assets/js/wow.min.js"></script>
     <script src="~/Assets/js/main.js"></script>
     <script src="~/Scripts/Script.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Activate Carousel
+            $("#myCarousel").carousel();
+
+            // Enable Carousel Indicators
+            $(".item1").click(function () {
+                $("#myCarousel").carousel(0);
+            });
+            $(".item2").click(function () {
+                $("#myCarousel").carousel(1);
+            });
+            $(".item3").click(function () {
+                $("#myCarousel").carousel(2);
+            });
+            $(".item4").click(function () {
+                $("#myCarousel").carousel(3);
+            });
+
+            // Enable Carousel Controls
+            $("#left").click(function () {
+                $("#myCarousel").carousel("prev");
+            });
+            $("#right").click(function () {
+                $("#myCarousel").carousel("next");
+            });
+        });
+        $(document).ready(function () {
+            // Activate Carousel
+            $("#myCarousel1").carousel();
+
+            // Enable Carousel Indicators
+            $(".item5").click(function () {
+                $("#myCarousel1").carousel(0);
+            });
+            $(".item6").click(function () {
+                $("#myCarousel1").carousel(1);
+            });
+            $(".item7").click(function () {
+                $("#myCarousel1").carousel(2);
+            });
+            $(".item8").click(function () {
+                $("#myCarousel1").carousel(3);
+            });
+
+            // Enable Carousel Controls
+            $("#left1").click(function () {
+                $("#myCarousel1").carousel("prev");
+            });
+            $("#right1").click(function () {
+                $("#myCarousel1").carousel("next");
+            });
+        });
+                    //Bị carousel không xoay vòng
+        /*https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_carousel_js&stacked=h */
+    </script>
+
 </head>
 <body>
     <!--
     header-img start
     ============================== -->
     <section id="hero-area">
-        <img class="img-responsive" src="~/Assets/images/homeheader.jpg" width="100" height="100">
+        <img class="img-responsive" src="~/Assets/images/homeheader.jpg" width="100%">
     </section>
     <!--
     Header start
@@ -62,7 +122,7 @@
                                         <span class="icon-bar"></span>
                                     </button>
                                     <a class="navbar-brand" href="#">
-                                        <img src="~/Assets/images/logo.png" alt="Logo">
+                                        <p id="titleKFC">KFC RESTAURANT</p>
                                     </a>
 
                                 </div>
@@ -78,13 +138,13 @@
                                         <li><a href="#contact-us">contacts</a></li>
 
                                         <li><a href="@Url.Action("Login","LoginUser")">Đăng nhập</a></li>
-                                   
-                                        <li><a href="GioHang/ShowToCart">
-                                            <img src="@Url.Content("~/Assets/images/cart.png")" style="height:20px;width:20px;"/>
-                                            @Html.Action("BagCart", "GioHang")
+
+                                        <li>
+                                            <a href="GioHang/ShowToCart">
+                                                <img src="@Url.Content("~/Assets/images/cart.png")" style="height:20px;width:20px;" />
+                                                @Html.Action("BagCart", "GioHang")
                                             </a>
                                         </li>
-
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
                             </div><!-- /.container-fluid -->
@@ -141,65 +201,152 @@
     <!--
     about-us start
     ============================== -->
-    <header>
-        <style>
-            .card {
-                width: 200px;
-                border-radius: 5px;
-                padding: 10px;
-                margin: 10px;
-                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-                transition: 0.3s;
-            }
 
-                .card:hover {
-                    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-                }
-
-            .containerMain {
-                width: 100% !important;
-                box-sizing: inherit;
-                display: flex;
-                border: 1px solid blue;
-            }
-
-            #margin-card {
-                text-align: center;
-                margin-top: 20px;
-                width: auto;
-            }
-        </style>
-    </header>
 
     <div class="container containerMain">
-        <div class="col-md-2">
+        <div class="col-md-2 div-loai">
             @{ Html.RenderAction("LoaiPartial", "Loai");}
         </div>
         <div class="col-md-10" id="div-content">
             <div class="row">
                 @*<div class="col-md-12">*@
                 @*<div class="row">*@
-                @foreach (var pro in Model)
-                {
-                    <div class="col-sm-6 col-md-4 col-lg-3" id="margin-card">
+
+                <div class="col-sm-6 col-md-4 col-lg-3" id="margin-card">
+                    @foreach (var pro in Model)
+                    {
                         <div class="card">
-                             <img src="@Url.Content(pro.HINHANH)" height="150" width="150" />
-                            <div class="col-sm-6 col-md-4 col-lg-3" id="margin-card">
+                            <img src="@Url.Content(pro.HINHANH)" height="199" width="198" style="border-radius:5px;" />
+                            <div class="col-sm-12 col-md-4 col-lg-3" id="margin-card">
                                 <p>@Html.DisplayFor(model => pro.TENMONAN)</p>
                                 <p>@Html.DisplayFor(model => pro.GIABAN)</p>
-                                <p>@Html.DisplayFor(model=>pro.LOAI.TENLOAI)</p>
-                                <a href="/GioHang/AddToCart/@pro.MAMONAN">
-                                    <p><input type="submit" value="Đặt Hàng" /></p>
-                                </a>
-                                @Html.ActionLink("Details", "Details", new { id = pro.MAMONAN })
+                                <p>@Html.DisplayFor(model => pro.MOTA)</p>
+                                <div class="btn-detail ">
+                                    <p>
+                                        <a href="/GioHang/AddToCart/@pro.MAMONAN">
+                                            <input type="submit" value="Đặt Hàng" class="btn-detail2" />
+                                        </a>
+                                    </p>
+                                    <p>
+                                        <a href="/Home/Details/@pro.MAMONAN">
+                                            <input type="submit" name="name" value="Detail" class="btn-detail1" />@*@Html.ActionLink("Details", "Details", new { id = pro.MAMONAN })*@
+                                        </a>
+                                    </p>
+                                </div>
+
                             </div>
-                        </div>
-                    </div>
-                }
+                        </div>}
+                </div>
                 @*</div>*@
                 @*</div>*@<!-- .col-md-12 close -->
             </div>
         </div>
-      <!-- .row close -->
-    </div><!-- .containe close -->
+        <!--carousel--><div class="col-md-3">
+            <div id="myCarousel" class="carousel slide ">
+                <ol class="carousel-indicators">
+                    <li class="item1 active"></li>
+                    <li class="item2"></li>
+                    <li class="item3"></li>
+                    <li class="item4"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+
+                    <div class="item active">
+                        <div><img class="img-carousel" src="https://kfcvietnam.com.vn/uploads/banner/d0d69f34e549f5754b49ce15536d1c25.png" width="100%" height="150px" /></div>
+
+                        @*<div class="carousel-caption">
+                                <h3>Chania</h3>
+                                <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+                            </div>*@
+                    </div>
+
+                    <div class="item">
+                        <div><img class="img-carousel" src="https://kfcvietnam.com.vn/uploads/banner/706bea33b68caf846dd84d5e2ad5bd54.png" width="100%" height="150px" /></div>
+                        @*<div class="carousel-caption">
+                                <h3>Chania</h3>
+                                <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+                            </div>*@
+                    </div>
+                    <div class="item">
+                        <div><img class="img-carousel" src="https://kfcvietnam.com.vn/uploads/banner/d0d69f34e549f5754b49ce15536d1c25.png" width="100%" height="150px" /></div>
+                    </div>
+                    <div class="item">
+                        <div><img class="img-carousel" src="https://kfcvietnam.com.vn/uploads/banner/706bea33b68caf846dd84d5e2ad5bd54.png" width="100%" height="150px" /></div>
+                        @*<div class="carousel-caption">
+                                <h3>Chania</h3>
+                                <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+                            </div>*@
+                    </div>
+                    <div class="item">
+                        <div><img class="img-carousel" src="https://kfcvietnam.com.vn/uploads/banner/d0d69f34e549f5754b49ce15536d1c25.png" width="100%" height="150px" /></div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" role="button" id="left">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" id="right">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div>
+
+                </div>
+                <!-- .row close -->
+            </div>
+            <div id="myCarousel1" class="carousel slide margin-next-carousel">
+                <ol class="carousel-indicators">
+                    <li class="item5 active"></li>
+                    <li class="item6"></li>
+                    <li class="item7"></li>
+                    <li class="item8"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+
+                    <div class="item active">
+                        <div class="img-carousel">
+                            <img class="img-carousel" src="https://kfcvietnam.com.vn/uploads/banner/d0d69f34e549f5754b49ce15536d1c25.png" width="100%" height="150px" />
+                        </div>
+
+                        @*<div class="carousel-caption">
+                                <h3>Chania</h3>
+                                <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+                            </div>*@
+                    </div>
+
+                    <div class="item">
+                        <div><img class="img-carousel" src="https://kfcvietnam.com.vn/uploads/banner/706bea33b68caf846dd84d5e2ad5bd54.png" width="100%" height="150px" /></div>
+                        @*<div class="carousel-caption">
+                                <h3>Chania</h3>
+                                <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+                            </div>*@
+                    </div>
+                    <div class="item">
+                        <div><img class="img-carousel" src="https://kfcvietnam.com.vn/uploads/banner/d0d69f34e549f5754b49ce15536d1c25.png" width="100%" height="150px" /></div>
+                    </div>
+                    <div class="item">
+                        <div><img class="img-carousel" src="https://kfcvietnam.com.vn/uploads/banner/706bea33b68caf846dd84d5e2ad5bd54.png" width="100%" height="150px" /></div>
+                        @*<div class="carousel-caption">
+                                <h3>Chania</h3>
+                                <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+                            </div>*@
+                    </div>
+                    <div class="item">
+                        <div><img class="img-carousel" src="https://kfcvietnam.com.vn/uploads/banner/d0d69f34e549f5754b49ce15536d1c25.png" width="100%" height="150px" /></div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel1" role="button" id="left1">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel1" role="button" id="right1">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div>
+
+                </div>
+                <!-- .row close -->
+            </div><!-- .containe close -->
+        </div>
 </body>
