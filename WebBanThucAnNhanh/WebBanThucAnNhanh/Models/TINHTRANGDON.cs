@@ -17,13 +17,13 @@ namespace WebBanThucAnNhanh.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TINHTRANGDON()
         {
-            this.CTHOADON = new HashSet<CTHOADON>();
+            this.DATHANGs = new HashSet<DATHANG>();
         }
     
         public int MATINHTRANG { get; set; }
         public string TINHTRANG { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHOADON> CTHOADON { get; set; }
+        public virtual ICollection<DATHANG> DATHANGs { get; set; }
     }
 }

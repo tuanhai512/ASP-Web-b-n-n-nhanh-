@@ -159,6 +159,9 @@
     <Compile Include="Models\DATHANG.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DIACHIGH.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DONVITINH.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -1895,6 +1898,10 @@
     <Content Include="Assets\css\animate.min.css" />
     <Content Include="Assets\css\bootstrap.min.css" />
     <Content Include="Assets\css\font-awesome.min.css" />
+    <Content Include="Assets\css\GioHang\checkout.css" />
+    <Content Include="Assets\css\GioHang\StyleSheet1.css" />
+    <Content Include="Assets\css\GioHang\use.css" />
+    <Content Include="Assets\css\home.css" />
     <Content Include="Assets\css\main.css" />
     <Content Include="Assets\css\owl.carousel.css" />
     <Content Include="Assets\css\responsive.css" />
@@ -1981,7 +1988,6 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\StyleSheet1.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -2295,6 +2301,12 @@
     <Content Include="Areas\NhanVien\Views\MonAn\SelectUnit.cshtml" />
     <Content Include="Areas\QuanLy\Views\DonViTinhMon\Create.cshtml" />
     <Content Include="Areas\QuanLy\Views\DonViTinhMon\Index.cshtml" />
+    <Content Include="Areas\NhanVien\Views\MonAn\Create.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Loai\Index.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Loai\Create.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Loai\Edit.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Loai\Delete.cshtml" />
+    <Content Include="Areas\QuanLy\Views\DonHang\Index.cshtml" />
     <EntityDeploy Include="Models\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
@@ -2302,12 +2314,6 @@
     <Content Include="Models\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\NhanVien\Views\MonAn\Create.cshtml" />
-    <Content Include="Areas\QuanLy\Views\Loai\Index.cshtml" />
-    <Content Include="Areas\QuanLy\Views\Loai\Create.cshtml" />
-    <Content Include="Areas\QuanLy\Views\Loai\Edit.cshtml" />
-    <Content Include="Areas\QuanLy\Views\Loai\Delete.cshtml" />
-    <Content Include="Areas\QuanLy\Views\DonHang\Index.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -2418,6 +2424,8 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\LoginUser\Login.cshtml" />
+    <Content Include="Views\GioHang\Checkout.cshtml" />
+    <Content Include="Views\GioHang\CheckoutSuccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

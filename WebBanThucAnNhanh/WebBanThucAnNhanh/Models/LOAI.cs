@@ -18,14 +18,14 @@ namespace WebBanThucAnNhanh.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LOAI()
         {
-            this.MONAN = new HashSet<MONAN>();
+            this.MONANs = new HashSet<MONAN>();
         }
     
         public string MALOAI { get; set; }
         public string TENLOAI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MONAN> MONAN { get; set; }
+        public virtual ICollection<MONAN> MONANs { get; set; }
 
         [NotMapped]
         public List<LOAI> listLoai { get; internal set; }

@@ -24,7 +24,6 @@
     </Key>
     <Property Name="MACTHOADON" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MAMONAN" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="MATINHTRANG" Type="int" Nullable="false" />
     <Property Name="MACTMONANDATHANG" Type="int" Nullable="false" />
     <Property Name="MAHOADON" Type="int" Nullable="false" />
     <Property Name="SOLUONG" Type="int" />
@@ -35,10 +34,23 @@
       <PropertyRef Name="MADATHANG" />
     </Key>
     <Property Name="MADATHANG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MAMONAN" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="SOLUONG" Type="int" />
+    <Property Name="NGAY" Type="datetime" Nullable="false" />
+    <Property Name="MADIACHI" Type="int" Nullable="false" />
     <Property Name="TONGTIEN" Type="float" />
     <Property Name="GHICHU" Type="nvarchar(max)" />
+    <Property Name="MATINHTRANG" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DIACHIGH">
+    <Key>
+      <PropertyRef Name="MADIACHI" />
+    </Key>
+    <Property Name="MADIACHI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MAKHACHHANG" Type="int" />
+    <Property Name="HOTEN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SDT" Type="int" Nullable="false" />
+    <Property Name="SONHA" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PHUONG" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="QUAN" Type="nvarchar" MaxLength="30" Nullable="false" />
   </EntityType>
   <EntityType Name="DONVITINH">
     <Key>
@@ -67,7 +79,7 @@
     <Property Name="MADATHANG" Type="int" Nullable="false" />
     <Property Name="TONGTIEN" Type="float" Nullable="false" />
     <Property Name="NGAYGIO" Type="datetime" />
-    <Property Name="TONGTHUE" Type="float" Nullable="false" />
+    <Property Name="TONGTHUE" Type="float" />
     <Property Name="GHICHU" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="KHACHHANG">
@@ -78,9 +90,9 @@
     <Property Name="TENKHACHHANG" Type="nvarchar(max)" Nullable="false" />
     <Property Name="NGAYSINH" Type="datetime" />
     <Property Name="DIACHI" Type="nvarchar(max)" />
-    <Property Name="SDT" Type="int" />
+    <Property Name="SDT" Type="int" Nullable="false" />
     <Property Name="EMAIL" Type="varchar(max)" Nullable="false" />
-    <Property Name="PASSWORD" Type="varchar(max)" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar(max)" />
     <Property Name="LOAI" Type="nvarchar" MaxLength="30" />
   </EntityType>
   <EntityType Name="KHUYENMAI">
@@ -105,7 +117,7 @@
     </Key>
     <Property Name="MAMONAN" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="TENMONAN" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="HINHANH" Type="text" />
+    <Property Name="HINHANH" Type="nvarchar(max)" />
     <Property Name="MADONVITINH" Type="int" Nullable="false" />
     <Property Name="GIABAN" Type="float" Nullable="false" />
     <Property Name="MOTA" Type="nvarchar(max)" />
@@ -148,18 +160,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_CTHOADON_CT_MONAN_TINHTRANG">
-    <End Role="TINHTRANGDON" Type="Self.TINHTRANGDON" Multiplicity="1" />
-    <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TINHTRANGDON">
-        <PropertyRef Name="MATINHTRANG" />
-      </Principal>
-      <Dependent Role="CTHOADON">
-        <PropertyRef Name="MATINHTRANG" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_CTHOADON_HOADON">
     <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
     <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
@@ -181,6 +181,30 @@
       </Principal>
       <Dependent Role="CT_MONAN_DATHANG">
         <PropertyRef Name="MADATHANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DATHANG_TINHTRANGDON">
+    <End Role="TINHTRANGDON" Type="Self.TINHTRANGDON" Multiplicity="1" />
+    <End Role="DATHANG" Type="Self.DATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TINHTRANGDON">
+        <PropertyRef Name="MATINHTRANG" />
+      </Principal>
+      <Dependent Role="DATHANG">
+        <PropertyRef Name="MATINHTRANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DIACHIGH_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="DIACHIGH" Type="Self.DIACHIGH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MAKHACHHANG" />
+      </Principal>
+      <Dependent Role="DIACHIGH">
+        <PropertyRef Name="MAKHACHHANG" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -273,6 +297,7 @@
     <EntitySet Name="CT_MONAN_DATHANG" EntityType="Self.CT_MONAN_DATHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTHOADON" EntityType="Self.CTHOADON" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DATHANG" EntityType="Self.DATHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DIACHIGH" EntityType="Self.DIACHIGH" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DONVITINH" EntityType="Self.DONVITINH" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FEEDBACK" EntityType="Self.FEEDBACK" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
@@ -287,10 +312,6 @@
       <End Role="CT_MONAN_DATHANG" EntitySet="CT_MONAN_DATHANG" />
       <End Role="CTHOADON" EntitySet="CTHOADON" />
     </AssociationSet>
-    <AssociationSet Name="FK_CTHOADON_CT_MONAN_TINHTRANG" Association="Self.FK_CTHOADON_CT_MONAN_TINHTRANG">
-      <End Role="TINHTRANGDON" EntitySet="TINHTRANGDON" />
-      <End Role="CTHOADON" EntitySet="CTHOADON" />
-    </AssociationSet>
     <AssociationSet Name="FK_CTHOADON_HOADON" Association="Self.FK_CTHOADON_HOADON">
       <End Role="HOADON" EntitySet="HOADON" />
       <End Role="CTHOADON" EntitySet="CTHOADON" />
@@ -298,6 +319,14 @@
     <AssociationSet Name="FK_DATHANG_MONAN" Association="Self.FK_DATHANG_MONAN">
       <End Role="DATHANG" EntitySet="DATHANG" />
       <End Role="CT_MONAN_DATHANG" EntitySet="CT_MONAN_DATHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DATHANG_TINHTRANGDON" Association="Self.FK_DATHANG_TINHTRANGDON">
+      <End Role="TINHTRANGDON" EntitySet="TINHTRANGDON" />
+      <End Role="DATHANG" EntitySet="DATHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DIACHIGH_KHACHHANG" Association="Self.FK_DIACHIGH_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="DIACHIGH" EntitySet="DIACHIGH" />
     </AssociationSet>
     <AssociationSet Name="FK_HOADON_DATHANG" Association="Self.FK_HOADON_DATHANG">
       <End Role="DATHANG" EntitySet="DATHANG" />

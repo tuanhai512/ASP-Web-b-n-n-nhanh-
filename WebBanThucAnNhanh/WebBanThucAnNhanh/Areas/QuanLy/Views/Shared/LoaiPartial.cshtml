@@ -1,25 +1,30 @@
 ﻿@using WebBanThucAnNhanh.Models
 @model List<LOAI>
-    <style>
-        #div-u{
-            padding-top:30px;
-            margin-top:50px;
-            text-decoration:none;
+<style>
+    #div-u {
+        padding-top: 30px;
+        text-decoration: none;
+        vertical-align: middle;
+    }
+
+    .div-loai {
+        height: 50px;
+        padding: 10px;
+        text-transform: uppercase;
+    }
+
+        .div-cate a {
+            color: red;
+        }
+</style>
+<ul style="list-style-type:none" id="div-u">
+    @{
+        foreach (var item in Model)
+        {
+            <li class="div-loai">
+                @Html.ActionLink(item.TENLOAI, "Index", "Home", new { loai = item.MALOAI.Trim() }, "")
+            </li>
 
         }
-        .div-cate{
-            height:30px;
-            width:100%;
-        }
-    </style>
-    <ul style="list-style-type:none" id="div-u">
-        @{
-            foreach (var item in Model)
-            {
-                <li class="div-cate">
-                    @Html.ActionLink(item.TENLOAI, "Index", "Home", new {loai=item.MALOAI.Trim()},"")
-                </li>
-
-            }
-        }
-    </ul>
+    }
+</ul>

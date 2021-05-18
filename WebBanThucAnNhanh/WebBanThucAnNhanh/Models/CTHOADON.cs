@@ -15,15 +15,13 @@ namespace WebBanThucAnNhanh.Models
     public partial class CTHOADON
     {
         public int MACTHOADON { get; set; }
-        public string MAMONAN { get; set; }
-        public int MATINHTRANG { get; set; }
         public int MACTMONANDATHANG { get; set; }
         public int MAHOADON { get; set; }
         public Nullable<int> SOLUONG { get; set; }
         public string GHICHU { get; set; }
+        public string MAMONAN { get; set; }
     
         public virtual CT_MONAN_DATHANG CT_MONAN_DATHANG { get; set; }
-        public virtual TINHTRANGDON TINHTRANGDON { get; set; }
         public virtual HOADON HOADON { get; set; }
     }
 }
