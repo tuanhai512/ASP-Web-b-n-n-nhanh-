@@ -128,13 +128,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\NhanVien\Controllers\ThongTinController.cs" />
     <Compile Include="Areas\QuanLy\Controllers\DonViTinhMonController.cs" />
     <Compile Include="Areas\NhanVien\Controllers\LoginNhanVienController.cs" />
     <Compile Include="Areas\NhanVien\NhanVienAreaRegistration.cs" />
     <Compile Include="Areas\NhanVien\Controllers\HomeController.cs" />
     <Compile Include="Areas\NhanVien\Controllers\MonAnController.cs" />
     <Compile Include="Areas\QuanLy\Controllers\AccountController.cs" />
-    <Compile Include="Areas\QuanLy\Controllers\DonHangController.cs" />
+    <Compile Include="Areas\NhanVien\Controllers\DonHangController.cs" />
     <Compile Include="Areas\QuanLy\Controllers\HoaDonController.cs" />
     <Compile Include="Areas\QuanLy\Controllers\KhachHangController.cs" />
     <Compile Include="Areas\QuanLy\Controllers\KhuyenMaiController.cs" />
@@ -2256,11 +2257,9 @@
     <Content Include="Areas\QuanLy\Views\KhachHang\Create.cshtml" />
     <Content Include="Areas\QuanLy\Views\KhachHang\Details.cshtml" />
     <Content Include="Areas\QuanLy\Views\HoaDon\Index.cshtml" />
-    <Content Include="Areas\QuanLy\Views\DonHang\ShowMonAn.cshtml" />
+    <Content Include="Areas\NhanVien\Views\DonHang\ShowMonAn.cshtml" />
     <Content Include="Areas\QuanLy\Views\KhuyenMai\Create.cshtml" />
-    <Content Include="Areas\QuanLy\Views\KhuyenMai\Index.cshtml" />
     <Content Include="Areas\QuanLy\Views\KhuyenMai\Edit.cshtml" />
-    <Content Include="Areas\QuanLy\Views\KhuyenMai\Index.cshtml" />
     <Content Include="Areas\QuanLy\Views\KhuyenMai\Edit.cshtml" />
     <Content Include="Areas\QuanLy\Views\Shared\LoaiPartial.cshtml" />
     <Content Include="Models\Model.Context.tt">
@@ -2306,7 +2305,7 @@
     <Content Include="Areas\QuanLy\Views\Loai\Create.cshtml" />
     <Content Include="Areas\QuanLy\Views\Loai\Edit.cshtml" />
     <Content Include="Areas\QuanLy\Views\Loai\Delete.cshtml" />
-    <Content Include="Areas\QuanLy\Views\DonHang\Index.cshtml" />
+    <Content Include="Areas\NhanVien\Views\DonHang\Index.cshtml" />
     <EntityDeploy Include="Models\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
@@ -2314,6 +2313,10 @@
     <Content Include="Models\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\QuanLy\Views\DonViTinhMon\Edit.cshtml" />
+    <Content Include="Areas\QuanLy\Views\DonViTinhMon\Delete.cshtml" />
+    <Content Include="Areas\QuanLy\Views\KhuyenMai\Index.cshtml" />
+    <Content Include="Areas\NhanVien\Views\MonAn\Trash.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -2430,6 +2433,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\NhanVien\Data\" />
+    <Folder Include="Areas\NhanVien\Views\ThongTin\" />
     <Folder Include="Areas\QuanLy\Data\" />
   </ItemGroup>
   <ItemGroup>

@@ -26,6 +26,7 @@ namespace WebBanThucAnNhanh.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MONAN> MONANs { get; set; }
+
         [NotMapped]
         public List<DONVITINH> listUnit { get; internal set; }
     }

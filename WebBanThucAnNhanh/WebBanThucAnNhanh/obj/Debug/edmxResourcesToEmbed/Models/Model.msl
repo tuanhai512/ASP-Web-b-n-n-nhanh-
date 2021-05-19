@@ -126,6 +126,8 @@
     <EntitySetMapping Name="MONANs">
       <EntityTypeMapping TypeName="QLThucAnNhanhModel.MONAN">
         <MappingFragment StoreEntitySet="MONAN">
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
           <ScalarProperty Name="MAMONAN" ColumnName="MAMONAN" />
           <ScalarProperty Name="TENMONAN" ColumnName="TENMONAN" />
           <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />

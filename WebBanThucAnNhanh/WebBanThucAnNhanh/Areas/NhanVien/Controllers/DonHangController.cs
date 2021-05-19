@@ -5,40 +5,46 @@ using System.Web;
 using System.Web.Mvc;
 using WebBanThucAnNhanh.Models;
 
-namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
+namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
 {
-    public class DonViTinhMonController : Controller
+    public class DonHangController : Controller
     {
         QLThucAnNhanhEntities _db = new QLThucAnNhanhEntities();
-        // GET: NhanVien/DonViTinhMon
+        // GET: QuanLy/DonHang
+        public ActionResult ShowMonAn()
+        {
+            if (Session["GioHang"] == null)
+                return RedirectToAction("ShowMonAn","DonHang");
+            GioHang _gioHang = Session["GioHang"] as GioHang;
+            return View(_gioHang);
+        }
         public ActionResult Index()
         {
-            return View(_db.DONVITINHs.ToList());
+            return View(_db.DATHANGs.ToList());
         }
 
-        // GET: NhanVien/DonViTinhMon/Details/5
+        // GET: QuanLy/DonHang/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: NhanVien/DonViTinhMon/Create
+        // GET: QuanLy/DonHang/Create
         public ActionResult Create()
         {
-            DONVITINH donvitinh = new DONVITINH();
-            return View(donvitinh);
+            return View();
         }
 
-        // POST: NhanVien/DonViTinhMon/Create
+        // POST: QuanLy/DonHang/Create
         [HttpPost]
-        public ActionResult Create(DONVITINH donvitinh)
+        public ActionResult Create(DATHANG collection)
+
         {
             try
             {
+               
                 // TODO: Add insert logic here
-
-                _db.DONVITINHs.Add(donvitinh);
-                _db.SaveChanges();
+               
                 return RedirectToAction("Index");
             }
             catch
@@ -47,13 +53,13 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
             }
         }
 
-        // GET: NhanVien/DonViTinhMon/Edit/5
+        // GET: QuanLy/DonHang/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: NhanVien/DonViTinhMon/Edit/5
+        // POST: QuanLy/DonHang/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -69,13 +75,13 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
             }
         }
 
-        // GET: NhanVien/DonViTinhMon/Delete/5
+        // GET: QuanLy/DonHang/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: NhanVien/DonViTinhMon/Delete/5
+        // POST: QuanLy/DonHang/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

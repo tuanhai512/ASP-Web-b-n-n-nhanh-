@@ -1,26 +1,22 @@
 ﻿@model IEnumerable<WebBanThucAnNhanh.Models.DATHANG>
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/NhanVien/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Đơn hàng</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.MADATHANG)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MAMONAN)
+            @Html.DisplayNameFor(model => model.CT_MONAN_DATHANG)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.SOLUONG)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.TONGTIEN)
         </th>
@@ -36,11 +32,11 @@
             @Html.DisplayFor(modelItem => item.MADATHANG)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MAMONAN)
+            @Html.DisplayFor(modelItem => item.CT_MONAN_DATHANG)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.SOLUONG)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.TONGTIEN)
         </td>

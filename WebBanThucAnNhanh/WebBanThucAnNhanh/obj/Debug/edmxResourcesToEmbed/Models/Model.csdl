@@ -138,7 +138,7 @@
     </Key>
     <Property Name="MAMONAN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TENMONAN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="HINHANH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HINHANH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="MADONVITINH" Type="Int32" Nullable="false" />
     <Property Name="GIABAN" Type="Double" Nullable="false" />
     <Property Name="MOTA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -146,6 +146,8 @@
     <NavigationProperty Name="CT_MONAN_DATHANG" Relationship="Self.FK_MONAN_DATHANG" FromRole="MONAN" ToRole="CT_MONAN_DATHANG" />
     <NavigationProperty Name="DONVITINH" Relationship="Self.FK_MONAN_DONVITINH" FromRole="MONAN" ToRole="DONVITINH" />
     <NavigationProperty Name="LOAI" Relationship="Self.FK_MONAN_LOAI" FromRole="MONAN" ToRole="LOAI" />
+    <Property Name="SOLUONG" Type="Int32" Nullable="false" />
+    <Property Name="STATUS" Type="Int32" />
   </EntityType>
   <EntityType Name="NHANVIEN">
     <Key>

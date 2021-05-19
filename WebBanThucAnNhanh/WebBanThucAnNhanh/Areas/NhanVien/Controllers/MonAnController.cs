@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebBanThucAnNhanh.Models;
 using System.IO;
-
+using System.Data.Entity;
 
 namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
 {
@@ -15,10 +15,62 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
         // GET: Admin/MonAn
         public ActionResult Index()
         {
-            return View(_db.MONANs.ToList());
+            var model = _db.MONANs.Where(s => s.STATUS != 0).ToList();
+            return View(model);
         }
 
+        public ActionResult Trash()
+        {
+            var model = _db.MONANs.Where(s => s.STATUS == 0).ToList();
+            return View(model);
+        }
         // GET: Admin/MonAn/Details/5
+        public ActionResult Status(string id)
+        {
+            if(id == null)
+            {
+                return RedirectToAction("Index");
+            }
+            MONAN monan = _db.MONANs.Find(id);
+            if(monan.STATUS == 1)
+            {
+                monan.STATUS = 2;
+            }
+            else
+            {
+                monan.STATUS = 1;
+            }
+            _db.Entry(monan).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+        public ActionResult Deltrash(string id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+            MONAN monan = _db.MONANs.Find(id);
+            monan.STATUS = 0;
+            _db.Entry(monan).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+        public ActionResult Retrash(string id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Trash","MonAn");
+            }
+            MONAN monan = _db.MONANs.Find(id);
+            monan.STATUS = 2;
+            _db.Entry(monan).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Trash", "MonAn");
+
+        }
         public ActionResult Details(string id)
         {
             return View(_db.MONANs.Where(s=>s.MAMONAN==id).FirstOrDefault());

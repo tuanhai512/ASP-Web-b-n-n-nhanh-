@@ -3,48 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebBanThucAnNhanh.Models;
 
-namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
+namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
 {
-    public class DonHangController : Controller
+    public class ThongTinController : Controller
     {
-        QLThucAnNhanhEntities _db = new QLThucAnNhanhEntities();
-        // GET: QuanLy/DonHang
-        public ActionResult ShowMonAn()
-        {
-            if (Session["GioHang"] == null)
-                return RedirectToAction("ShowMonAn","DonHang");
-            GioHang _gioHang = Session["GioHang"] as GioHang;
-            return View(_gioHang);
-        }
+        // GET: NhanVien/ThongTin
         public ActionResult Index()
         {
-            return View(_db.DATHANGs.ToList());
+            return View();
         }
 
-        // GET: QuanLy/DonHang/Details/5
+        // GET: NhanVien/ThongTin/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: QuanLy/DonHang/Create
+        // GET: NhanVien/ThongTin/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: QuanLy/DonHang/Create
+        // POST: NhanVien/ThongTin/Create
         [HttpPost]
-        public ActionResult Create(DATHANG collection)
-
+        public ActionResult Create(FormCollection collection)
         {
             try
             {
-               
                 // TODO: Add insert logic here
-               
+
                 return RedirectToAction("Index");
             }
             catch
@@ -53,13 +42,13 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
             }
         }
 
-        // GET: QuanLy/DonHang/Edit/5
+        // GET: NhanVien/ThongTin/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: QuanLy/DonHang/Edit/5
+        // POST: NhanVien/ThongTin/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -75,13 +64,13 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
             }
         }
 
-        // GET: QuanLy/DonHang/Delete/5
+        // GET: NhanVien/ThongTin/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: QuanLy/DonHang/Delete/5
+        // POST: NhanVien/ThongTin/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

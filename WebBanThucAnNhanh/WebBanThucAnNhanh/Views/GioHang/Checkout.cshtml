@@ -116,8 +116,8 @@
                             <div>
                                 @foreach (var pro in GioHang.Items)
                                 {
-                                    double total = pro._monan.GIABAN * pro._quantity;
-                                    <p style="margin-block-start: 0em; margin-block-end: 0em;" class="carttotal"> @Html.DisplayFor(model => pro._monan.TENMONAN) x @Html.DisplayFor(model => pro._quantity) <span class="price">@total VNĐ</span></p>}
+                                    string total = String.Format("{0:0đ}",(pro._monan.GIABAN * pro._quantity));
+                                    <p style="margin-block-start: 0em; margin-block-end: 0em;" class="carttotal"> @Html.DisplayFor(model => pro._monan.TENMONAN) x @Html.DisplayFor(model => pro._quantity) <span class="price"> @total VNĐ</span></p>}
                                 <p style="margin-block-start:1mm; margin-block-end: 0em;" class="carttotal">TỔNG TIỀN <span class="price" style="color:black"><b>@GioHang.Total_money() VNĐ</b></span></p>
                             </div>
                         </div>
