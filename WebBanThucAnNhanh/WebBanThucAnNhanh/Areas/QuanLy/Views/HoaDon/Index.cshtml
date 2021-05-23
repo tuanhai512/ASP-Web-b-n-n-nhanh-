@@ -5,84 +5,75 @@
     Layout = "~/Areas/QuanLy/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6 text-danger text-uppercase">
+                    <strong>Danh sách tài khoản nhân viên</strong>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <div class="card-block p-3">
+        <table class="table table-bordered table-hover table-striped">
+        
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MAHOADON)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TONGTIEN)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NGAYGIO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TONGTHUE)
+                </th>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MAHOADON)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MAKHUYENMAI)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MANHANVIEN)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MAKHACHHANG)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MACTHOADON)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MADATHANG)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TONGTIEN)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NGAYGIO)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TONGTHUE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GHICHU)
-        </th>
-        <th></th>
-    </tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DATHANG.GHICHU)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MAKHACHHANG)
+                </th>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MAHOADON)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MAKHUYENMAI)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MANHANVIEN)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MAKHACHHANG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MACTHOADON)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MADATHANG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TONGTIEN)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NGAYGIO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TONGTHUE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GHICHU)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
+            </tr>
+
+                @foreach (var item in Model)
+                {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MAHOADON)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TONGTIEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYGIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TONGTHUE)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.DATHANG.GHICHU)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.MAKHACHHANG)
+            </td>
+            <td>
+        
+
+            </td>
+        </tr>
+                }
+
+            </table>
+        </div>
 }
-
-</table>

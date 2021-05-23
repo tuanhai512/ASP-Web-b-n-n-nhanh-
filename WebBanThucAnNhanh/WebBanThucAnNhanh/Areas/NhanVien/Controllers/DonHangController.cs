@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebBanThucAnNhanh.Models;
+using System.IO;
+using System.Data.Entity;
 
 namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
 {
@@ -14,7 +16,7 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
         public ActionResult ShowMonAn()
         {
             if (Session["GioHang"] == null)
-                return RedirectToAction("ShowMonAn","DonHang");
+                return RedirectToAction("ShowMonAn", "DonHang");
             GioHang _gioHang = Session["GioHang"] as GioHang;
             return View(_gioHang);
         }
@@ -22,61 +24,83 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
         {
             return View(_db.DATHANGs.ToList());
         }
+        public ActionResult XacNhan(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+            DATHANG dathang = _db.DATHANGs.Find(id);
+            if (dathang.TRANGTHAI == 0)
+            {
+                dathang.TRANGTHAI = 1;
+            }
+            _db.Entry(dathang).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
 
+        }
+        public ActionResult HoanTat(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+            DATHANG dathang = _db.DATHANGs.Find(id);
+            if (dathang.TRANGTHAI == 1)
+            {
+                if (ModelState.IsValid)
+                {
+
+                    var hoadon = new HOADON()
+                    {
+                        MADATHANG = dathang.MADATHANG,
+                        TONGTIEN = (double)dathang.TONGTIEN,
+                        NGAYGIO = DateTime.Now,
+                    };
+                    _db.HOADONs.Add(hoadon);
+                    _db.SaveChanges();
+
+                    var mONAN_DATHANG = _db.CT_MONAN_DATHANG.Where(m => m.MADATHANG == id).ToList();
+                    foreach (var item in mONAN_DATHANG)
+                    {
+                        var cthoadon = new CTHOADON()
+                        {
+                            MAHOADON = hoadon.MAHOADON,
+                            MADATHANG = item.MADATHANG,
+                            MAMONAN = item.MAMONAN,
+                            SOLUONG = item.SOLUONG,
+                        };
+                        _db.CTHOADONs.Add(cthoadon);
+                        _db.SaveChanges();
+                    }
+
+                    dathang.TRANGTHAI = 2;
+                    _db.Entry(dathang).State = EntityState.Modified;
+                    _db.SaveChanges();
+                }
+            }
+            return RedirectToAction("Index");
+
+        }
+        public ActionResult Huy(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+            DATHANG dathang = _db.DATHANGs.Find(id);
+            if (dathang.TRANGTHAI == 1)
+            {
+                dathang.TRANGTHAI = 3;
+            }
+            _db.Entry(dathang).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
         // GET: QuanLy/DonHang/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: QuanLy/DonHang/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: QuanLy/DonHang/Create
-        [HttpPost]
-        public ActionResult Create(DATHANG collection)
-
-        {
-            try
-            {
-               
-                // TODO: Add insert logic here
-               
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: QuanLy/DonHang/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: QuanLy/DonHang/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: QuanLy/DonHang/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Details()
         {
             return View();
         }

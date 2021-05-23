@@ -11,7 +11,8 @@ namespace WebBanThucAnNhanh.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class KHACHHANG
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -34,5 +35,8 @@ namespace WebBanThucAnNhanh.Models
         public virtual ICollection<DIACHIGH> DIACHIGHs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
+
+        [NotMapped]
+        public string Comfirm { get; set; }
     }
 }

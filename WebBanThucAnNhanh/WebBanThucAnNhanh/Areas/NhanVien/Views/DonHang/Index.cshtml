@@ -1,54 +1,104 @@
 ﻿@model IEnumerable<WebBanThucAnNhanh.Models.DATHANG>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/NhanVien/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Đơn hàng</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6 text-danger text-uppercase">
+                    <strong>Danh sách đơn hàng</strong>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="card-block p-3">
+        <table class="table table-bordered table-hover table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MADATHANG)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MADIACHI)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NGAY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TONGTIEN)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GHICHU)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TRANGTHAI)
+                </th>
+            </tr>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MADATHANG)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CT_MONAN_DATHANG)
-        </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.SOLUONG)
-        </th>*@
-        <th>
-            @Html.DisplayNameFor(model => model.TONGTIEN)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GHICHU)
-        </th>
-        <th></th>
-    </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MADATHANG)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MADIACHI)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NGAY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TONGTIEN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GHICHU)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TRANGTHAI)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("XacNhan", "DonHang", new { id = @item.MADATHANG })" class="btn btn-info btn-sm">
+                            @if (item.TRANGTHAI.Equals(0))
+                            {
+                                <span>Xác Nhận</span>
+                            }
+                            else
+                            {
+                                <span>Đã Xác Nhận</span>
+                            }
+                        </a>
+                        <a href="@Url.Action("HoanTat", "DonHang", new { id = @item.MADATHANG })" class="btn btn-info btn-sm">
+                            @if (item.TRANGTHAI.Equals(1))
+                            {
+                                <span>Hoàn Tất Đơn</span>
+                            }
+                            else
+                            {
+                                <span>Đã Hoàn Tất Đơn</span>
+                            }
+                        </a>
+                        <a href="@Url.Action("Huy", "DonHang", new { id = @item.MADATHANG })" class="btn btn-info btn-sm">
+                            @if (item.TRANGTHAI.Equals(1))
+                            {
+                                <span>Hủy Đơn</span>
+                            }
+                            else
+                            {
+                                <span>Đã Hủy Đơn</span>
+                            }
+                        </a>
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) 
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MADATHANG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CT_MONAN_DATHANG)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.SOLUONG)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.TONGTIEN)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GHICHU)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
+                    </td>
+                </tr>
+            }
+
+        </table>
+        </div>
 }
-
-</table>

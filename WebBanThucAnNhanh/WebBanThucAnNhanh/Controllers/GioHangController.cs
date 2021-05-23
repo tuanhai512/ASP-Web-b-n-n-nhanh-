@@ -96,6 +96,7 @@ namespace WebBanThucAnNhanh.Controllers
                     SONHA = model.SONHA,
                     PHUONG = model.PHUONG,
                     QUAN = model.QUAN,
+                    MAKHACHHANG = model.MAKHACHHANG
                 };
                 _db.DIACHIGHs.Add(diachigh);
                 _db.SaveChanges();

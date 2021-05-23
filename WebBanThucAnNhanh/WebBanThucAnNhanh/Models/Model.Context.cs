@@ -38,7 +38,8 @@ namespace WebBanThucAnNhanh.Models
         public virtual DbSet<LOAI> LOAIs { get; set; }
         public virtual DbSet<MONAN> MONANs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
-        public virtual DbSet<THONGKEBAOCAO> THONGKEBAOCAOs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TINHTRANGDON> TINHTRANGDONs { get; set; }
+        public virtual DbSet<THONGKEBAOCAO> THONGKEBAOCAOs { get; set; }
     }
 }

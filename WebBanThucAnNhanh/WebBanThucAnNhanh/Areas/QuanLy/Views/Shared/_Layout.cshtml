@@ -93,27 +93,20 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div>
+        
                                     <span>
-                                        @if (Session["Email"] == null)
+                                        @if (Session["EMAIL"] == null)
                                         {
-                                            <span></span>
+                                            <span><a href="@Url.Action("Index", "LoginQuanLy")">Đăng nhập</a></span>
                                         }
                                         else
                                         {
-                                            <span style="color:black;margin-right:20px">@Session["Email"]</span>
+                                            <span style="color:black;margin-right:20px">@Session["EMAIL"]</span>
+                                            <span><a href="@Url.Action("Logout", "LoginQuanLy")">Đăng xuất</a></span>
+
+
                                         }
                                     </span>
-                                  
-
-                                    <img class="img-profile rounded-circle"
-                                         src="/Assets/admin/img/undraw_profile.svg">
-                                </div>
-                              
-
-                            </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                  aria-labelledby="userDropdown">

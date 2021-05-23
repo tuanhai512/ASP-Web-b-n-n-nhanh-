@@ -12,15 +12,12 @@ namespace WebBanThucAnNhanh.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class CT_MONAN_DATHANG
+    public partial class sysdiagram
     {
-        public int MADATHANG { get; set; }
-        public string MAMONAN { get; set; }
-        public Nullable<int> SOLUONG { get; set; }
-        public Nullable<double> GIABAN { get; set; }
-    
-        public virtual DATHANG DATHANG { get; set; }
-        public virtual MONAN MONAN { get; set; }
-        public virtual CTHOADON CTHOADON { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

@@ -10,44 +10,43 @@
   </EntityType>
   <EntityType Name="CT_MONAN_DATHANG">
     <Key>
-      <PropertyRef Name="MACTMONANDATHANG" />
+      <PropertyRef Name="MADATHANG" />
+      <PropertyRef Name="MAMONAN" />
     </Key>
-    <Property Name="MACTMONANDATHANG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MAMONAN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="MADATHANG" Type="Int32" Nullable="false" />
+    <Property Name="MAMONAN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="SOLUONG" Type="Int32" />
     <Property Name="GIABAN" Type="Double" />
-    <NavigationProperty Name="CTHOADONs" Relationship="Self.FK_CTHOADON_CT_MONAN_DATHANG" FromRole="CT_MONAN_DATHANG" ToRole="CTHOADON" />
-    <NavigationProperty Name="DATHANG" Relationship="Self.FK_DATHANG_MONAN" FromRole="CT_MONAN_DATHANG" ToRole="DATHANG" />
-    <NavigationProperty Name="MONAN" Relationship="Self.FK_MONAN_DATHANG" FromRole="CT_MONAN_DATHANG" ToRole="MONAN" />
+    <NavigationProperty Name="DATHANG" Relationship="Self.FK_CT_DATHANG" FromRole="CT_MONAN_DATHANG" ToRole="DATHANG" />
+    <NavigationProperty Name="MONAN" Relationship="Self.FK_CT_MONAN" FromRole="CT_MONAN_DATHANG" ToRole="MONAN" />
+    <NavigationProperty Name="CTHOADON" Relationship="Self.FK_CTDATHANG_CTHOADON" FromRole="CT_MONAN_DATHANG" ToRole="CTHOADON" />
   </EntityType>
   <EntityType Name="CTHOADON">
     <Key>
-      <PropertyRef Name="MACTHOADON" />
+      <PropertyRef Name="MADATHANG" />
+      <PropertyRef Name="MAMONAN" />
     </Key>
-    <Property Name="MACTHOADON" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MACTMONANDATHANG" Type="Int32" Nullable="false" />
     <Property Name="MAHOADON" Type="Int32" Nullable="false" />
+    <Property Name="MADATHANG" Type="Int32" Nullable="false" />
+    <Property Name="MAMONAN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="SOLUONG" Type="Int32" />
     <Property Name="GHICHU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="CT_MONAN_DATHANG" Relationship="Self.FK_CTHOADON_CT_MONAN_DATHANG" FromRole="CTHOADON" ToRole="CT_MONAN_DATHANG" />
+    <NavigationProperty Name="CT_MONAN_DATHANG" Relationship="Self.FK_CTDATHANG_CTHOADON" FromRole="CTHOADON" ToRole="CT_MONAN_DATHANG" />
     <NavigationProperty Name="HOADON" Relationship="Self.FK_CTHOADON_HOADON" FromRole="CTHOADON" ToRole="HOADON" />
-    <Property Name="MAMONAN" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="DATHANG">
     <Key>
       <PropertyRef Name="MADATHANG" />
     </Key>
     <Property Name="MADATHANG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MADIACHI" Type="Int32" Nullable="false" />
     <Property Name="NGAY" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MADIACHI" Type="Int32" Nullable="false" />
     <Property Name="TONGTIEN" Type="Double" />
     <Property Name="GHICHU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="CT_MONAN_DATHANG" Relationship="Self.FK_DATHANG_MONAN" FromRole="DATHANG" ToRole="CT_MONAN_DATHANG" />
+    <Property Name="TRANGTHAI" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CT_MONAN_DATHANG" Relationship="Self.FK_CT_DATHANG" FromRole="DATHANG" ToRole="CT_MONAN_DATHANG" />
     <NavigationProperty Name="DIACHIGH" Relationship="Self.FK_DATHANG_DIACHIGH" FromRole="DATHANG" ToRole="DIACHIGH" />
     <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_DATHANG" FromRole="DATHANG" ToRole="HOADON" />
-    <Property Name="MATINHTRANG" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="TINHTRANGDON" Relationship="QLThucAnNhanhModel.FK_DATHANG_TINHTRANGDON" FromRole="DATHANG" ToRole="TINHTRANGDON" />
   </EntityType>
   <EntityType Name="DIACHIGH">
     <Key>
@@ -84,20 +83,15 @@
       <PropertyRef Name="MAHOADON" />
     </Key>
     <Property Name="MAHOADON" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MAKHUYENMAI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="MANHANVIEN" Type="Int32" Nullable="false" />
     <Property Name="MADATHANG" Type="Int32" Nullable="false" />
+    <Property Name="MAKHACHHANG" Type="Int32" />
     <Property Name="TONGTIEN" Type="Double" Nullable="false" />
     <Property Name="NGAYGIO" Type="DateTime" Precision="3" />
     <Property Name="TONGTHUE" Type="Double" />
     <Property Name="GHICHU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="CTHOADONs" Relationship="Self.FK_CTHOADON_HOADON" FromRole="HOADON" ToRole="CTHOADON" />
     <NavigationProperty Name="DATHANG" Relationship="Self.FK_HOADON_DATHANG" FromRole="HOADON" ToRole="DATHANG" />
-    <NavigationProperty Name="KHUYENMAI" Relationship="Self.FK_HOADON_KHUYENMAI" FromRole="HOADON" ToRole="KHUYENMAI" />
-    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_HOADON_NHANVIEN" FromRole="HOADON" ToRole="NHANVIEN" />
-    <Property Name="MAKHACHHANG" Type="Int32" Nullable="false" />
-    <Property Name="MACTHOADON" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="KHACHHANG" Relationship="QLThucAnNhanhModel.FK_HOADON_KHACHHANG" FromRole="HOADON" ToRole="KHACHHANG" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_HOADON_KHACHHANG" FromRole="HOADON" ToRole="KHACHHANG" />
   </EntityType>
   <EntityType Name="KHACHHANG">
     <Key>
@@ -112,7 +106,7 @@
     <Property Name="PASSWORD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="LOAI" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="DIACHIGHs" Relationship="Self.FK_DIACHIGH_KHACHHANG" FromRole="KHACHHANG" ToRole="DIACHIGH" />
-    <NavigationProperty Name="HOADONs" Relationship="QLThucAnNhanhModel.FK_HOADON_KHACHHANG" FromRole="KHACHHANG" ToRole="HOADON" />
+    <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_KHACHHANG" FromRole="KHACHHANG" ToRole="HOADON" />
   </EntityType>
   <EntityType Name="KHUYENMAI">
     <Key>
@@ -122,7 +116,6 @@
     <Property Name="GIAMGIA" Type="Double" />
     <Property Name="NGAYBATDAU" Type="DateTime" Precision="3" />
     <Property Name="NGAYKETTHUC" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_KHUYENMAI" FromRole="KHUYENMAI" ToRole="HOADON" />
   </EntityType>
   <EntityType Name="LOAI">
     <Key>
@@ -136,18 +129,18 @@
     <Key>
       <PropertyRef Name="MAMONAN" />
     </Key>
-    <Property Name="MAMONAN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MAMONAN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TENMONAN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="HINHANH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="MADONVITINH" Type="Int32" Nullable="false" />
     <Property Name="GIABAN" Type="Double" Nullable="false" />
     <Property Name="MOTA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="MALOAI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="CT_MONAN_DATHANG" Relationship="Self.FK_MONAN_DATHANG" FromRole="MONAN" ToRole="CT_MONAN_DATHANG" />
-    <NavigationProperty Name="DONVITINH" Relationship="Self.FK_MONAN_DONVITINH" FromRole="MONAN" ToRole="DONVITINH" />
-    <NavigationProperty Name="LOAI" Relationship="Self.FK_MONAN_LOAI" FromRole="MONAN" ToRole="LOAI" />
     <Property Name="SOLUONG" Type="Int32" Nullable="false" />
     <Property Name="STATUS" Type="Int32" />
+    <NavigationProperty Name="CT_MONAN_DATHANG" Relationship="Self.FK_CT_MONAN" FromRole="MONAN" ToRole="CT_MONAN_DATHANG" />
+    <NavigationProperty Name="DONVITINH" Relationship="Self.FK_MONAN_DONVITINH" FromRole="MONAN" ToRole="DONVITINH" />
+    <NavigationProperty Name="LOAI" Relationship="Self.FK_MONAN_LOAI" FromRole="MONAN" ToRole="LOAI" />
   </EntityType>
   <EntityType Name="NHANVIEN">
     <Key>
@@ -158,7 +151,23 @@
     <Property Name="SDT" Type="Int32" />
     <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="PASSWORD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_NHANVIEN" FromRole="NHANVIEN" ToRole="HOADON" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TINHTRANGDON">
+    <Key>
+      <PropertyRef Name="MATINHTRANG" />
+    </Key>
+    <Property Name="MATINHTRANG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TINHTRANG" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="THONGKEBAOCAO">
     <Key>
@@ -168,27 +177,7 @@
     <Property Name="THANG" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="GHICHU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="TINHTRANGDON">
-    <Key>
-      <PropertyRef Name="MATINHTRANG" />
-    </Key>
-    <Property Name="MATINHTRANG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TINHTRANG" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="DATHANGs" Relationship="QLThucAnNhanhModel.FK_DATHANG_TINHTRANGDON" FromRole="TINHTRANGDON" ToRole="DATHANG" />
-  </EntityType>
-  <Association Name="FK_CTHOADON_CT_MONAN_DATHANG">
-    <End Role="CT_MONAN_DATHANG" Type="Self.CT_MONAN_DATHANG" Multiplicity="1" />
-    <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CT_MONAN_DATHANG">
-        <PropertyRef Name="MACTMONANDATHANG" />
-      </Principal>
-      <Dependent Role="CTHOADON">
-        <PropertyRef Name="MACTMONANDATHANG" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DATHANG_MONAN">
+  <Association Name="FK_CT_DATHANG">
     <End Role="DATHANG" Type="Self.DATHANG" Multiplicity="1" />
     <End Role="CT_MONAN_DATHANG" Type="Self.CT_MONAN_DATHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -200,7 +189,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_MONAN_DATHANG">
+  <Association Name="FK_CT_MONAN">
     <End Role="MONAN" Type="Self.MONAN" Multiplicity="1" />
     <End Role="CT_MONAN_DATHANG" Type="Self.CT_MONAN_DATHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -208,6 +197,20 @@
         <PropertyRef Name="MAMONAN" />
       </Principal>
       <Dependent Role="CT_MONAN_DATHANG">
+        <PropertyRef Name="MAMONAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTDATHANG_CTHOADON">
+    <End Role="CT_MONAN_DATHANG" Type="Self.CT_MONAN_DATHANG" Multiplicity="1" />
+    <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CT_MONAN_DATHANG">
+        <PropertyRef Name="MADATHANG" />
+        <PropertyRef Name="MAMONAN" />
+      </Principal>
+      <Dependent Role="CTHOADON">
+        <PropertyRef Name="MADATHANG" />
         <PropertyRef Name="MAMONAN" />
       </Dependent>
     </ReferentialConstraint>
@@ -272,27 +275,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_HOADON_KHUYENMAI">
-    <End Role="KHUYENMAI" Type="Self.KHUYENMAI" Multiplicity="1" />
+  <Association Name="FK_HOADON_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
     <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="KHUYENMAI">
-        <PropertyRef Name="MAKHUYENMAI" />
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MAKHACHHANG" />
       </Principal>
       <Dependent Role="HOADON">
-        <PropertyRef Name="MAKHUYENMAI" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_HOADON_NHANVIEN">
-    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
-    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NHANVIEN">
-        <PropertyRef Name="MANHANVIEN" />
-      </Principal>
-      <Dependent Role="HOADON">
-        <PropertyRef Name="MANHANVIEN" />
+        <PropertyRef Name="MAKHACHHANG" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -322,19 +313,20 @@
     <EntitySet Name="LOAIs" EntityType="Self.LOAI" />
     <EntitySet Name="MONANs" EntityType="Self.MONAN" />
     <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
-    <EntitySet Name="THONGKEBAOCAOs" EntityType="Self.THONGKEBAOCAO" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="TINHTRANGDONs" EntityType="Self.TINHTRANGDON" />
-    <AssociationSet Name="FK_CTHOADON_CT_MONAN_DATHANG" Association="Self.FK_CTHOADON_CT_MONAN_DATHANG">
-      <End Role="CT_MONAN_DATHANG" EntitySet="CT_MONAN_DATHANG" />
-      <End Role="CTHOADON" EntitySet="CTHOADONs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DATHANG_MONAN" Association="Self.FK_DATHANG_MONAN">
+    <EntitySet Name="THONGKEBAOCAOs" EntityType="Self.THONGKEBAOCAO" />
+    <AssociationSet Name="FK_CT_DATHANG" Association="Self.FK_CT_DATHANG">
       <End Role="DATHANG" EntitySet="DATHANGs" />
       <End Role="CT_MONAN_DATHANG" EntitySet="CT_MONAN_DATHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK_MONAN_DATHANG" Association="Self.FK_MONAN_DATHANG">
+    <AssociationSet Name="FK_CT_MONAN" Association="Self.FK_CT_MONAN">
       <End Role="MONAN" EntitySet="MONANs" />
       <End Role="CT_MONAN_DATHANG" EntitySet="CT_MONAN_DATHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTDATHANG_CTHOADON" Association="Self.FK_CTDATHANG_CTHOADON">
+      <End Role="CT_MONAN_DATHANG" EntitySet="CT_MONAN_DATHANG" />
+      <End Role="CTHOADON" EntitySet="CTHOADONs" />
     </AssociationSet>
     <AssociationSet Name="FK_CTHOADON_HOADON" Association="Self.FK_CTHOADON_HOADON">
       <End Role="HOADON" EntitySet="HOADONs" />
@@ -356,49 +348,13 @@
       <End Role="DONVITINH" EntitySet="DONVITINHs" />
       <End Role="MONAN" EntitySet="MONANs" />
     </AssociationSet>
-    <AssociationSet Name="FK_HOADON_KHUYENMAI" Association="Self.FK_HOADON_KHUYENMAI">
-      <End Role="KHUYENMAI" EntitySet="KHUYENMAIs" />
-      <End Role="HOADON" EntitySet="HOADONs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HOADON_NHANVIEN" Association="Self.FK_HOADON_NHANVIEN">
-      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+    <AssociationSet Name="FK_HOADON_KHACHHANG" Association="Self.FK_HOADON_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
       <End Role="HOADON" EntitySet="HOADONs" />
     </AssociationSet>
     <AssociationSet Name="FK_MONAN_LOAI" Association="Self.FK_MONAN_LOAI">
       <End Role="LOAI" EntitySet="LOAIs" />
       <End Role="MONAN" EntitySet="MONANs" />
     </AssociationSet>
-    <AssociationSet Name="FK_DATHANG_TINHTRANGDON" Association="QLThucAnNhanhModel.FK_DATHANG_TINHTRANGDON">
-      <End Role="TINHTRANGDON" EntitySet="TINHTRANGDONs" />
-      <End Role="DATHANG" EntitySet="DATHANGs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HOADON_KHACHHANG" Association="QLThucAnNhanhModel.FK_HOADON_KHACHHANG">
-      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
-      <End Role="HOADON" EntitySet="HOADONs" />
-    </AssociationSet>
   </EntityContainer>
-  <Association Name="FK_DATHANG_TINHTRANGDON">
-    <End Type="QLThucAnNhanhModel.TINHTRANGDON" Role="TINHTRANGDON" Multiplicity="1" />
-    <End Type="QLThucAnNhanhModel.DATHANG" Role="DATHANG" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TINHTRANGDON">
-        <PropertyRef Name="MATINHTRANG" />
-      </Principal>
-      <Dependent Role="DATHANG">
-        <PropertyRef Name="MATINHTRANG" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_HOADON_KHACHHANG">
-    <End Type="QLThucAnNhanhModel.KHACHHANG" Role="KHACHHANG" Multiplicity="1" />
-    <End Type="QLThucAnNhanhModel.HOADON" Role="HOADON" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KHACHHANG">
-        <PropertyRef Name="MAKHACHHANG" />
-      </Principal>
-      <Dependent Role="HOADON">
-        <PropertyRef Name="MAKHACHHANG" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>
