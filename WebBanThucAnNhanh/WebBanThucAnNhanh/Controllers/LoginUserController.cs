@@ -20,19 +20,19 @@ namespace WebBanThucAnNhanh.Controllers
         {
 
             var check = database.KHACHHANGs.Where(s => s.EMAIL == _user.EMAIL && s.PASSWORD == _user.PASSWORD).FirstOrDefault();
-                if(check == null)
-                {
-                    ViewBag.ErrorInfo = "Sai info";
-                    return View("Login");
-                }    
-                else
-                {
-                    database.Configuration.ValidateOnSaveEnabled = false;
-                    Session["EMAIL"] = _user.EMAIL;
-                    Session["PASSWORD"] = _user.PASSWORD;
-                    return RedirectToAction("About", "Home");
-                }    
-            return View();
+            if (check == null)
+            {
+                ViewBag.ErrorInfo = "Sai info";
+                return View("Login");
+            }
+            else
+            {
+                database.Configuration.ValidateOnSaveEnabled = false;
+                Session["EMAIL"] = _user.EMAIL;
+                Session["PASSWORD"] = _user.PASSWORD;
+                return RedirectToAction("Index", "Home");
+            }
+            //return View();
         }
         public ActionResult RegisterUser()
         {

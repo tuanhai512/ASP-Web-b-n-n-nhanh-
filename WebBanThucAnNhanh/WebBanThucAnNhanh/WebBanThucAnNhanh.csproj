@@ -2317,6 +2317,8 @@
     <Content Include="Areas\QuanLy\Views\DonViTinhMon\Delete.cshtml" />
     <Content Include="Areas\QuanLy\Views\KhuyenMai\Index.cshtml" />
     <Content Include="Areas\NhanVien\Views\MonAn\Trash.cshtml" />
+    <Content Include="Areas\QuanLy\Views\LoginQuanLy\EditAccount.cshtml" />
+    <Content Include="Areas\NhanVien\Views\LoginUser\EditAccount.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />

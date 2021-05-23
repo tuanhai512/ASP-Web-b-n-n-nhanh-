@@ -130,9 +130,8 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    @Html.ActionLink("Logout", "Logout", "Login")
-
+                                <a class="dropdown-item" href="@Url.Action("Logout", "LoginUser")">
+                                    Logout
                                 </a>
                             </div>
                         </li>

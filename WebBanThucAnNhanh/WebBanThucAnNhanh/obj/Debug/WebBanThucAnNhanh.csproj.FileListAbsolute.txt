@@ -260,3 +260,4 @@ H:\năm 3 - HK2\Đồ án 1\New folder\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\D
 H:\năm 3 - HK2\Đồ án 1\New folder\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.csproj.CopyComplete
 H:\năm 3 - HK2\Đồ án 1\New folder\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.dll
 H:\năm 3 - HK2\Đồ án 1\New folder\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.pdb
+D:\git-hub\ASP-WebBanDoAnNhanh\WebBanThucAnNhanh\WebBanThucAnNhanh\obj\Debug\WebBanThucAnNhanh.csprojAssemblyReference.cache
