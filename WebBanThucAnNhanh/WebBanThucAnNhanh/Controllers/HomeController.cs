@@ -42,5 +42,6 @@ namespace WebBanThucAnNhanh.Controllers
         {
             return View(_db.MONANs.Where(s => s.MAMONAN == id).FirstOrDefault());
         }
+       
     }
 }

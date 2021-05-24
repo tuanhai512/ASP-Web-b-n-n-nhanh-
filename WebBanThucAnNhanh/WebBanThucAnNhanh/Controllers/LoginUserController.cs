@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace WebBanThucAnNhanh.Controllers
 {
@@ -30,6 +31,8 @@ namespace WebBanThucAnNhanh.Controllers
                 database.Configuration.ValidateOnSaveEnabled = false;
                 Session["EMAIL"] = _user.EMAIL;
                 Session["PASSWORD"] = _user.PASSWORD;
+                Session["MaKH"] = check.MAKHACHHANG;
+                int a = (int)Session["MaKH"];
                 return RedirectToAction("Index", "Home");
             }
             //return View();
@@ -60,6 +63,46 @@ namespace WebBanThucAnNhanh.Controllers
                 }
             }
             return View();
+        }
+        public ActionResult EditAccount(int ID)
+        {
+            var detailUser = database.KHACHHANGs.Where(m => m.MAKHACHHANG == ID).FirstOrDefault();
+            return View(detailUser);
+        }
+
+        [HttpPost]
+        public ActionResult EditAccount(KHACHHANG khachhang)
+        {
+            var detail = database.KHACHHANGs.Where(m => m.MAKHACHHANG == khachhang.MAKHACHHANG);
+
+            if (detail == null)
+            {
+                return HttpNotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                database.Entry(khachhang).State = EntityState.Modified;
+                database.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        public bool CheckExistAccount(KHACHHANG khachang)
+        {
+            var check = database.KHACHHANGs.Where(s => s.EMAIL == khachang.EMAIL && s.PASSWORD == khachang.PASSWORD).FirstOrDefault();
+            if (check != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        public ActionResult DonDat(int id)
+        {
+            var bill = database.HOADONs.Where(m => m.MAKHACHHANG == id).ToList();
+            return View(bill);
         }
     }
 }

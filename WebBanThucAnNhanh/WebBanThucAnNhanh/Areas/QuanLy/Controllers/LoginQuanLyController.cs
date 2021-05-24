@@ -23,6 +23,7 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
         [HttpPost]
         public ActionResult LoginAccount(ADMIN _user)
         {
+            var user = database.ADMINs.Find(_user.Email);
             if (!CheckExistAccount(_user))
             {
                 ViewBag.ErrorInfo = "Sai info";
@@ -31,6 +32,7 @@ namespace WebBanThucAnNhanh.Areas.QuanLy.Controllers
 
             database.Configuration.ValidateOnSaveEnabled = false;
             Session["Email"] = _user.Email;
+            Session["ID"] = user.ID;
 
             return RedirectToAction("Index", "Account");     
         }

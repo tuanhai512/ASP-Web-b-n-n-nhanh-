@@ -16,25 +16,26 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
         {
             return View();
         }
-       
+
         [HttpPost]
         public ActionResult LoginAccount(NHANVIEN _user)
         {
-            
-                if(!CheckExistAccount(_user))
-                {
-                    ViewBag.ErrorInfo = "Sai info";
-                    return View("Index");
-                }    
-                else
-                {
-                    database.Configuration.ValidateOnSaveEnabled = false;
-                    Session["EMAIL"] = _user.EMAIL;
-                    Session["PASSWORD"] = _user.PASSWORD;
-                    Session["TENNV"] = _user.TENNV;
-                    return RedirectToAction("Index", "MonAn");
-                }    
-            
+
+            if (!CheckExistAccount(_user))
+            {
+                ViewBag.ErrorInfo = "Sai info";
+                return View("Index");
+            }
+            else
+            {
+                database.Configuration.ValidateOnSaveEnabled = false;
+                Session["EMAIL"] = _user.EMAIL;
+                Session["PASSWORD"] = _user.PASSWORD;
+                Session["TENNV"] = _user.TENNV;
+                Session["ID"] = _user.MANHANVIEN;
+                return RedirectToAction("Index", "MonAn");
+            }
+
         }
         public ActionResult EditAccount(int ID)
         {

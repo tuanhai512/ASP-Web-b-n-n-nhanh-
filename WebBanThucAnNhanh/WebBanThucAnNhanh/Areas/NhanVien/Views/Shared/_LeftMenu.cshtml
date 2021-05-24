@@ -11,17 +11,17 @@
     <!-- Divider -->
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="@Url.Action("Index","MonAn")">
+        <a class="nav-link collapsed" href="@Url.Action("Index", "MonAn")">
             <h5>Quản lý món ăn</h5>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="@Url.Action("Index","DonHang")">
+        <a class="nav-link collapsed" href="@Url.Action("Index", "DonHang")">
             <h5>Quản lý đơn hàng</h5>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="@Url.Action("EditAccount","LoginUser")">
+        <a class="nav-link collapsed" href="@Url.Action("EditAccount", "LoginUser", new { id = Session["ID"]})">
             <h5>Thông tin</h5>
         </a>
     </li>

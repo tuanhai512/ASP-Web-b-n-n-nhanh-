@@ -5,14 +5,14 @@
     Layout = "~/Areas/QuanLy/Views/Shared/_Layout.cshtml";
 }
 
-<h2>EditAccount</h2>
+
 
 @using (Html.BeginForm("EditAccount"))
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ADMIN</h4>
+        <h4>Thông tin cá nhân</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)

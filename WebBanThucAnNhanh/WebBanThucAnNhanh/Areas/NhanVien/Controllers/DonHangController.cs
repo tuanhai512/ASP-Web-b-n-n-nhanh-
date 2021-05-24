@@ -46,6 +46,7 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
             {
                 return RedirectToAction("Index");
             }
+            //int temp = (int)Session["MAKH"];
             DATHANG dathang = _db.DATHANGs.Find(id);
             if (dathang.TRANGTHAI == 1)
             {
@@ -53,10 +54,12 @@ namespace WebBanThucAnNhanh.Areas.NhanVien.Controllers
                 {
 
                     var hoadon = new HOADON()
-                    {
+                    {   
                         MADATHANG = dathang.MADATHANG,
                         TONGTIEN = (double)dathang.TONGTIEN,
-                        NGAYGIO = DateTime.Now,
+                        NGAYGIO = dathang.NGAY,
+                        MAKHACHHANG = (int)Session["MAKH"]
+
                     };
                     _db.HOADONs.Add(hoadon);
                     _db.SaveChanges();

@@ -145,8 +145,11 @@
                                                 else
                                                 {
                                                     <span style="color:black;margin-right:20px">@Session["Email"]</span>
+                                                    <span> <a href="@Url.Action("EditAccount", "LoginUser", new { id = Session["MaKH"] })">Thông tin</a></span>
+
+                                                    <span> <a href="@Url.Action("DonDat", "LoginUser", new { id = Session["MaKH"] })">Don dat</a></span>
                                                     <span><a href="@Url.Action("Logout", "LoginUser")">Đăng xuất</a></span>
-                                               
+
                                                 }
                                             </span>
 
