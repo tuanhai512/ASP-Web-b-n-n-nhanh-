@@ -14,13 +14,19 @@ namespace WebBanThucAnNhanh.Models
     
     public partial class CTHOADON
     {
-        public int MAHOADON { get; set; }
-        public int MADATHANG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CTHOADON()
+        {
+            this.HOADONs = new HashSet<HOADON>();
+        }
+    
         public string MAMONAN { get; set; }
+        public int MADATHANG { get; set; }
         public Nullable<int> SOLUONG { get; set; }
         public string GHICHU { get; set; }
     
         public virtual CT_MONAN_DATHANG CT_MONAN_DATHANG { get; set; }
-        public virtual HOADON HOADON { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOADON> HOADONs { get; set; }
     }
 }

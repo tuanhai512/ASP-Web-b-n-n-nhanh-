@@ -14,8 +14,8 @@ namespace WebBanThucAnNhanh.Models
     
     public partial class CT_MONAN_DATHANG
     {
-        public int MADATHANG { get; set; }
         public string MAMONAN { get; set; }
+        public int MADATHANG { get; set; }
         public Nullable<int> SOLUONG { get; set; }
         public Nullable<double> GIABAN { get; set; }
     

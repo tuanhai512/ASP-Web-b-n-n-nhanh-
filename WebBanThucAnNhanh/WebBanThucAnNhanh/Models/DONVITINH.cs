@@ -20,10 +20,10 @@ namespace WebBanThucAnNhanh.Models
         {
             this.MONANs = new HashSet<MONAN>();
         }
-    
+
         public int MADONVITINH { get; set; }
         public string TENDONVITINH { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MONAN> MONANs { get; set; }
 

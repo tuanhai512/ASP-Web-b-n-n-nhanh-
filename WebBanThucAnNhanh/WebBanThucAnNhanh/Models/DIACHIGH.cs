@@ -14,12 +14,6 @@ namespace WebBanThucAnNhanh.Models
     
     public partial class DIACHIGH
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DIACHIGH()
-        {
-            this.DATHANGs = new HashSet<DATHANG>();
-        }
-    
         public int MADIACHI { get; set; }
         public Nullable<int> MAKHACHHANG { get; set; }
         public string HOTEN { get; set; }
@@ -28,8 +22,6 @@ namespace WebBanThucAnNhanh.Models
         public string PHUONG { get; set; }
         public string QUAN { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DATHANG> DATHANGs { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }
     }
 }

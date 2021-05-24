@@ -76,6 +76,24 @@
                 </div>
                 <div class="float-right">
                     <ul class="h_social list_style">
+                        <li>
+                            <span>
+                                @if (Session["Email"] == null)
+                                {
+                                    <a href="@Url.Action("Login", "LoginUser")" class="dropdown-toggle">Đăng nhập</a>
+                                }
+                                else
+                                {
+                                    <span style="color:black;margin-right:20px">@Session["Email"]</span>
+                                    <span> <a href="@Url.Action("EditAccount", "LoginUser", new { id = Session["MaKH"] })">Thông tin</a></span>
+
+                                    <span> <a href="@Url.Action("DonDat", "LoginUser", new { id = Session["MaKH"] })">Don dat</a></span>
+                                    <span><a href="@Url.Action("Logout", "LoginUser")">Đăng xuất</a></span>
+
+                                }
+                            </span>
+
+                        </li>
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
@@ -116,9 +134,7 @@
                             <li class="dropdown submenu">
                                 <a class="dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
                             </li>
-                            <li class="dropdown submenu">
-                                <a class="dropdown-toggle" href="@Url.Action("Login","LoginUser")" role="button" aria-haspopup="true" aria-expanded="false">Sign In</a>
-                            </li>
+                           
                             <li class="dropdown submenu active">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
                             </li>

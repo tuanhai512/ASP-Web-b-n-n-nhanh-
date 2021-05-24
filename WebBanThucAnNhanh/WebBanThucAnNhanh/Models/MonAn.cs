@@ -22,7 +22,7 @@ namespace WebBanThucAnNhanh.Models
             HINHANH = "~/Assets/admin/img/photo-1.jpg";
             this.CT_MONAN_DATHANG = new HashSet<CT_MONAN_DATHANG>();
         }
-    
+
         public string MAMONAN { get; set; }
         public string TENMONAN { get; set; }
         public string HINHANH { get; set; }
@@ -32,7 +32,7 @@ namespace WebBanThucAnNhanh.Models
         public string MALOAI { get; set; }
         public int SOLUONG { get; set; }
         public Nullable<int> STATUS { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_MONAN_DATHANG> CT_MONAN_DATHANG { get; set; }
         public virtual DONVITINH DONVITINH { get; set; }

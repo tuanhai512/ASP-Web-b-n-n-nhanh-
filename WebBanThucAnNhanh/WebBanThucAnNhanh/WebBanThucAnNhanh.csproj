@@ -203,9 +203,6 @@
     <Compile Include="Models\NHANVIEN.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\THONGKEBAOCAO.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -2318,13 +2315,6 @@
     <Content Include="Areas\NhanVien\Views\MonAn\Trash.cshtml" />
     <Content Include="Areas\QuanLy\Views\LoginQuanLy\EditAccount.cshtml" />
     <Content Include="Areas\NhanVien\Views\LoginUser\EditAccount.cshtml" />
-    <EntityDeploy Include="Models\Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\NhanVien\Views\DonHang\Details.cshtml" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
@@ -2348,6 +2338,13 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="Models\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -2463,6 +2460,7 @@
     <Content Include="Views\LoginUser\RegisterUser.cshtml" />
     <Content Include="Views\LoginUser\EditAccount.cshtml" />
     <Content Include="Views\LoginUser\DonDat.cshtml" />
+    <Content Include="Views\Shared\_MainPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
