@@ -5,6 +5,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="~/Assets/css/GioHang/use.css" rel="stylesheet" />
     <link href="~/Assets/css/GioHang/StyleSheet1.css" rel="stylesheet" />
+    <script src="~/Scripts/Script.js"></script>
+    <script>
+        function decrease() {
+                document.getElementById("quantityc").stepDown(1)            
+        }
+        function increase() {
+            document.getElementById("quantityc").stepUp(1);
+        }
+    </script>
+    <style>
+        .btn-quantity {
+            cursor: pointer;
+            height: 15px;
+        }
+    </style>
 </head>
 <div class="header-bg">
     <div class="header">
@@ -48,7 +63,7 @@
         </span>
         <span class="title2-all title2-cart"> > </span>
         <span class="title2-all title2-cart">Giỏ Hàng</span>
-    </div> 
+    </div>
 </div>
 <div class="shopping-cart">
     <div class="padding">
@@ -110,8 +125,12 @@
                                     @Html.DisplayFor(model => pro._monan.GIABAN)
                                 </td>
                                 <td>
+                                    <button onclick="decrease()" class="btn-quantity">Giam</button>
+
                                     <input type="hidden" value="@pro._monan.MAMONAN" name="MA_MONAN" id="textbox" />
-                                    <input class="quantity" type="text" value="@pro._quantity" name="Quantity">
+                                    <input class="quantity" type="number" id="quantityc" value="@pro._quantity" name="Quantity">
+                                    <button onclick="increase()" class="btn-quantity">Tang</button>
+
                                 </td>
                                 <td class="product-subtotal total-price">
                                     @total
@@ -141,7 +160,8 @@
             }
             <div style="padding-top:30px">
                 <div style="width:40%">
-                    <h2 style="color:#1a1a1a">TỔNG GIỎ HÀNG
+                    <h2 style="color:#1a1a1a">
+                        TỔNG GIỎ HÀNG
                         <span c style="color:#1a1a1a;padding-left:15px">
                             <i class="fa fa-shopping-cart"></i>
                             <b>
