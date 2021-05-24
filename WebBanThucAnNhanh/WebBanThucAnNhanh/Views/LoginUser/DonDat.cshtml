@@ -8,29 +8,29 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <div class="row product_d_price carddetail">
+    <div class="table-responsive">
 
-
-        <div class="card-block p-3">
-            <table class="table table-bordered table-hover table-striped">
+            <table class="table">
+            <thead>
                 <tr>
-                    <th>
+                    <th scope="col">
                         @Html.DisplayNameFor(model => model.MAHOADON)
                     </th>
-                    <th>
+                    <th scope="col">
                         @Html.DisplayNameFor(model => model.KHACHHANG.TENKHACHHANG)
                     </th>
-                    <th>
+                    <th scope="col">
                         @Html.DisplayNameFor(model => model.TONGTIEN)
                     </th>
-                    <th>
+                    <th scope="col">
                         @Html.DisplayNameFor(model => model.NGAYGIO)
                     </th>
                     @*<th>
                             @Html.DisplayNameFor(model => model.DATHANG.TRANGTHAI)
                         </th>*@
                 </tr>
-
+</thead>
+<tbody>
                 @foreach (var item in Model)
                 {
                     <tr>
@@ -50,13 +50,13 @@
                                 @Html.DisplayFor(modelItem => item.DATHANG.TRANGTHAI)
                             </td>*@
 
-                        <td>
-                            //Xem chi tiết đơn đặt
-                        </td>
+                      
                     </tr>
 
                 }
+                </tbody>
+
             </table>
-        </div>
+        
     </div>
 }
